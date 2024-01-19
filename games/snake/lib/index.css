@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+html, body {
+    border: none;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    overflow: hidden;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+}
+
+.main {
+    background-color: white;
+    display: flex;
+    position: relative;
+}
+
+.main__score {
+    color: darkgray;
+    font-size: 0.8em;
+    left: 0.5vw;
+    position: absolute;
+    top: 0.5vh;
+}
+
+.main__content {
+    flex: 1 1 auto;
+    overflow: hidden;
+    margin: 5vh 5vw 5vh 5vw;
+    position: relative;
+}
+
+.main__content__canvas {
+    pointer-events: none;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+}

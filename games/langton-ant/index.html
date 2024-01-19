@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Langton Ant</title>
+        <link href="./lib/app.css" rel="stylesheet" media="all" charset="UTF-8" />
+    </head>
+
+    <body class="app">
+        <section class="app__canvas-area">
+            <canvas data-layer="background"></canvas>
+            <canvas data-layer="cells"></canvas>
+            <canvas data-layer="ant"></canvas>
+        </section>
+
+        <section class="app__information">
+            <h3>Ant Langton</h3>
+            <p>Iteration :<span class="app__information__iteration">0</span></p>
+            <br />
+            <input type="range" value="5" min="1" max="100" />
+        </section>
+
+        <script type="module" src="./lib/index.js"></script>
+    </body>
+</html>

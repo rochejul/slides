@@ -1,0 +1,25 @@
+:root {
+  --font-app: "Georgia";
+  --font-cell: "Arial Black";
+
+  --color-app-background: #006db3;
+  --color-app-failure: #f44336;
+  --color-app-success: #a5d6a7;
+  --color-app-border: #039be5;
+  --color-app-text: #63ccff;
+
+  --color-grid-background: #ffffff;
+
+  --color-cell-background: #f3f3f3;
+  --color-cell-border: #615c62;
+  --color-cell-shadow: #b3b1b1;
+  --color-cell-text-0: #000000;
+  --color-cell-text-1: #a5d6a7;
+  --color-cell-text-2: #fff59d;
+  --color-cell-text-3: #63ccff;
+  --color-cell-text-4: #ffab91;
+  --color-cell-text-5: #f44336;
+  --color-cell-text-6: #8e0000;
+  --color-cell-text-7: #9c4dcc;
+  --color-cell-text-8: #38006b;
+}

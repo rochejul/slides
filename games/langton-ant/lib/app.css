@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+html,
+body {
+    border: none;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    width: 100%;
+}
+
+.app {
+    background-color: #21B7EC;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.app__canvas-area {
+    flex: 1 1 auto;
+    position: relative;
+}
+
+.app__information {
+    color: white;
+    flex: 0 0 350px;
+    margin: 1rem;
+}
+
+.app__information__iteration {
+    font-weight: bolder;
+}
+
+canvas {
+    border-left: 1px solid #042424;
+    border-right: 1px solid #042424;
+    left: 0;
+    position: absolute;
+    top: 0;
+}

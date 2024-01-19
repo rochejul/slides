@@ -1,0 +1,67 @@
+@import "./variables.css";
+
+.grid {
+  background-color: var(--color-grid-background);
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(3, auto);
+}
+
+.grid__cell {
+  background-color: var(--color-cell-background);
+  border: 1px solid var(--color-cell-border);
+  box-shadow: inset 0 0 1rem var(--color-cell-shadow);
+  color: var(--color-cell-text-0);
+  cursor: pointer;
+  line-height: 0.75rem;
+  user-select: none;
+}
+
+.grid__cell--open {
+  align-items: center;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: none;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bolder;
+  pointer-events: none;
+}
+
+.grid__cell--bomb:after {
+  content: '*';
+}
+
+.grid__cell--proximity-1 {
+  color: var(--color-cell-text-1);
+}
+
+.grid__cell--proximity-2 {
+  color: var(--color-cell-text-2);
+}
+
+.grid__cell--proximity-3 {
+  color: var(--color-cell-text-3);
+}
+
+.grid__cell--proximity-4 {
+  color: var(--color-cell-text-4);
+}
+
+.grid__cell--proximity-5 {
+  color: var(--color-cell-text-5);
+}
+
+.grid__cell--proximity-6 {
+  color: var(--color-cell-text-6);
+}
+
+.grid__cell--proximity-7 {
+  color: var(--color-cell-text-7);
+}
+
+.grid__cell--proximity-8 {
+  color: var(--color-cell-text-8);
+}

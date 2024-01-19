@@ -1,0 +1,38 @@
+@import url('./variables.css');
+
+.app {
+  background-color: var(--color-app-background);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app--game-over {
+  background-color: var(--color-app-failure);
+  pointer-events: none;
+}
+
+.app--game-finished {
+  background-color: var(--color-app-success);
+  pointer-events: none;
+}
+
+.app__title {
+  color: var(--color-app-text);
+  font-size: 2rem;
+  font-weight: bolder;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.app__content {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.app__content__grid {
+  height: 80vmin;
+  width: 80vmin;
+}

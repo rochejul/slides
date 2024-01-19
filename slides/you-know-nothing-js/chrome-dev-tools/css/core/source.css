@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@import "../variables.css";
+
+a.c-source {
+  position: fixed;
+  left: 2px;
+  top: 2px;
+  z-index: 10000;
+}

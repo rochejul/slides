@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@import url('./styling/app.css');
+@import url('./styling/grid.css');
+
+html,
+body {
+  border: none;
+  height: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  width: 100%;
+}
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <style>
+            html, body {
+                border: none;
+                height: 100%;
+                margin: 0px 0px 0px 0px;
+                overflow: hidden;
+                padding: 0px 0px 0px 0px;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas></canvas>
+
+        <script type="module" src="./lib/maze.js"></script>
+        <script type="module">
+            import Maze from './lib/maze.js';
+
+            let mazePaths = Maze.generate(25, 25);
+//            let mazePaths = {"x":10,"y":20,"columns":[[true,true,true,null,null,true,true,true,true,true,true,true,true,true,null,true,true,true,true],[null,true,null,null,null,null,true,true,true,null,true,null,true,true,true,null,true],[true,null,null,null,null,null,null,true,null,null,null,true,true,true,true,true,null,true],[true,true,null,null,null,true,null,null,null,null,true,true,null,true,true,true,null,true],[true,null,true,null,true,true,null,true,null,true,null,true,true,null,true,null,true,true],[true,null,null,true,null,null,true,null,null,true,null,null,null,true,null,null,null,true],[true,null,true,true,null,null,true,true,null,true,null,null,true,true,null,true],[true,true,null,null,null,true,true,true,true,true,null,null,true,true,null,true,null,true,true],[true,null,true,null,null,true,null,true,true,true,null,null,null,true,null,null,null,null,true],[true,true,true,true,true,null,true,null,true,true,true,null,true,true,true,null,true,true,true]],"rows":[[true,true,null,true,true,true,null,null,null,null,null,null,true,null,null,true,null,null,true,true],[true,null,true,true,true,true,true,null,null,true,true,true,null,null,null,null,true,null,true,true],[null,null,true,true,true,true,true,true,true,true,null,null,true,null,null,null,true,true,null,true],[true,null,null,true,true,null,null,true,null,true,true,null,null,null,null,null,null,null,true,true],[null,true,true,null,true,true,true,null,true,null,true,true,null,true,true,true,true,null,null,true],[null,null,true,null,null,true,null,true,true,true,null,true,true,null,null,true,true,true,true,true],[true,null,null,null,true,true,null,null,null,null,true,true,null,null,true,null,null,true,null,true],[null,true,true,true,true,null,null,null,null,null,null,true,true,null,true,true,true,true],[true,null,null,null,true,true,true,true,null,null,true,true,true,null,null,true,true,true,null,true],[]]};
+            let mazeRunner = { 'x': 0, 'y': 0, 'resolved': false, 'move': null };
+            let canvasElement = document.querySelector('canvas');
+            let timeout = 250;
+
+            function run() {
+                Maze.draw(mazePaths, canvasElement);
+                mazeRunner = Maze.run(mazePaths, mazeRunner, canvasElement);
+
+                setTimeout(run, timeout);
+            }
+
+            function resize() {
+                let { height, width } = document.body.getBoundingClientRect();
+                canvasElement.height = height;
+                canvasElement.width = width;
+
+                Maze.draw(mazePaths, canvasElement);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            console.log(Maze.toString(mazePaths));
+            setTimeout(run, timeout);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+ - Misc
+    * https://developer.chrome.com/docs/devtools/command-menu/
+	* https://twitter.com/ChromeDevTools/status/1455936412646199296
+	* https://twitter.com/ChromeDevTools/status/1283046341204041728
+	* https://twitter.com/umaar/status/1281536304707248128
+	* https://twitter.com/ChromeDevTools/status/1197175265643745282
+            * https://twitter.com/ShankaragoudaG/status/1551782086427947009?t=1GJVZ0zbUAtoIO0okjuD9Q&s=19
+ - Network
+	* https://twitter.com/kentcdodds/status/847160919234768896
+ - Inspector:
+	* https://twitter.com/techytacos/status/1405387270258008067
+	* https://twitter.com/stefanjudis/status/1366526458001297410
+	* https://twitter.com/addyosmani/status/1359416560847261697
+	* https://twitter.com/addyosmani/status/1311923875467284480
+	* https://twitter.com/addyosmani/status/1250340585170329605
+ - Editor
+	* https://twitter.com/addyosmani/status/1229004999163863041
+	* https://twitter.com/addyosmani/status/1222421620230443010
+ - Console
+	* https://twitter.com/mgechev/status/1371695266345185280
+	* https://medium.com/@orenmagid/0-a-nice-little-chrome-developer-tools-console-trick-423851bdc39f#:~:text=In%20the%20Elements%20panel%20of,to%20refer%20to%20that%20element.
+ - Profiling
+    * https://twitter.com/addyosmani/status/1311199098238713856
+    * https://twitter.com/addyosmani/status/1230077063748444160
+	

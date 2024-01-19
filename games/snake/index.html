@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Snake</title>
+
+        <link rel="stylesheet" type="text/css" media="all" href="./lib/index.css" />
+    </head>
+    <body class="main">
+        <span class="main__score">Score: <span id="score">0</span></span>
+
+        <section class="main__content">
+            <canvas class="main__content__canvas" id="layer-background"></canvas>
+            <canvas class="main__content__canvas" id="layer-apples"></canvas>
+            <canvas class="main__content__canvas" id="layer-snake"></canvas>
+        </section>
+
+        <script type="text/javascript" src="./resources/Rx.js"></script>
+        <script type="module" src="./lib/index.js"></script>
+    </body>
+</html>
