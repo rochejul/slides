@@ -9,7 +9,7 @@ What the web can do: https://thewebshowcase.withgoogle.com/
     -   https://twitter.com/bramus/status/1749461824817311947?t=uNLFsjTi8FYt0S-ka9eXjg&s=19
 -   Page Visibility Api
     -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=page_visibility&params=&sectionId=features&subSectionId=browser_apis
--   Broadcasr channel api
+-   Broadcast channel api
     -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=broadcast_channel&params=&sectionId=features&subSectionId=browser_apis
 -   Set
     -   https://twitter.com/i/bookmarks?post_id=1597947853598785537
