@@ -1,218 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>You know nothing JS - Chrome Dev Tools</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <head>
+        <meta charset="UTF-8" />
+        <title>You know nothing JS - Chrome Dev Tools</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/highlight.js@9.12.0/styles/idea.css" />
-    <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/reveal.css" />
-    <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/theme/white.css" />
-    <link rel="stylesheet" media="all" charset="utf-8" href="css/main.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/highlight.js@9.12.0/styles/idea.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/reveal.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/theme/white.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="css/main.css" />
 
-    <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/highlight.js@9.12.0/lib/highlight.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/lib/js/head.min.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/js/reveal.js"></script>
-  </head>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/highlight.js@9.12.0/lib/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/lib/js/head.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/js/reveal.js"></script>
+    </head>
 
-  <body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-background-image="./images/you-know-nothing.jpg" data-background-size="cover" data-background-position="50% 50%">
-        <h2 class="c-title--white">You know nothing JS</h2>
-        <h3 class="c-title--white"><u>Chrome Dev Tool</u></h3>
-      </section>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-image="./images/you-know-nothing.jpg" data-background-size="cover" data-background-position="50% 50%">
+                    <h2 class="c-title--white">You know nothing JS</h2>
+                    <h3 class="c-title--white"><u>Chrome Dev Tool</u></h3>
+                </section>
 
-      <section>
-        <h2>Before we start, never forget this mantra</h2>
-        <blockquote>
-          <p>What we don’t know is usually what gets us killed.</p>
-          <p><i>Petyr Baelish</i></p>
-        </blockquote>
-      </section>
+                <section>
+                    <h2>Before we start, never forget this mantra</h2>
+                    <blockquote>
+                        <p>What we don’t know is usually what gets us killed.</p>
+                        <p><i>Petyr Baelish</i></p>
+                    </blockquote>
+                </section>
 
-      <!-- Goal -->
-      <section data-background-image="./images/goal.jpg" data-background-size="cover" data-background-position="50% 50%">
-        <h2 class="c-title--white">Goal</h2>
-        <h3 class="c-title--white">Discover <i>some</i> possibilities of the tools</h3>
-      </section>
+                <!-- Goal -->
+                <section data-background-image="./images/goal.jpg" data-background-size="cover" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Goal</h2>
+                    <h3 class="c-title--white">Discover <i>some</i> possibilities of the tools</h3>
+                </section>
 
-      <!-- Basics -->
-      <section>
-        <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Big picture</h2>
-        </section>
+                <!-- Basics -->
+                <section>
+                    <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Big picture</h2>
+                    </section>
 
-        <section>
-          <h2>What is the Chrome DevTools?</h2>
-          <p>This is the superhero tools for Web devs</p>
-          <ul>
-            <li>It contains debugging tools</li>
-            <li>It contains editing tools</li>
-            <li>It contains inspecting and profiling tools</li>
-            <li>It contains emulating tools</li>
-          </ul>
-        </section>
+                    <section>
+                        <h2>What is the Chrome DevTools?</h2>
+                        <p>This is the superhero tools for Web devs</p>
+                        <ul>
+                            <li>It contains debugging tools</li>
+                            <li>It contains editing tools</li>
+                            <li>It contains inspecting and profiling tools</li>
+                            <li>It contains emulating tools</li>
+                        </ul>
+                    </section>
 
-        <section>
-          <h2>We have two versions</h2>
-          <ul>
-            <li>One is our usual Chrome browser</li>
-            <li>One is Chrome Canary</li>
-          </ul>
-          <img src="./resources/chrome-and-canary.png" alt="" />
-        </section>
+                    <section>
+                        <h2>We have two versions</h2>
+                        <ul>
+                            <li>One is our usual Chrome browser</li>
+                            <li>One is Chrome Canary</li>
+                        </ul>
+                        <img src="./resources/chrome-and-canary.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>Chrome Canary</h2>
-          <ul>
-            <li>This is Chrome in version n+3/+4</li>
-            <li>It enables a lot of new Web features</li>
-            <li>It deploys new Chrome Dev Tools features</li>
-            <li>In both cases, we could test them and bring some feedback</li>
-          </ul>
-        </section>
+                    <section>
+                        <h2>Chrome Canary</h2>
+                        <ul>
+                            <li>This is Chrome in version n+3/+4</li>
+                            <li>It enables a lot of new Web features</li>
+                            <li>It deploys new Chrome Dev Tools features</li>
+                            <li>In both cases, we could test them and bring some feedback</li>
+                        </ul>
+                    </section>
 
-        <section>
-          <h2>E.g. Chrome v107 and Chrome Canary v110</h2>
-          <img src="./resources/chrome-canary.png" alt="" />
-        </section>
-      </section>
+                    <section>
+                        <h2>E.g. Chrome v107 and Chrome Canary v110</h2>
+                        <img src="./resources/chrome-canary.png" alt="" />
+                    </section>
+                </section>
 
-      <!-- Basic -->
-      <section>
-        <section data-background-image="./images/basic.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">You and the Console</h2>
-        </section>
+                <!-- Basic -->
+                <section>
+                    <section data-background-image="./images/basic.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">You and the Console</h2>
+                    </section>
 
-        <section>
-          <h2>We have a TON of shortcuts</h2>
-          <p>Really, no kidding</p>
-          <img src="./images/sarcasm.jpg" alt="" />
-        </section>
+                    <section>
+                        <h2>We have a TON of shortcuts</h2>
+                        <p>Really, no kidding</p>
+                        <img src="./images/sarcasm.jpg" alt="" />
+                    </section>
 
-        <section>
-          <a class="c-source" href="https://medium.com/@orenmagid/0-a-nice-little-chrome-developer-tools-console-trick-423851bdc39f#:~:text=In%20the%20Elements%20panel%20of,to%20refer%20to%20that%20element" target="_blank" title="Source">[?]</a>
-          <h2>For DOM inspection</h2>
-          <p><i>$0</i> represents the last selected dom element, <i>$1</i>, the previous one, etc...</p>
-          <img src="./resources/cdt-console-dom-inspection.gif" alt="" />
-        </section>
+                    <section>
+                        <a
+                            class="c-source"
+                            href="https://medium.com/@orenmagid/0-a-nice-little-chrome-developer-tools-console-trick-423851bdc39f#:~:text=In%20the%20Elements%20panel%20of,to%20refer%20to%20that%20element"
+                            target="_blank"
+                            title="Source"
+                            >[?]</a
+                        >
+                        <h2>For DOM inspection</h2>
+                        <p><i>$0</i> represents the last selected dom element, <i>$1</i>, the previous one, etc...</p>
+                        <img src="./resources/cdt-console-dom-inspection.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>For DOM inspection</h2>
-          <p><i>$$(cssSelector[, rootElement])</i> will search any elements into the page</p>
-          <img src="./resources/cdt-console-dom-search.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>For DOM inspection</h2>
+                        <p><i>$$(cssSelector[, rootElement])</i> will search any elements into the page</p>
+                        <img src="./resources/cdt-console-dom-search.gif" alt="" />
+                    </section>
 
-        <section>
-          <a class="c-source" href="https://twitter.com/mgechev/status/1371695266345185280" target="_blank" title="Source">[?]</a>
-          <h2>For inspection and debug</h2>
-          <ul>
-            <li><i>getEventListeners(domElement)</i> to return all attached listeners on the DOM element</li>
-            <li><i>copy(var/object/fn)</i> to copy into the clipboard the value of the variable from the console</li>
-            <li><i>inspect(var/object)</i> to open the watcher's tab within sources tab</li>
-            <li><i>keys(var/object)</i> returns an array containing the names of the properties of an object</li>
-            <li><i>values(var/object)</i> returns an array containing the values of all properties of an object</li>
-          </ul>
-        </section>
+                    <section>
+                        <a class="c-source" href="https://twitter.com/mgechev/status/1371695266345185280" target="_blank" title="Source">[?]</a>
+                        <h2>For inspection and debug</h2>
+                        <ul>
+                            <li><i>getEventListeners(domElement)</i> to return all attached listeners on the DOM element</li>
+                            <li><i>copy(var/object/fn)</i> to copy into the clipboard the value of the variable from the console</li>
+                            <li><i>inspect(var/object)</i> to open the watcher's tab within sources tab</li>
+                            <li><i>keys(var/object)</i> returns an array containing the names of the properties of an object</li>
+                            <li><i>values(var/object)</i> returns an array containing the values of all properties of an object</li>
+                        </ul>
+                    </section>
 
-        <section>
-          <a class="c-source" href="https://twitter.com/addyosmani/status/1250340585170329605" target="_blank" title="Source">[?]</a>
-          <h2>For deeper inspection</h2>
-          <p><i>queryObjects(Constructor)</i> to get all objects of a given constructor or class</p>
-          <img src="./resources/cdt-query-objects.gif" alt="" />
-        </section>
+                    <section>
+                        <a class="c-source" href="https://twitter.com/addyosmani/status/1250340585170329605" target="_blank" title="Source">[?]</a>
+                        <h2>For deeper inspection</h2>
+                        <p><i>queryObjects(Constructor)</i> to get all objects of a given constructor or class</p>
+                        <img src="./resources/cdt-query-objects.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>For monitoring</h2>
-          <p><i>monitor(function)</i> will log a message into the console each time this is called</p>
-          <img src="./resources/cdt-method-monitor.gif" alt="" />
-        </section>
-      </section>
+                    <section>
+                        <h2>For monitoring</h2>
+                        <p><i>monitor(function)</i> will log a message into the console each time this is called</p>
+                        <img src="./resources/cdt-method-monitor.gif" alt="" />
+                    </section>
+                </section>
 
-      <!-- Intermediate - 1 -->
-      <section>
-        <section data-background-image="./images/intermediate.webp" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">You and CDT's commands</h2>
-        </section>
+                <!-- Intermediate - 1 -->
+                <section>
+                    <section data-background-image="./images/intermediate.webp" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">You and CDT's commands</h2>
+                    </section>
 
-        <section>
-          <h2>Command Menu</h2>
-          <p>Type <i>Control+Shift+P</i> (Windows / Linux) or <i>Command+Shift+P</i> (Mac) to see all available command.</p>
-          <img src="./resources/command-menu.avif" alt="" />
-        </section>
+                    <section>
+                        <h2>Command Menu</h2>
+                        <p>Type <i>Control+Shift+P</i> (Windows / Linux) or <i>Command+Shift+P</i> (Mac) to see all available command.</p>
+                        <img src="./resources/command-menu.avif" alt="" />
+                    </section>
 
-        <section>
-          <h2>Really, a huge list of commands</h2>
-          <img src="./resources/cdt-command-menu-list.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>Really, a huge list of commands</h2>
+                        <img src="./resources/cdt-command-menu-list.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>Then you could emulate <i>prefers-color-scheme: dark</i>...</h2>
-          <img src="./resources/emulate-dark-mode.jpg" alt="" />
-        </section>
+                    <section>
+                        <h2>Then you could emulate <i>prefers-color-scheme: dark</i>...</h2>
+                        <img src="./resources/emulate-dark-mode.jpg" alt="" />
+                    </section>
 
-        <section>
-          <a class="c-source" href="https://umaar.com/dev-tips/231-emulate-vision-deficiencies/" target="_blank" title="Source">[?]</a>
-          <h2>... or emulate vision deficiencies</h2>
-          <img src="./resources/emulate-vision-deficiencies.gif" alt="" />
-        </section>
-      </section>
+                    <section>
+                        <a class="c-source" href="https://umaar.com/dev-tips/231-emulate-vision-deficiencies/" target="_blank" title="Source">[?]</a>
+                        <h2>... or emulate vision deficiencies</h2>
+                        <img src="./resources/emulate-vision-deficiencies.gif" alt="" />
+                    </section>
+                </section>
 
-      <!-- Intermediate - 2 -->
-      <section>
-        <section data-background-image="./images/intermediate-3.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">You and CDT's editors</h2>
-        </section>
+                <!-- Intermediate - 2 -->
+                <section>
+                    <section data-background-image="./images/intermediate-3.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">You and CDT's editors</h2>
+                    </section>
 
-        <section>
-          <h2>We have a ton of editors</h2>
-          <p>They ease the definition of some CSS properties, HTML rendering, etc...</p>
-        </section>
+                    <section>
+                        <h2>We have a ton of editors</h2>
+                        <p>They ease the definition of some CSS properties, HTML rendering, etc...</p>
+                    </section>
 
-        <section>
-          <h2>You could edit the flexibox easily</h2>
-          <p>Simply click on the <i>flex</i> badge into the DOM inspector</p>
-          <img src="./resources/flexbox-editor.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>You could edit the flexibox easily</h2>
+                        <p>Simply click on the <i>flex</i> badge into the DOM inspector</p>
+                        <img src="./resources/flexbox-editor.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>You could debug the grid easily</h2>
-          <p>Simply click on the <i>grid</i> badge into the DOM inspector</p>
-          <img src="./resources/grid-debug.avif" alt="" />
-        </section>
+                    <section>
+                        <h2>You could debug the grid easily</h2>
+                        <p>Simply click on the <i>grid</i> badge into the DOM inspector</p>
+                        <img src="./resources/grid-debug.avif" alt="" />
+                    </section>
 
-        <section>
-          <h2>We could find a built-in shadow editor</h2>
-          <img src="./resources/shadow-css-editor.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>We could find a built-in shadow editor</h2>
+                        <img src="./resources/shadow-css-editor.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>We could find a built-in transition effect editor</h2>
-          <img src="./resources/transform-effect-editor.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>We could find a built-in transition effect editor</h2>
+                        <img src="./resources/transform-effect-editor.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>We have a Web component inspector</h2>
-          <img src="./resources/web-component-inspector.gif" alt="" />
-        </section>
-      </section>
+                    <section>
+                        <h2>We have a Web component inspector</h2>
+                        <img src="./resources/web-component-inspector.gif" alt="" />
+                    </section>
+                </section>
 
-      <!-- Advanced -->
-      <section>
-        <section data-background-image="./images/advanced.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Advanced</h2>
-        </section>
+                <!-- Advanced -->
+                <section>
+                    <section data-background-image="./images/advanced.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Advanced</h2>
+                    </section>
 
-        <section>
-          <h2>Save your usual scripts in Snippets</h2>
-          <img src="./resources/snippets.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>Save your usual scripts in Snippets</h2>
+                        <img src="./resources/snippets.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>Alarm api</h2>
-          <p>To execute periodically some code</p>
-          <pre class="c-pre">
+                    <section>
+                        <h2>Alarm api</h2>
+                        <p>To execute periodically some code</p>
+                        <pre class="c-pre">
             <code class="javascript u-no-max">const delayInMinutes = 5;
 const periodInMinutes = 2;
 
@@ -222,205 +228,221 @@ chrome.alarms.onAlarm.addListener((alarmName) => {
   alarmName == 'my-periodic-alarm' && executeSomeCode()
 });</code>
           </pre>
-        </section>
+                    </section>
 
-        <section>
-          <h2>Record, replay and inspect user flow</h2>
-          <img src="./resources/recorder.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>Record, replay and inspect user flow</h2>
+                        <img src="./resources/recorder.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>Hold Shift and see related resources on your network</h2>
-          <img src="./resources/see-network-related-resources.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>Hold Shift and see related resources on your network</h2>
+                        <img src="./resources/see-network-related-resources.gif" alt="" />
+                    </section>
 
-        <section>
-          <h2>Use performance monitor so detect leaks in real time</h2>
-          <img src="./resources/performance-monitor.gif" alt="" />
-        </section>
+                    <section>
+                        <h2>Use performance monitor so detect leaks in real time</h2>
+                        <img src="./resources/performance-monitor.gif" alt="" />
+                    </section>
 
-        <section>
-          <a class="c-source" href="https://web.dev/lcp/" target="_blank" title="Source">[?]</a>
-          <h2>Find easily Largest Contentful Paint (LCP)</h2>
-          <img src="./resources/lcp.jpg" alt="" />
-        </section>
-      </section>
+                    <section>
+                        <a class="c-source" href="https://web.dev/lcp/" target="_blank" title="Source">[?]</a>
+                        <h2>Find easily Largest Contentful Paint (LCP)</h2>
+                        <img src="./resources/lcp.jpg" alt="" />
+                    </section>
+                </section>
 
-      <!-- Resources -->
-      <section>
-        <section data-background-image="./images/resources.png" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Resources</h2>
-        </section>
+                <!-- Resources -->
+                <section>
+                    <section data-background-image="./images/resources.png" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Resources</h2>
+                    </section>
 
-        <section>
-          <h2>Main entry points</h2>
-          <ul>
-            <li><a href="https://developer.chrome.com/docs/devtools/" target="_blank">The Chrome Dev Tools doc</a></li>
-            <li><a href="https://www.google.com/intl/en_uk/chrome/canary/" target="_blank">Chrome Canary</a></li>
-          </ul>
-        </section>
+                    <section>
+                        <h2>Main entry points</h2>
+                        <ul>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/devtools/" target="_blank">The Chrome Dev Tools doc</a>
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/intl/en_uk/chrome/canary/" target="_blank">Chrome Canary</a>
+                            </li>
+                        </ul>
+                    </section>
 
-        <section>
-          <h2>Official</h2>
-          <ul>
-            <li><a href="https://developer.chrome.com/docs/devtools/console/utilities/" target="_blank">Console utilities</a></li>
-            <li><a href="https://developer.chrome.com/docs/devtools/command-menu/" target="_blank">Command Menu</a></li>
-            <li><a href="https://developer.chrome.com/docs/devtools/css/grid/" target="_blank">Grid debug</a></li>
-            <li><a href="https://developer.chrome.com/blog/new-in-devtools-90/" target="_blank">Flex editor</a></li>
-            <li><a href="https://developer.chrome.com/docs/extensions/reference/alarms" target="_blank">Alarm api</a></li>
-            <li><a href="https://developer.chrome.com/docs/devtools/recorder/" target="_blank">Recorder</a></li>
-          </ul>
-        </section>
-      </section>
+                    <section>
+                        <h2>Official</h2>
+                        <ul>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/devtools/console/utilities/" target="_blank">Console utilities</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/devtools/command-menu/" target="_blank">Command Menu</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/devtools/css/grid/" target="_blank">Grid debug</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.chrome.com/blog/new-in-devtools-90/" target="_blank">Flex editor</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/extensions/reference/alarms" target="_blank">Alarm api</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/devtools/recorder/" target="_blank">Recorder</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
 
-      <!-- Many thanks -->
-      <section data-background-image="./images/thank-you.webp" data-background-size="contain" data-background-position="50% 50%">
-        <h2 class="c-title--white">Many thanks</h2>
-      </section>
-    </div>
-  </div>
-  <script type="text/javascript" charset="UTF-8">
-    Reveal.initialize({
-      // Display presentation control arrows
-      'controls': true,
+                <!-- Many thanks -->
+                <section data-background-image="./images/thank-you.webp" data-background-size="contain" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Many thanks</h2>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" charset="UTF-8">
+            Reveal.initialize({
+                // Display presentation control arrows
+                controls: true,
 
-      // Help the user learn the controls by providing hints, for example by
-      // bouncing the down arrow when they first encounter a vertical slide
-      'controlsTutorial': true,
+                // Help the user learn the controls by providing hints, for example by
+                // bouncing the down arrow when they first encounter a vertical slide
+                controlsTutorial: true,
 
-      // Determines where controls appear, "edges" or "bottom-right"
-      'controlsLayout': 'bottom-right',
+                // Determines where controls appear, "edges" or "bottom-right"
+                controlsLayout: 'bottom-right',
 
-      // Visibility rule for backwards navigation arrows; "faded", "hidden"
-      // or "visible"
-      'controlsBackArrows': 'faded',
+                // Visibility rule for backwards navigation arrows; "faded", "hidden"
+                // or "visible"
+                controlsBackArrows: 'faded',
 
-      // Display a presentation progress bar
-      'progress': true,
+                // Display a presentation progress bar
+                progress: true,
 
-      // Set default timing of 2 minutes per slide
-      'defaultTiming': 120,
+                // Set default timing of 2 minutes per slide
+                defaultTiming: 120,
 
-      // Display the page number of the current slide
-      'slideNumber': false,
+                // Display the page number of the current slide
+                slideNumber: false,
 
-      // Push each slide change to the browser history
-      'history': true,
+                // Push each slide change to the browser history
+                history: true,
 
-      // Enable keyboard shortcuts for navigation
-      'keyboard': true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
 
-      // Enable the slide overview mode
-      'overview': true,
+                // Enable the slide overview mode
+                overview: true,
 
-      // Vertical centering of slides
-      'center': true,
+                // Vertical centering of slides
+                center: true,
 
-      // Enables touch navigation on devices with touch input
-      'touch': true,
+                // Enables touch navigation on devices with touch input
+                touch: true,
 
-      // Loop the presentation
-      'loop': false,
+                // Loop the presentation
+                loop: false,
 
-      // Change the presentation direction to be RTL
-      'rtl': false,
+                // Change the presentation direction to be RTL
+                rtl: false,
 
-      // Randomizes the order of slides each time the presentation loads
-      'shuffle': false,
+                // Randomizes the order of slides each time the presentation loads
+                shuffle: false,
 
-      // Turns fragments on and off globally
-      'fragments': true,
+                // Turns fragments on and off globally
+                fragments: true,
 
-      // Flags if the presentation is running in an embedded mode,
-      // i.e. contained within a limited portion of the screen
-      'embedded': false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
 
-      // Flags if we should show a help overlay when the questionmark
-      // key is pressed
-      'help': true,
+                // Flags if we should show a help overlay when the questionmark
+                // key is pressed
+                help: true,
 
-      // Flags if speaker notes should be visible to all viewers
-      'showNotes': false,
+                // Flags if speaker notes should be visible to all viewers
+                showNotes: false,
 
-      // Global override for autoplaying embedded media (video/audio/iframe)
-      // - null: Media will only autoplay if data-autoplay is present
-      // - true: All media will autoplay, regardless of individual setting
-      // - false: No media will autoplay, regardless of individual setting
-      'autoPlayMedia': null,
+                // Global override for autoplaying embedded media (video/audio/iframe)
+                // - null: Media will only autoplay if data-autoplay is present
+                // - true: All media will autoplay, regardless of individual setting
+                // - false: No media will autoplay, regardless of individual setting
+                autoPlayMedia: null,
 
-      // Number of milliseconds between automatically proceeding to the
-      // next slide, disabled when set to 0, this value can be overwritten
-      // by using a data-autoslide attribute on your slides
-      'autoSlide': 0,
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
 
-      // Stop auto-sliding after user input
-      'autoSlideStoppable': true,
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
 
-      // Use this method for navigation when auto-sliding
-      'autoSlideMethod': Reveal.navigateNext,
+                // Use this method for navigation when auto-sliding
+                autoSlideMethod: Reveal.navigateNext,
 
-      // Enable slide navigation via mouse wheel
-      'mouseWheel': false,
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
 
-      // Hides the address bar on mobile devices
-      'hideAddressBar': true,
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
 
-      // Opens links in an iframe preview overlay
-      // Add `data-preview-link` and `data-preview-link="false"` to customise each link
-      // individually
-      'previewLinks': false,
+                // Opens links in an iframe preview overlay
+                // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+                // individually
+                previewLinks: false,
 
-      // Transition style
-      'transition': 'slide', // none/fade/slide/convex/concave/zoom
+                // Transition style
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-      // Transition speed
-      'transitionSpeed': 'default', // default/fast/slow
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
 
-      // Transition style for full page slide backgrounds
-      'backgroundTransition': 'fade', // none/fade/slide/convex/concave/zoom
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
 
-      // Number of slides away from the current that are visible
-      'viewDistance': 3,
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
 
-      // Parallax background image
-      'parallaxBackgroundImage': '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+                // Parallax background image
+                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
-      // Parallax background size
-      'parallaxBackgroundSize': '', // CSS syntax, e.g. "2100px 900px"
+                // Parallax background size
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
 
-      // Number of pixels to move the parallax background per slide
-      // - Calculated automatically unless specified
-      // - Set to 0 to disable movement along an axis
-      'parallaxBackgroundHorizontal': null,
-      'parallaxBackgroundVertical': null,
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
 
-      // The display mode that will be used to show slides
-      'display': 'block',
+                // The display mode that will be used to show slides
+                display: 'block',
 
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      'width': 1200,
-      'height': 800,
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                width: 1200,
+                height: 800,
 
-      // Factor of the display size that should remain empty around the content
-      'margin': 0.1,
+                // Factor of the display size that should remain empty around the content
+                margin: 0.1,
 
-      // Bounds for smallest/largest possible scale to apply to content
-      'minScale': 0.2,
-      'maxScale': 1.5,
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.2,
+                maxScale: 1.5,
 
-      'dependencies': [
-        // Syntax highlight for <code> elements
-        {
-          'src': 'https://unpkg.com/reveal.js@3.6.0/plugin/highlight/highlight.js',
-          'async': true,
-          'callback': function() {
-            hljs.initHighlightingOnLoad();
-          }
-        }
-      ]
-    });
-  </script>
-  </body>
+                dependencies: [
+                    // Syntax highlight for <code> elements
+                    {
+                        src: 'https://unpkg.com/reveal.js@3.6.0/plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        },
+                    },
+                ],
+            });
+        </script>
+    </body>
 </html>

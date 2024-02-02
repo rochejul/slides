@@ -1,0 +1,59 @@
+What the web can do: https://thewebshowcase.withgoogle.com/
+
+-   Observables
+    -   https://twitter.com/i/bookmarks?post_id=1737773777885270426
+-   Close Watcher API
+    -   https://twitter.com/i/bookmarks?post_id=1737659403107529107
+-   Transition view API
+    -   https://twitter.com/i/bookmarks?post_id=1732020295467204946
+    -   https://twitter.com/bramus/status/1749461824817311947?t=uNLFsjTi8FYt0S-ka9eXjg&s=19
+-   Page Visibility Api
+    -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=page_visibility&params=&sectionId=features&subSectionId=browser_apis
+-   Broadcasr channel api
+    -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=broadcast_channel&params=&sectionId=features&subSectionId=browser_apis
+-   Set
+    -   https://twitter.com/i/bookmarks?post_id=1597947853598785537
+-   Temporal
+    -   https://twitter.com/i/bookmarks?post_id=1597232074523824131
+    -   https://medium.com/@yourfuse/javascript-whats-new-with-ecmascript-2024-es15-ef056d2f4bf1
+    -   https://plainenglish.io/blog/javascript-new-features-for-2023-and-2024
+-   Intl
+    -   Segmenter
+        -   https://twitter.com/i/bookmarks?post_id=1596922615582830593
+-   Array
+    -   Non mutating methods
+        -   https://twitter.com/i/bookmarks?post_id=1593271021557239809
+        -   https://twitter.com/i/bookmarks?post_id=1555206623836127232
+        -   https://javascript.plainenglish.io/next-level-javascript-a-sneak-peek-into-ecmascript-2023-and-a-glimpse-of-what-awaits-in-2024-acd38be719b9
+    -   Sort copy: https://plainenglish.io/blog/javascript-new-features-for-2023-and-2024
+    -   findLast/findLastIndex: https://plainenglish.io/blog/javascript-new-features-for-2023-and-2024
+    -   at: https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=array_at&params=&sectionId=features&subSectionId=language
+-   Record & Tuple
+    -   https://github.com/tc39/proposal-record-tuple
+-   Unicode formatting
+    -   https://medium.com/@yourfuse/javascript-whats-new-with-ecmascript-2024-es15-ef056d2f4bf1
+    -   https://javascript.plainenglish.io/next-level-javascript-a-sneak-peek-into-ecmascript-2023-and-a-glimpse-of-what-awaits-in-2024-acd38be719b9
+-   Pipeline operator
+    -   https://medium.com/@yourfuse/javascript-whats-new-with-ecmascript-2024-es15-ef056d2f4bf1
+    -   https://plainenglish.io/blog/javascript-new-features-for-2023-and-2024
+-   Decorators
+    -   https://medium.com/@yourfuse/javascript-whats-new-with-ecmascript-2024-es15-ef056d2f4bf1
+-   Realm api
+    -   https://medium.com/@yourfuse/javascript-whats-new-with-ecmascript-2024-es15-ef056d2f4bf1
+-   Weakmap & symbol
+    -   https://plainenglish.io/blog/javascript-new-features-for-2023-and-2024
+    -   https://javascript.plainenglish.io/next-level-javascript-a-sneak-peek-into-ecmascript-2023-and-a-glimpse-of-what-awaits-in-2024-acd38be719b9
+-   Error cause
+    -   https://plainenglish.io/blog/javascript-new-features-for-2023-and-2024
+-   RegExp
+    -   https://javascript.plainenglish.io/next-level-javascript-a-sneak-peek-into-ecmascript-2023-and-a-glimpse-of-what-awaits-in-2024-acd38be719b9
+    -   Declarative Shadow Dom (without JS)
+        -   https://eisenbergeffect.medium.com/web-components-2024-winter-update-445f27e7613a
+    -   Slot content detection
+        -   https://eisenbergeffect.medium.com/web-components-2024-winter-update-445f27e7613a
+    -   Scoped element registries
+        -   https://eisenbergeffect.medium.com/web-components-2024-winter-update-445f27e7613a
+-   Promise
+    -   https://2022.stateofjs.com/en-US/features/language/#promise_all_settled
+    -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=promise_any&params=&sectionId=features&subSectionId=language
+    -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=top_level_await&params=&sectionId=features&subSectionId=language

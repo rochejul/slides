@@ -1,158 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>You know nothing JS - Console Api</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <head>
+        <meta charset="UTF-8" />
+        <title>You know nothing JS - Console Api</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/highlight.js@9.12.0/styles/idea.css" />
-    <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/reveal.css" />
-    <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/theme/white.css" />
-    <link rel="stylesheet" media="all" charset="utf-8" href="css/main.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/highlight.js@9.12.0/styles/idea.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/reveal.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/theme/white.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="css/main.css" />
 
-    <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/highlight.js@9.12.0/lib/highlight.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/lib/js/head.min.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/js/reveal.js"></script>
-  </head>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/highlight.js@9.12.0/lib/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/lib/js/head.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/js/reveal.js"></script>
+    </head>
 
-  <body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-background-image="./images/you-know-nothing.jpg" data-background-size="cover" data-background-position="50% 50%">
-        <h2 class="c-title--white">You know nothing JS</h2>
-        <h3 class="c-title--white"><u>Console Api</u></h3>
-      </section>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-image="./images/you-know-nothing.jpg" data-background-size="cover" data-background-position="50% 50%">
+                    <h2 class="c-title--white">You know nothing JS</h2>
+                    <h3 class="c-title--white"><u>Console Api</u></h3>
+                </section>
 
-      <section>
-        <h2>Before we start, never forget this mantra</h2>
-        <blockquote>
-          <p>Be curious. Read widely. Try new things. I think a lot of what people call intelligence boils down to curiosity.</p>
-          <p><i>Aaron Swartz</i></p>
-        </blockquote>
-      </section>
+                <section>
+                    <h2>Before we start, never forget this mantra</h2>
+                    <blockquote>
+                        <p>Be curious. Read widely. Try new things. I think a lot of what people call intelligence boils down to curiosity.</p>
+                        <p><i>Aaron Swartz</i></p>
+                    </blockquote>
+                </section>
 
-      <!-- Goal -->
-      <section data-background-image="./images/goal.jpg" data-background-size="cover" data-background-position="50% 50%">
-        <h2 class="c-title--white">Goal</h2>
-        <h3 class="c-title--white">Discover all possibilities of the api</h3>
-      </section>
+                <!-- Goal -->
+                <section data-background-image="./images/goal.jpg" data-background-size="cover" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Goal</h2>
+                    <h3 class="c-title--white">Discover all possibilities of the api</h3>
+                </section>
 
-      <!-- Basics -->
-      <section>
-        <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Basics</h2>
-        </section>
+                <!-- Basics -->
+                <section>
+                    <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Basics</h2>
+                    </section>
 
-        <section>
-          <h2>What is the Console Api?</h2>
-          <p>It's an Api to allow display information (for debugging purpose) into the console</p>
-          <p>Basically, this is a logger</p>
-        </section>
+                    <section>
+                        <h2>What is the Console Api?</h2>
+                        <p>It's an Api to allow display information (for debugging purpose) into the console</p>
+                        <p>Basically, this is a logger</p>
+                    </section>
 
-        <section>
-          <h2>We have basics logger methods</h2>
-          <ul>
-            <li>console.debug (only be displayed if the console is configured to verbose mode)</li>
-            <li>console.log</li>
-            <li>console.info</li>
-            <li>console.warn</li>
-            <li>console.error (or console.exception)</li>
-          </ul>
-        </section>
+                    <section>
+                        <h2>We have basics logger methods</h2>
+                        <ul>
+                            <li>console.debug (only be displayed if the console is configured to verbose mode)</li>
+                            <li>console.log</li>
+                            <li>console.info</li>
+                            <li>console.warn</li>
+                            <li>console.error (or console.exception)</li>
+                        </ul>
+                    </section>
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/basics.png" alt="" />
-        </section>
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/basics.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>console.clear</h2>
-          <p>Clear the console</p>
-        </section>
+                    <section>
+                        <h2>console.clear</h2>
+                        <p>Clear the console</p>
+                    </section>
 
-        <section>
-          <h2>console.assert</h2>
-          <p>We define an assertion and an error will appear with the stackstrace if the assertion is not respected</p>
-          <img src="./resources/assert.png" alt="" />
-        </section>
-      </section>
+                    <section>
+                        <h2>console.assert</h2>
+                        <p>We define an assertion and an error will appear with the stackstrace if the assertion is not respected</p>
+                        <img src="./resources/assert.png" alt="" />
+                    </section>
+                </section>
 
-      <!-- Less basics -->
-      <section>
-        <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Less basics</h2>
-        </section>
+                <!-- Less basics -->
+                <section>
+                    <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Less basics</h2>
+                    </section>
 
-        <section>
-          <h2>console.trace</h2>
-          <p>Show the current stackstrace of the code</p>
-          <img src="./resources/trace.png" alt="" />
-        </section>
+                    <section>
+                        <h2>console.trace</h2>
+                        <p>Show the current stackstrace of the code</p>
+                        <img src="./resources/trace.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>console.dir</h2>
-          <p>Display as a tree the specified JavaScript object</p>
-          <img src="./resources/dir.png" alt="" />
-        </section>
+                    <section>
+                        <h2>console.dir</h2>
+                        <p>Display as a tree the specified JavaScript object</p>
+                        <img src="./resources/dir.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>console.dirxml</h2>
-          <p>Display as a tree the specified XML or HTML element</p>
-          <img src="./resources/dirxml.png" alt="" />
-        </section>
+                    <section>
+                        <h2>console.dirxml</h2>
+                        <p>Display as a tree the specified XML or HTML element</p>
+                        <img src="./resources/dirxml.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>console.table</h2>
-          <p>Display as a table to illustrate</p>
-          <ul>
-            <li>a simple array</li>
-            <li>a complex array</li>
-            <li>an object</li>
-          </ul>
-        </section>
+                    <section>
+                        <h2>console.table</h2>
+                        <p>Display as a table to illustrate</p>
+                        <ul>
+                            <li>a simple array</li>
+                            <li>a complex array</li>
+                            <li>an object</li>
+                        </ul>
+                    </section>
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/table1.png" alt="" />
-        </section>
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/table1.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/table2.png" alt="" />
-        </section>
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/table2.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/table3.png" alt="" />
-        </section>
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/table3.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/table4.png" alt="" />
-        </section>
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/table4.png" alt="" />
+                    </section>
 
-        <section>
-          <h2>console.table</h2>
-          <p>Has got as second parameter an array of string to filter columns we want to show</p>
-          <img src="./resources/table5.png" alt="" />
-        </section>
-      </section>
+                    <section>
+                        <h2>console.table</h2>
+                        <p>Has got as second parameter an array of string to filter columns we want to show</p>
+                        <img src="./resources/table5.png" alt="" />
+                    </section>
+                </section>
 
-      <!-- Count -->
-      <section>
-        <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Count</h2>
-        </section>
+                <!-- Count -->
+                <section>
+                    <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Count</h2>
+                    </section>
 
-        <section>
-          <h2>console.count</h2>
-          <p>Display the number of time the method is called</p>
-          <p>Can have a label as parameter (default value: "default")</p>
-        </section>
+                    <section>
+                        <h2>console.count</h2>
+                        <p>Display the number of time the method is called</p>
+                        <p>Can have a label as parameter (default value: "default")</p>
+                    </section>
 
-        <section>
-          <h2>Example</h2>
-          <pre class="c-pre">
+                    <section>
+                        <h2>Example</h2>
+                        <pre class="c-pre">
             <code class="javascript u-no-max">function count(target, key, descriptor) {
   const myMethod = descriptor.value;
   descriptor.value = function (...arg) {
@@ -170,13 +170,13 @@ class MyClass {
   }
 };</code>
           </pre>
-        </section>
+                    </section>
 
-        <section>
-          <h2>In motion</h2>
-          <div class="c-layout c-layout--two-columns">
-            <div class=" u-size-w-650px">
-              <pre class="c-pre">
+                    <section>
+                        <h2>In motion</h2>
+                        <div class="c-layout c-layout--two-columns">
+                            <div class="u-size-w-650px">
+                                <pre class="c-pre">
                 <code class="javascript u-no-max">const instance = new MyClass();
 const howManyTime = Math.ceil(Math.random() * 10);
 console.info(
@@ -188,35 +188,35 @@ for (let i = 0; i < howManyTime; ++i) {
   instance.myAwesomeFunction();
 }</code>
               </pre>
-            </div>
-            <div>
-              <img src="./resources/count.png" alt="" />
-            </div>
-          </div>
-        </section>
+                            </div>
+                            <div>
+                                <img src="./resources/count.png" alt="" />
+                            </div>
+                        </div>
+                    </section>
 
-        <section>
-          <h2>console.countReset</h2>
-          <p>Reset the number of time the method is called</p>
-          <p>Can have a label as parameter (default value: "default")</p>
-        </section>
-      </section>
+                    <section>
+                        <h2>console.countReset</h2>
+                        <p>Reset the number of time the method is called</p>
+                        <p>Can have a label as parameter (default value: "default")</p>
+                    </section>
+                </section>
 
-      <!-- Timing -->
-      <section>
-        <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Timing</h2>
-        </section>
+                <!-- Timing -->
+                <section>
+                    <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Timing</h2>
+                    </section>
 
-        <section>
-          <h2>console.time / console.timeEnd</h2>
-          <p>Will display the number of time between the call of the two methods</p>
-          <p>Can have a label as parameter (default value: "default")</p>
-        </section>
+                    <section>
+                        <h2>console.time / console.timeEnd</h2>
+                        <p>Will display the number of time between the call of the two methods</p>
+                        <p>Can have a label as parameter (default value: "default")</p>
+                    </section>
 
-        <section>
-          <h2>Example (as annotation)</h2>
-          <pre class="c-pre">
+                    <section>
+                        <h2>Example (as annotation)</h2>
+                        <pre class="c-pre">
             <code class="javascript u-no-max">function timing(target, key, descriptor) {
   const myMethod = descriptor.value;
 
@@ -237,11 +237,11 @@ for (let i = 0; i < howManyTime; ++i) {
   return descriptor;
 }</code>
           </pre>
-        </section>
+                    </section>
 
-        <section>
-          <h2>Example (usage)</h2>
-          <pre class="c-pre">
+                    <section>
+                        <h2>Example (usage)</h2>
+                        <pre class="c-pre">
             <code class="javascript u-no-max">class MyClass {
   @timing
   myAwesomeFunction() {
@@ -260,284 +260,302 @@ for (let i = 0; i < howManyTime; ++i) {
   }
 }</code>
           </pre>
-        </section>
+                    </section>
 
-        <section>
-          <h2>In motion</h2>
-          <div class="c-layout c-layout--two-columns">
-            <div class=" u-size-w-650px">
-              <pre class="c-pre">
+                    <section>
+                        <h2>In motion</h2>
+                        <div class="c-layout c-layout--two-columns">
+                            <div class="u-size-w-650px">
+                                <pre class="c-pre">
                 <code class="javascript u-no-max">(async function() {
   const instance = new MyClass();
   instance.myAwesomeFunction();
   await instance.myAsyncFunction();
 })();</code>
               </pre>
+                            </div>
+                            <div>
+                                <img src="./resources/timing.png" alt="" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>console.timeLog</h2>
+                        <p>Display the current timing of the associated label</p>
+                        <p>Can have a label as parameter (default value: "default")</p>
+                    </section>
+
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/timeLog.png" alt="" />
+                    </section>
+                </section>
+
+                <!-- Grouping -->
+                <section>
+                    <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Grouping</h2>
+                    </section>
+
+                    <section>
+                        <h2>console.group / console.groupEnd</h2>
+                        <p>Organize the output by visually associating related messages</p>
+                        <p>Can create nested group</p>
+                        <p>console.group can have a label as parameter (default value: "console.group")</p>
+                    </section>
+
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/group1.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/group2.png" alt="" />
+                    </section>
+                </section>
+
+                <!-- Advanced -->
+                <section>
+                    <section data-background-image="./images/advanced.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Advanced</h2>
+                    </section>
+
+                    <section>
+                        <h2>Outputting a single object</h2>
+                        <p>For all basics console methods</p>
+                        <img src="./resources/output1.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>Outputting multiple objects</h2>
+                        <p>For all basics console methods</p>
+                        <img src="./resources/output2.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>Using string substitutions</h2>
+                        <p>For all basics console methods</p>
+                        <ul>
+                            <li>%s: output a string</li>
+                            <li>%o: output an object</li>
+                            <li>%f: output a floating number</li>
+                            <li>%f: output a digit number</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>In motion</h2>
+                        <img src="./resources/substitution.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>Styling</h2>
+                        <p>For all basics console methods</p>
+                        <p>use "%c" to apply css from this point</p>
+                        <img src="./resources/styling.png" alt="" />
+                    </section>
+                </section>
+
+                <!-- Resources -->
+                <section>
+                    <section data-background-image="./images/resources.png" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Resources</h2>
+                    </section>
+
+                    <section>
+                        <h2>Official</h2>
+                        <ul>
+                            <li>
+                                <a href="https://console.spec.whatwg.org/" target="_blank">https://console.spec.whatwg.org/</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/console" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/console</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Side links</h2>
+                        <ul>
+                            <li>
+                                <a href="https://developers.google.com/web/tools/chrome-devtools/console/api" target="_blank"
+                                    >https://developers.google.com/web/tools/chrome-devtools/console/api</a
+                                >
+                            </li>
+                            <li>
+                                <a href="https://nodejs.org/api/console.html#console_console_timestamp_label" target="_blank"
+                                    >https://nodejs.org/api/console.html#console_console_timestamp_label</a
+                                >
+                            </li>
+                            <li>
+                                <a href="https://alligator.io/js/console/" target="_blank">https://alligator.io/js/console/</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Caniuse</h2>
+                        <ul>
+                            <li>
+                                <a href="https://caniuse.com/#search=console" target="_blank">https://caniuse.com/#search=console</a>
+                            </li>
+                            <li>
+                                <a href="https://caniuse.com/#search=timestamp" target="_blank">https://caniuse.com/#search=timestamp</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <!-- Many thanks -->
+                <section data-background-image="./images/thank-you.webp" data-background-size="contain" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Many thanks</h2>
+                </section>
             </div>
-            <div>
-              <img src="./resources/timing.png" alt="" />
-            </div>
-          </div>
-        </section>
+        </div>
+        <script type="text/javascript" charset="UTF-8">
+            Reveal.initialize({
+                // Display presentation control arrows
+                controls: true,
 
-        <section>
-          <h2>console.timeLog</h2>
-          <p>Display the current timing of the associated label</p>
-          <p>Can have a label as parameter (default value: "default")</p>
-        </section>
+                // Help the user learn the controls by providing hints, for example by
+                // bouncing the down arrow when they first encounter a vertical slide
+                controlsTutorial: true,
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/timeLog.png" alt="" />
-        </section>
-      </section>
+                // Determines where controls appear, "edges" or "bottom-right"
+                controlsLayout: 'bottom-right',
 
-      <!-- Grouping -->
-      <section>
-        <section data-background-image="./images/main.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Grouping</h2>
-        </section>
+                // Visibility rule for backwards navigation arrows; "faded", "hidden"
+                // or "visible"
+                controlsBackArrows: 'faded',
 
-        <section>
-          <h2>console.group / console.groupEnd</h2>
-          <p>Organize the output by visually associating related messages</p>
-          <p>Can create nested group</p>
-          <p>console.group can have a label as parameter (default value: "console.group")</p>
-        </section>
+                // Display a presentation progress bar
+                progress: true,
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/group1.png" alt="" />
-        </section>
+                // Set default timing of 2 minutes per slide
+                defaultTiming: 120,
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/group2.png" alt="" />
-        </section>
-      </section>
+                // Display the page number of the current slide
+                slideNumber: false,
 
-      <!-- Advanced -->
-      <section>
-        <section data-background-image="./images/advanced.jpg" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Advanced</h2>
-        </section>
+                // Push each slide change to the browser history
+                history: true,
 
-        <section>
-          <h2>Outputting a single object</h2>
-          <p>For all basics console methods</p>
-          <img src="./resources/output1.png" alt="" />
-        </section>
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
 
-        <section>
-          <h2>Outputting multiple objects</h2>
-          <p>For all basics console methods</p>
-          <img src="./resources/output2.png" alt="" />
-        </section>
+                // Enable the slide overview mode
+                overview: true,
 
-        <section>
-          <h2>Using string substitutions</h2>
-          <p>For all basics console methods</p>
-          <ul>
-            <li>%s: output a string</li>
-            <li>%o: output an object</li>
-            <li>%f: output a floating number</li>
-            <li>%f: output a digit number</li>
-          </ul>
-        </section>
+                // Vertical centering of slides
+                center: true,
 
-        <section>
-          <h2>In motion</h2>
-          <img src="./resources/substitution.png" alt="" />
-        </section>
+                // Enables touch navigation on devices with touch input
+                touch: true,
 
-        <section>
-          <h2>Styling</h2>
-          <p>For all basics console methods</p>
-          <p>use "%c" to apply css from this point</p>
-          <img src="./resources/styling.png" alt="" />
-        </section>
-      </section>
+                // Loop the presentation
+                loop: false,
 
-      <!-- Resources -->
-      <section>
-        <section data-background-image="./images/resources.png" data-background-size="cover" data-background-position="50% 50%">
-          <h2 class="c-title--white">Resources</h2>
-        </section>
+                // Change the presentation direction to be RTL
+                rtl: false,
 
-        <section>
-          <h2>Official</h2>
-          <ul>
-            <li><a href="https://console.spec.whatwg.org/" target="_blank">https://console.spec.whatwg.org/</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/console" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/console</a></li>
-          </ul>
-        </section>
+                // Randomizes the order of slides each time the presentation loads
+                shuffle: false,
 
-        <section>
-          <h2>Side links</h2>
-          <ul>
-            <li><a href="https://developers.google.com/web/tools/chrome-devtools/console/api" target="_blank">https://developers.google.com/web/tools/chrome-devtools/console/api</a></li>
-            <li><a href=https://nodejs.org/api/console.html#console_console_timestamp_label"" target="_blank">https://nodejs.org/api/console.html#console_console_timestamp_label</a></li>
-            <li><a href="https://alligator.io/js/console/" target="_blank">https://alligator.io/js/console/</a></li>
-          </ul>
-        </section>
+                // Turns fragments on and off globally
+                fragments: true,
 
-        <section>
-          <h2>Caniuse</h2>
-          <ul>
-            <li><a href="https://caniuse.com/#search=console" target="_blank">https://caniuse.com/#search=console</a></li>
-            <li><a href="https://caniuse.com/#search=timestamp" target="_blank">https://caniuse.com/#search=timestamp</a></li>
-          </ul>
-        </section>
-      </section>
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
 
-      <!-- Many thanks -->
-      <section data-background-image="./images/thank-you.webp" data-background-size="contain" data-background-position="50% 50%">
-        <h2 class="c-title--white">Many thanks</h2>
-      </section>
-    </div>
-  </div>
-  <script type="text/javascript" charset="UTF-8">
-    Reveal.initialize({
-      // Display presentation control arrows
-      'controls': true,
+                // Flags if we should show a help overlay when the questionmark
+                // key is pressed
+                help: true,
 
-      // Help the user learn the controls by providing hints, for example by
-      // bouncing the down arrow when they first encounter a vertical slide
-      'controlsTutorial': true,
+                // Flags if speaker notes should be visible to all viewers
+                showNotes: false,
 
-      // Determines where controls appear, "edges" or "bottom-right"
-      'controlsLayout': 'bottom-right',
+                // Global override for autoplaying embedded media (video/audio/iframe)
+                // - null: Media will only autoplay if data-autoplay is present
+                // - true: All media will autoplay, regardless of individual setting
+                // - false: No media will autoplay, regardless of individual setting
+                autoPlayMedia: null,
 
-      // Visibility rule for backwards navigation arrows; "faded", "hidden"
-      // or "visible"
-      'controlsBackArrows': 'faded',
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
 
-      // Display a presentation progress bar
-      'progress': true,
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
 
-      // Set default timing of 2 minutes per slide
-      'defaultTiming': 120,
+                // Use this method for navigation when auto-sliding
+                autoSlideMethod: Reveal.navigateNext,
 
-      // Display the page number of the current slide
-      'slideNumber': false,
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
 
-      // Push each slide change to the browser history
-      'history': true,
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
 
-      // Enable keyboard shortcuts for navigation
-      'keyboard': true,
+                // Opens links in an iframe preview overlay
+                // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+                // individually
+                previewLinks: false,
 
-      // Enable the slide overview mode
-      'overview': true,
+                // Transition style
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-      // Vertical centering of slides
-      'center': true,
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
 
-      // Enables touch navigation on devices with touch input
-      'touch': true,
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
 
-      // Loop the presentation
-      'loop': false,
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
 
-      // Change the presentation direction to be RTL
-      'rtl': false,
+                // Parallax background image
+                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
-      // Randomizes the order of slides each time the presentation loads
-      'shuffle': false,
+                // Parallax background size
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
 
-      // Turns fragments on and off globally
-      'fragments': true,
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
 
-      // Flags if the presentation is running in an embedded mode,
-      // i.e. contained within a limited portion of the screen
-      'embedded': false,
+                // The display mode that will be used to show slides
+                display: 'block',
 
-      // Flags if we should show a help overlay when the questionmark
-      // key is pressed
-      'help': true,
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                width: 1200,
+                height: 800,
 
-      // Flags if speaker notes should be visible to all viewers
-      'showNotes': false,
+                // Factor of the display size that should remain empty around the content
+                margin: 0.1,
 
-      // Global override for autoplaying embedded media (video/audio/iframe)
-      // - null: Media will only autoplay if data-autoplay is present
-      // - true: All media will autoplay, regardless of individual setting
-      // - false: No media will autoplay, regardless of individual setting
-      'autoPlayMedia': null,
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.2,
+                maxScale: 1.5,
 
-      // Number of milliseconds between automatically proceeding to the
-      // next slide, disabled when set to 0, this value can be overwritten
-      // by using a data-autoslide attribute on your slides
-      'autoSlide': 0,
-
-      // Stop auto-sliding after user input
-      'autoSlideStoppable': true,
-
-      // Use this method for navigation when auto-sliding
-      'autoSlideMethod': Reveal.navigateNext,
-
-      // Enable slide navigation via mouse wheel
-      'mouseWheel': false,
-
-      // Hides the address bar on mobile devices
-      'hideAddressBar': true,
-
-      // Opens links in an iframe preview overlay
-      // Add `data-preview-link` and `data-preview-link="false"` to customise each link
-      // individually
-      'previewLinks': false,
-
-      // Transition style
-      'transition': 'slide', // none/fade/slide/convex/concave/zoom
-
-      // Transition speed
-      'transitionSpeed': 'default', // default/fast/slow
-
-      // Transition style for full page slide backgrounds
-      'backgroundTransition': 'fade', // none/fade/slide/convex/concave/zoom
-
-      // Number of slides away from the current that are visible
-      'viewDistance': 3,
-
-      // Parallax background image
-      'parallaxBackgroundImage': '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
-
-      // Parallax background size
-      'parallaxBackgroundSize': '', // CSS syntax, e.g. "2100px 900px"
-
-      // Number of pixels to move the parallax background per slide
-      // - Calculated automatically unless specified
-      // - Set to 0 to disable movement along an axis
-      'parallaxBackgroundHorizontal': null,
-      'parallaxBackgroundVertical': null,
-
-      // The display mode that will be used to show slides
-      'display': 'block',
-
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      'width': 1200,
-      'height': 800,
-
-      // Factor of the display size that should remain empty around the content
-      'margin': 0.1,
-
-      // Bounds for smallest/largest possible scale to apply to content
-      'minScale': 0.2,
-      'maxScale': 1.5,
-
-      'dependencies': [
-        // Syntax highlight for <code> elements
-        {
-          'src': 'https://unpkg.com/reveal.js@3.6.0/plugin/highlight/highlight.js',
-          'async': true,
-          'callback': function() {
-            hljs.initHighlightingOnLoad();
-          }
-        }
-      ]
-    });
-  </script>
-  </body>
+                dependencies: [
+                    // Syntax highlight for <code> elements
+                    {
+                        src: 'https://unpkg.com/reveal.js@3.6.0/plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        },
+                    },
+                ],
+            });
+        </script>
+    </body>
 </html>
