@@ -1,0 +1,918 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>CSS tricks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/highlight.js@9.12.0/styles/idea.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/reveal.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/theme/white.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/css/main.css" />
+
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/highlight.js@9.12.0/lib/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/lib/js/head.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/js/reveal.js"></script>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-image="./images/pankaj-patel-551095-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                    <h2 class="c-title--white">CSS tricks</h2>
+                </section>
+
+                <section>
+                    <h2>Before we start, never forget this mantra</h2>
+                    <blockquote>
+                        <p>“Chrome only” is not the web.</p>
+                        <p>
+                            <i><a href="https://twitter.com/jensimmons" target="_blank">Jen Simmons</a></i>
+                        </p>
+                        <p>
+                            <i
+                                ><small>Pssst, see her awesome youtube channel: <a href="https://t.co/8FEcRMJN4d" target="_blank">Layout Land</a></small></i
+                            >
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section data-background-image="./images/nicolas-cool-111447-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                    <h2 class="c-title--white">Caution: after this slide, you could see terrible things :(</h2>
+                </section>
+
+                <section data-background-image="./images/the-ugly.jpg" data-background-size="initial" data-background-position="0% 50%" name="the-good-bad-ugly">
+                    <h2>The ugly parts</h2>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/ian-froome-362138-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">The f***ng jumping line</h2>
+                    </section>
+
+                    <section>
+                        <h2>You want to align two blocks on the same line...</h2>
+                        <pre class="c-pre">
+                <code class="html u-no-max">&lt;div class=&quot;my-element my-element--left&quot;&gt;Left element&lt;/div&gt;
+&lt;div class=&quot;my-element my-element--right&quot;&gt;Right element&lt;/div&gt;
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>..., without border, margin, padding</h2>
+                        <pre class="c-pre">
+                <code class="css u-no-max">.my-element {
+  border: none;
+  display: inline-block;
+  height: 50px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.my-element--left {
+  background: orange;
+  width: 45%;
+}
+
+.my-element--right {
+  background: purple;
+  width: 55%;
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/w1Ly2rbn/embedded/result,html,css/"></iframe>
+                    </section>
+
+                    <section data-background-image="./images/george-clooney-surprised.webp" data-background-size="50% 80%" data-background-position="50% 50%"></section>
+
+                    <section>
+                        <h2>The reason?</h2>
+                        <p>"Elements" between inline-blocks should have a minimal width. If not specified, the browser applied one (between 2 or 3 pixels)</p>
+                        <p>In our case? The carriage return or the space between our tags ...</p>
+                    </section>
+
+                    <section>
+                        <h2>Change to</h2>
+                        <pre class="c-pre">
+            <code class="html u-no-max">&lt;div class=&quot;my-element my-element--left&quot;&gt;Left element&lt;/div&gt;&lt;div class=&quot;my-element my-element--right&quot;&gt;Right element&lt;/div&gt;
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Tada!</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/ch1z3kcr/embedded/result,html,css/"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/ian-froome-362138-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Height 100% may not do what you think it does</h2>
+                    </section>
+
+                    <section>
+                        <h2>We want our element take the 100% height of the zone</h2>
+                        <pre class="c-pre">
+                <code class="css u-no-max">.my-element {
+   background-color: orange;
+   color: white;
+   height: 100%;
+}
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>But we do not have the expected behavior</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/yk7k14hr/embedded/result,html,css/"></iframe>
+                    </section>
+
+                    <section data-background-image="./images/jim-carrey-scarred.webp" data-background-size="50% 80%" data-background-position="50% 50%"></section>
+
+                    <section>
+                        <h2>The reason?</h2>
+                        <p>The purcentage css unit is based on a <b>context</b></p>
+                        <p>That means height 100% means we want 100% of the parent height, not the page</p>
+                    </section>
+
+                    <section>
+                        <h2>Ok, we try to fix it</h2>
+                        <pre class="c-pre">
+                <code class="css u-no-max">html,
+body {
+   height: 100%;
+}
+
+.my-element {
+   background-color: orange;
+   color: white;
+   height: 100%;
+}
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Tada! (with overlap due to parent padding / margin)</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/ms788dht/embedded/result,html,css/"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>Be aware that we have the same behavior with "em"</h2>
+                        <pre class="c-pre">
+                <code class="css u-no-max">html,
+body {
+   font-size: 1em;
+}
+
+.my-element {
+   font-size: 0.8em;
+}
+.my-element2 {
+   font-size: 0.8em;
+}
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>If .my-element2 is under .my-element</h2>
+                        <pre class="c-pre">
+                <code class="html u-no-max">&lt;div class=&quot;my-element&quot;&gt;
+  &lt;div&gt;A text to 0.8em&lt;/div&gt;
+  &lt;div class=&quot;my-element2&quot;&gt;A text to 0.8em? (spoiler: nope, to 0.64)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;my-element2&quot;&gt;A text to 0.8em&lt;/div&gt;
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>As you can see</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/cno5rnyy/embedded/result,html,css/"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/ian-froome-362138-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Opacity changes the z-index</h2>
+                    </section>
+
+                    <section>
+                        <h2>Talk is cheap, let's play with it</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/21hvsnga/embedded/result,html,css,js/"></iframe>
+                    </section>
+
+                    <section data-background-image="./images/shocked.webp" data-background-size="50% 80%" data-background-position="50% 50%"></section>
+
+                    <section>
+                        <h2>This example is based on an article by Philip Walton</h2>
+                        <ul>
+                            <li>
+                                Link:
+                                <a href="https://philipwalton.com/articles/what-no-one-told-you-about-z-index/" target="_blank"
+                                    >https://philipwalton.com/articles/what-no-one-told-you-about-z-index/</a
+                                >
+                            </li>
+                            <li>Had made a lot of greatfull articles around Flex</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>What Philip Walton says</h2>
+                        <ul>
+                            <li>Basically, elements with a higher z-index are stacked in front of elements with a lower z-index</li>
+                            <li>
+                                <b
+                                    >BUT when you introduce the position property into the mix, any positioned elements (and their children) are displayed in front of any
+                                    non-positioned elements</b
+                                >
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Some stacking contexts are created...</h2>
+                        <ul>
+                            <li>...when an element is the root of a document</li>
+                            <li>...when an element has a position which is not "static" or "relative"</li>
+                            <li>...when an element has got a values from properties like <b>opacity, transform, filter</b></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>How to calculate this stacking order?</h2>
+                        <p>When no opacity</p>
+                        <pre class="c-pre">
+            <code class="html u-no-max">&lt;div&gt;&lt;!-- 1 --&gt;
+  &lt;span class=&quot;red&quot;&gt;&lt;!-- 6 --&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;!-- 2 --&gt;
+  &lt;span class=&quot;green&quot;&gt;&lt;!-- 4 --&gt;&lt;span&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;!-- 3 --&gt;
+  &lt;span class=&quot;blue&quot;&gt;&lt;!-- 5 --&gt;&lt;/span&gt;
+&lt;/div&gt;
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>How to calculate this stacking order?</h2>
+                        <p>When opacity</p>
+                        <pre class="c-pre">
+            <code class="html u-no-max">&lt;div&gt;&lt;!-- 1 --&gt;
+  &lt;span class=&quot;red&quot;&gt;&lt;!-- 1.1 --&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;!-- 2 --&gt;
+  &lt;span class=&quot;green&quot;&gt;&lt;!-- 4 --&gt;&lt;span&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;!-- 3 --&gt;
+  &lt;span class=&quot;blue&quot;&gt;&lt;!-- 5 --&gt;&lt;/span&gt;
+&lt;/div&gt;
+            </code>
+          </pre>
+                    </section>
+                </section>
+
+                <section data-background-image="./images/the-bad.jpg" data-background-size="initial" data-background-position="0% 50%" name="the-good-bad-ugly">
+                    <h2>The bad parts</h2>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/yosh-ginsu-146177-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Vertical padding is relative to element’s width</h2>
+                    </section>
+
+                    <section data-background-image="./images/george-clooney-surprised.webp" data-background-size="50% 80%" data-background-position="50% 50%"></section>
+
+                    <section>
+                        <h2>What does it mean?</h2>
+                        <p>So padding-top: 50% does not add 50% of the original height of the element as padding, but 50% of the width of the parent element</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/td89z94b/embedded/result,html,css/"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/yosh-ginsu-146177-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Margins overlap, but only sometimes</h2>
+                    </section>
+
+                    <section data-background-image="./images/alison-brie-shocked.webp" data-background-size="50% 80%" data-background-position="50% 50%"></section>
+
+                    <section>
+                        <h2>Cases of margins adjoining</h2>
+                        <ul>
+                            <li><b>Sibling elements</b>: The bottom margin of an element collapses with the top margin of its proceeding sibling.</li>
+                            <li>
+                                <div><b>Child elements</b>:</div>
+                                <ol>
+                                    <li>The top margin of an element collapses with the top margin of its first child element.</li>
+                                    <li>The bottom margin of an element collapses with the bottom margin of its last child element.</li>
+                                </ol>
+                            </li>
+                            <li><b>No size elements</b>: The top and bottom margins of an element collapse if the element has no height, padding, or border.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/c9htw7nc/embedded/result,html,css,js/"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>When do margins not collapse?</h2>
+                        <p>
+                            There are several exceptions to the margin collapse rules. This is where things can get hard to follow. Following are some visual examples of situations
+                            where margins would not collapse. For a more complete understanding, refer to the specs.
+                        </p>
+                        <p>
+                            See
+                            <a href="https://jonathan-harrell.com/whats-the-deal-with-margin-collapse" target="_blank"
+                                >https://jonathan-harrell.com/whats-the-deal-with-margin-collapse</a
+                            >
+                            and the <a href="https://www.w3.org/TR/CSS2/box.html#collapsing-margins" target="_blank">CSS Box model Spec</a>
+                        </p>
+                    </section>
+                </section>
+
+                <section data-background-image="./images/the-good.jpg" data-background-size="initial" data-background-position="0% 50%" name="the-good-bad-ugly">
+                    <h2>The good parts</h2>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/andressa-voltolini-202193-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">The power of CSS units</h2>
+                    </section>
+
+                    <section>
+                        <h2>Do you know we use only a few units?</h2>
+                        <ul>
+                            <li><b>px</b> for pixels</li>
+                            <li><b>%</b> for purcentage</li>
+                            <li>
+                                <div><b>em</b> for element measure</div>
+                                <ol>
+                                    <li>Measuring the width of printed matter, equal to the height of the type size being used</li>
+                                    <li>Dedicated for font sizes</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>But we have plenty mores!!</h2>
+                    </section>
+
+                    <section>
+                        <h2>Basics sizing</h2>
+                        <ul>
+                            <li><b>cm</b> for centimeters</li>
+                            <li><b>mm</b> for millimeters</li>
+                            <li><b>in</b> for inches</li>
+                            <li><b>pt</b> for points (1/72 of a inch)</li>
+                            <li><b>pc</b> for picas (12 points)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Font sizes</h2>
+                        <ul>
+                            <li><b>rem</b> for root em (<b>no more context sizing!</b>)</li>
+                            <li><b>ex</b> for height of the lowercase x</li>
+                            <li><b>ch</b> for the width of the 0</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Be carefull when to use it</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Recommanded</th>
+                                    <th>Sometimes</th>
+                                    <th>Never</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Screen</td>
+                                    <td>rem, em, px, %</td>
+                                    <td>ex</td>
+                                    <td>pt, cm, mm, in, pc</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Printer</td>
+                                    <td>rem, em, cm, mm, in, pt, pc, %</td>
+                                    <td>px, ex</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section>
+                        <h2>Some units for transformation</h2>
+                        <ul>
+                            <li>
+                                <div><b>deg</b> for degrees</div>
+                                <ol>
+                                    <li>Especially for rotation</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Some units based on the viewport size!</h2>
+                        <ul>
+                            <li><b>vw</b> for 1/100th of the screen width</li>
+                            <li><b>vh</b> for 1/100th of the screen height</li>
+                            <li><b>vmin</b> for 1/100th of the smallest screen side</li>
+                            <li><b>vmax</b> for 1/100th of the largest screen side</li>
+                        </ul>
+                    </section>
+
+                    <section data-background-image="./images/hugh-grant-dancing.gif" data-background-size="50% 80%" data-background-position="50% 50%"></section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/andressa-voltolini-202193-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Fit your content</h2>
+                    </section>
+
+                    <section>
+                        <h2>For an image</h2>
+                        <p>You want your image has got 250px of width and use too the specified height with keeping ratio?</p>
+                        <p>Use so <b>object-fit</b></p>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <pre class="c-pre">
+            <code class="css u-no-max">img {
+  height: 250px;
+}
+
+.cover {
+  width: 250px;
+  object-fit: cover;
+}</code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Living example</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/9hk8qpvh/embedded/result,html,css/"></iframe>
+                    </section>
+
+                    <section data-background-image="./images/parks-happy.webp" data-background-size="50% 80%" data-background-position="50% 50%"></section>
+
+                    <section>
+                        <h2>Possible values</h2>
+                        <ul>
+                            <li>fill (default)</li>
+                            <li>contain</li>
+                            <li>cover</li>
+                            <li>none</li>
+                            <li>scale-down (compare none and contain and keep the smallest size)</li>
+                        </ul>
+                        <p><a href="https://css-tricks.com/almanac/properties/o/object-fit/" target="_blank">Further details</a></p>
+                    </section>
+
+                    <section>
+                        <h2>Intrinsic And Extrinsic Sizing</h2>
+                        <p>Boxes on your webpage have a size, <b>even if you haven’t given them one</b></p>
+                        <p>See the <a hef="https://drafts.csswg.org/css-sizing-3/" target="_blank">sizing spec</a></p>
+                    </section>
+
+                    <section>
+                        <h2>Max content</h2>
+                        <p>Per default, a box will always try to take the max content size</p>
+                        <p>However, you could specify that it should take instead the min content or a fit content</p>
+                        <ul>
+                            <li>max-content: the maximal size of the content of the boxes</li>
+                            <li>min-content: the minimal size of the content of the boxes</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <pre class="c-pre">
+            <code class="css u-no-max">.min-content {
+  width: min-content;
+}
+
+.max-content {
+  width: max-content;
+}</code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Living example</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/cjq5noo7/embedded/result,html,css/"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/andressa-voltolini-202193-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">at CSS rules</h2>
+                    </section>
+
+                    <section>
+                        <h2>What is an at rule?</h2>
+                        <p>The at-rule is a statement that provides CSS with instructions to perform or how to behave.</p>
+                        <p>Always have the following syntax: <b>@[KEYWORD] (RULE);</b></p>
+                    </section>
+
+                    <section>
+                        <h2>@charset</h2>
+                        <p>Define the charset of your file</p>
+                        <p>Place it to the top of the file</p>
+                        <pre class="c-pre">
+            <code class="css u-no-max">@charset "UTF-8";
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>@import</h2>
+                        <p>To import css files between them</p>
+                        <p>Note: in production mode, we will have an http request for each import: try to contatenate instead</p>
+                        <pre class="c-pre">
+            <code class="css u-no-max">@import 'global.css';
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>@namespace</h2>
+                        <p>This rule is particularly useful for applying CSS to XML HTML (XHTML) so that XHTML elements can be used as selectors in the CSS.</p>
+                        <p>Few use cases now</p>
+                        <pre class="c-pre">
+            <code class="css u-no-max">/* Namespace for XHTML */
+@namespace url(http://www.w3.org/1999/xhtml);
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>@font-face</h2>
+                        <p>Declare your own font!</p>
+                        <pre class="c-pre">
+            <code class="css u-no-max">@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 200;
+  src: url("./nunito/nunito-v9-latin-200.eot"); /* IE9 Compat Modes */
+  src: local("Nunito ExtraLight"), local("Nunito-ExtraLight"),
+    url("./nunito/nunito-v9-latin-200.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("./nunito/nunito-v9-latin-200.woff2") format("woff2"), /* Super Modern Browsers */ url("./nunito/nunito-v9-latin-200.woff") format("woff"), /* Modern Browsers */ url("./nunito/nunito-v9-latin-200.ttf") format("truetype"), /* Safari, Android, iOS */ url("./nunito/nunito-v9-latin-200.svg#Nunito") format("svg"); /* Legacy iOS */
+}
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>@media</h2>
+                        <p>Define query condition to apply some style</p>
+                        <pre class="c-pre">
+            <code class="css u-no-max">@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .module { width: 100%; }
+
+}
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>@keyframes</h2>
+                        <p>Define a scenario of an animation</p>
+                        <pre class="c-pre">
+            <code class="css u-no-max">@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.my-element {
+  animation: pulse linear 1s infinite alternate;
+}</code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>@page</h2>
+                        <p>Usefull when media is "print" mode</p>
+                        <p>Related pseudo-elements:</p>
+                        <ul>
+                            <li>:first (when first page)</li>
+                            <li>:blank (when the page is blank)</li>
+                            <li>:left (when print left to right)</li>
+                            <li>:right (when print right to left)</li>
+                        </ul>
+                        <pre class="c-pre">
+            <code class="css u-no-max">@page :first {
+  margin: 1in;
+}</code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>@supports</h2>
+                        <p>Check if a CSS feature is available</p>
+                        <pre class="c-pre">
+            <code class="css u-no-max">/* Check one supported condition */
+@supports (display: flex) {
+  .module { display: flex; }
+}
+
+/* Check multiple conditions */
+@supports (display: flex) and (-webkit-appearance: checkbox) {
+  .module { display: flex; }
+}</code>
+          </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/andressa-voltolini-202193-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Optimize painting</h2>
+                    </section>
+
+                    <section>
+                        <h2>The CSS painting contains three steps</h2>
+                        <ul>
+                            <li>Layout</li>
+                            <li>Paint</li>
+                            <li>Composite</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>When you change a CSS properties value, the browser needs to react to your change</h2>
+                        <p>A change in width requires the browser</p>
+                        <ul>
+                            <li>To update layout</li>
+                            <li>Then "paint" any pixels that have changed</li>
+                            <li>Then "composite" them together</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Some CSS properties can be changed more inexpensively</h2>
+                        <p>A good site to identify them: <a href="https://csstriggers.com/" target="_blank">https://csstriggers.com/</a></p>
+                        <img src="./images/csstriggers.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>Mastering these changes helps to master</h2>
+                        <ul>
+                            <li>Repaints (occurs when changes are made to elements that affect visibility but not the layout: Ex: opacity, background-color)</li>
+                            <li>Reflows (refers to the re-calculation of positions and dimensions of all elements)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Did yo know there is a CSS property to help you?</h2>
+                    </section>
+
+                    <section data-background-image="./images/zootopia-paresseux.webp" data-background-size="25% 50%" data-background-position="50% 50%"></section>
+
+                    <section>
+                        <h2>will-change CSS property</h2>
+                        <p>
+                            Optimizes animations by letting the browser know which properties and elements are just about to be manipulated, potentially increasing the performance
+                            of that particular operation.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Possible values</h2>
+                        <ul>
+                            <li><b>auto</b>: standard browser optimizations will be applied</li>
+                            <li><b>scroll-position</b>: indicates that the element’s scroll position will be animated sometime in the near future</li>
+                            <li><b>contents</b>: the contents of an element is expected to change so the browser will not cache this element’s content</li>
+                            <li><b>Any css property</b>: any user-defined property such as transform or opacity that we want will-change to be applied to.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>And there is another one</h2>
+                    </section>
+
+                    <section data-background-image="./images/happy-carlton.webp" data-background-size="50% 50%" data-background-position="50% 50%"></section>
+
+                    <section>
+                        <h2>contain CSS property</h2>
+                        <p>Limit the scope of the browser's styles, layout and paint work.</p>
+                    </section>
+
+                    <section>
+                        <h2>Possible values</h2>
+                        <ul>
+                            <li><b>none </b></li>
+                            <li>
+                                <div>Combination of <b>layout style paint size </b></div>
+                                <ul>
+                                    <li><b>layout</b>: ensures that the containing element is totally opaque for layout purposes</li>
+                                    <li><b>paint</b>: ensures that the descendants of the containing element don’t display outside its bounds</li>
+                                    <li><b>size</b>: ensures that the containing element can be laid out without needing to examine its descendants</li>
+                                    <li><b>style</b>: ensures that, for properties which can have effects on more than just an element and its descendants</li>
+                                </ul>
+                            </li>
+                            <li><b>strict</b>: combination of layout style paint size</li>
+                            <li><b>content</b>: combination of layout style paint</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>We could increase performance</h2>
+                        <img src="./images/contain.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>For this property, not all browsers implement it yet</h2>
+                        <p>sob sob :'(</p>
+                        <p><a href="https://developers.google.com/web/updates/2016/06/css-containment" target="_blank">For further details</a></p>
+                    </section>
+                </section>
+
+                <section data-background-image="./images/dinosaurs-dancing.webp" data-background-size="50% 50%" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Many thanks</h2>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" charset="UTF-8">
+            Reveal.initialize({
+                // Display presentation control arrows
+                controls: true,
+
+                // Help the user learn the controls by providing hints, for example by
+                // bouncing the down arrow when they first encounter a vertical slide
+                controlsTutorial: true,
+
+                // Determines where controls appear, "edges" or "bottom-right"
+                controlsLayout: 'bottom-right',
+
+                // Visibility rule for backwards navigation arrows; "faded", "hidden"
+                // or "visible"
+                controlsBackArrows: 'faded',
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Set default timing of 2 minutes per slide
+                defaultTiming: 120,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Push each slide change to the browser history
+                history: true,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+
+                // Change the presentation direction to be RTL
+                rtl: false,
+
+                // Randomizes the order of slides each time the presentation loads
+                shuffle: false,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Flags if we should show a help overlay when the questionmark
+                // key is pressed
+                help: true,
+
+                // Flags if speaker notes should be visible to all viewers
+                showNotes: false,
+
+                // Global override for autoplaying embedded media (video/audio/iframe)
+                // - null: Media will only autoplay if data-autoplay is present
+                // - true: All media will autoplay, regardless of individual setting
+                // - false: No media will autoplay, regardless of individual setting
+                autoPlayMedia: null,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Use this method for navigation when auto-sliding
+                autoSlideMethod: Reveal.navigateNext,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+                // individually
+                previewLinks: false,
+
+                // Transition style
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
+
+                // The display mode that will be used to show slides
+                display: 'block',
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                width: 1200,
+                height: 800,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.1,
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.2,
+                maxScale: 1.5,
+
+                dependencies: [
+                    // Syntax highlight for <code> elements
+                    {
+                        src: 'https://unpkg.com/reveal.js@3.6.0/plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        },
+                    },
+                ],
+            });
+
+            Reveal.addEventListener('slidechanged', function (event) {
+                if (event.currentSlide.getAttribute('name') === 'the-good-bad-ugly') {
+                    document.querySelector('audio').play();
+                }
+            });
+        </script>
+        <audio>
+            <source src="./sounds/lyrics-good-bad-ugly.mp3" type="audio/mpeg" />
+        </audio>
+    </body>
+</html>

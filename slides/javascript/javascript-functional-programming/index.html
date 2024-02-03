@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Functional Programming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/highlight.js@9.12.0/styles/idea.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/reveal.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/theme/white.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/css/main.css" />
+
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/highlight.js@9.12.0/lib/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/lib/js/head.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/js/reveal.js"></script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-background-image="./images/code-coding-computer-574077.jpg" data-background-size="cover" data-background-position="0% 0%">
+        <h2 class="c-title--white">JavaScript Functional Programming</h2>
+      </section>
+
+      <section>
+        <h2>Before we start, never forget this mantra</h2>
+        <blockquote>
+          <p>Clean code is functional.</p>
+          <p><i><a href="https://twitter.com/unclebobmartin" target="_blank"> Robert C. Martin(akka Uncle Bob)</a></i></p>
+        </blockquote>
+      </section>
+
+      <!-- What is Functional Programming? -->
+      <section>
+        <section data-background-image="./images/code-coding-computer-34676.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">What is Functional Programming?</h2>
+        </section>
+
+        <section>
+          <h2>Definition</h2>
+          <blockquote>Functional programming is a programming paradigm in which we try to bind everything in pure mathematical functions style</blockquote>
+        </section>
+
+        <section data-background-image="./images/math-everywhere.gif" data-background-size="cover" data-background-position="50% 50%">
+        </section>
+
+        <section>
+          <h2>Big picture</h2>
+          <ul>
+            <li>It is a declarative type of programming style</li>
+            <li>Its main focus is on “what to solve” in contrast to an imperative style where the main focus is “how to solve”</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Origin</h2>
+          <ul>
+            <li>
+              <div><b>Lambda calculus</b> which was a formal system in mathematical logic for expressing computation</div>
+              <pre>square_sum(x, y) = x2 + y2</pre>
+            </li>
+            <li>Alan Turing used it into its "state machine" to decode the Enigma system</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Principle: idempotence</h2>
+          <ul>
+            <li>
+              <div>A function called with same parameters should return same value</div>
+              <ul>
+                <li>Same logic as mathematical function f(x)</li>
+                <li>An example of non-idempotence function: Math.random()</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Principle: immutability</h2>
+          <ul>
+            <li>
+              <div>Never modify the input parameters (to avoid side effects). If you want to modify one parameter:</div>
+              <ul>
+                <li>Clone the parameter</li>
+                <li>Modify the cloned parameter</li>
+                <li>Return the cloned parameter</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Principle: referential transparency</h2>
+          <p>Never modify the variables / context outside of your function</p>
+          <p>This eliminates any chances of side effects because any variable can be replaced with its actual value at any point of execution</p>
+        </section>
+
+        <section>
+          <h2>Pure function</h2>
+          <p>A pure function should respect the three previous principles</p>
+          <ul>
+            <li>Idempotence</li>
+            <li>Immutability</li>
+            <li>Referential transparency</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Functions are First-Class</h2>
+          <p>"First-Class" means that something is just a value</p>
+          <ul>
+            <li>First-class functions are treated as first-class variable</li>
+            <li>The first class variables can be passed to functions as parameter</li>
+            <li>The first class variables can be returned from functions or stored in data structures</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Functions can be Higher-Order</h2>
+          <p>Higher order functions are the functions that take other functions as arguments and they can also return functions</p>
+        </section>
+
+        <section>
+          <h2>Gains</h2>
+          <ul>
+            <li>Composition</li>
+            <li>Extensibility</li>
+            <li>Reusage</li>
+            <li>Readability</li>
+            <li>Testability</li>
+          </ul>
+        </section>
+
+        <section data-background-image="./images/adult-blur-business-986831.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">To have a humanized and readable code</h2>
+        </section>
+
+        <section>
+          <h2>Cons</h2>
+          <ul>
+            <li>Writing pure functions can be bit intimidating</li>
+            <li>Immutable values and recursion can lead to decrease in performance.</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- What kind of functions? -->
+      <section>
+        <section data-background-image="./images/ai-close-up-code-160107.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">What kind of functions?</h2>
+        </section>
+
+        <section>
+          <h2>Pure function</h2>
+          <p>Already seen</p>
+        </section>
+
+        <section>
+          <h2>Impure function</h2>
+          <p>Reversed pure function</p>
+        </section>
+
+        <section>
+          <h2>Partial function</h2>
+          <p>A partial function is a function that is not defined for all possible input values</p>
+        </section>
+
+        <section>
+          <h2>Example</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const half = x != x / 2;</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Possible input</h2>
+          <ul>
+            <li>number</li>
+            <li>string</li>
+            <li>void</li>
+            <li>object</li>
+            <li>array</li>
+            <li>symbol</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Possible output</h2>
+          <ul>
+            <li>number</li>
+            <li>NaN (which is a number)</li>
+            <li>Uncaught TypeError</li>
+          </ul>
+        </section>
+
+        <section data-background-image="./images/aerial-background-beautiful-990830.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2>It could be not a big deal</h2>
+          <h3>It could be into the contract / documentation to deal only with a specified type</h3>
+        </section>
+
+        <section>
+          <h2>Total function</h2>
+          <p>A total function is a function that is defined for all kind of inputs</p>
+          <p>Basically, we guarantee to return always the same output, despite the specified inputs</p>
+        </section>
+
+        <section>
+          <h2>Example in Java World:</h2>
+          <pre class="c-pre">
+            <code class="java u-no-max">public Optional&lt;User&gt; findUser(string uuid) {
+   // We will return an optional, not directly a user
+   // So we could have an empty optional (with isPresent())
+   // Or we could have an optional with the user
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Summary</h2>
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <td>Partial</td>
+                <td>Total</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pure</td>
+                <td>Pure & Partial</td>
+                <td>Pure & Total</td>
+              </tr>
+              <tr>
+                <td>Impure</td>
+                <td>Impure & Partial</td>
+                <td>Impure & Total</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <!-- Which languages? -->
+      <section>
+        <section data-background-image="./images/apple-blogging-business-36990.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">Which languages?</h2>
+        </section>
+
+        <section>
+          <h2>The language should allowed:</h2>
+          <ul>
+            <li>Returning a function from a function</li>
+            <li>Passing a function into a function</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Some compatible languages</h2>
+          <ul>
+            <li>Haskell</li>
+            <li>JavaScript</li>
+            <li>Scala</li>
+            <li>Erlang</li>
+            <li>Clojure</li>
+            <li>Lisp / Common Lisp</li>
+          </ul>
+        </section>
+
+        <section data-background-image="./images/amazing.webp" data-background-size="contain" data-background-position="50% 50%">
+          <h2 class="c-title--white">Yes, even JavaScript</h2>
+        </section>
+
+        <section>
+          <h2>Because</h2>
+          <ul>
+            <li>We can pass a function as parameter (High-Order)</li>
+            <li>We could return a function (High-Order)</li>
+            <li>We could orchestrate the code based on data (context)</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Functional Patterns -->
+      <section>
+        <section data-background-image="./images/color-conifer-environment-192136.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">Functional Patterns</h2>
+        </section>
+
+        <section data-background-image="./images/ancient-antique-architectural-design-442420.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Basics needs - bind</h2>
+        </section>
+
+        <section>
+          <h2>Bind</h2>
+          <p>Goal: return a function with a specified context</p>
+          <p>Why: prevent context overriding, expecially when we set as function parameter our function</p>
+          <p><blockquote>Nota bene: there is now a bind function on functions</blockquote></p>
+        </section>
+
+        <section>
+          <h2>Implementation</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">function bind(funcToBind, context) {
+   return function () {
+      return funcToBind.apply(context, arguments);
+   };
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Usage</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">this.a = { name: 'John' };
+const greet = (age) => `Hi ${this.name}, you have ${age} years old.`
+const boundGreet = bind(greet, { name: 'Jack' });
+
+boundGreet(42); // Hi Jack, you have 42 years old.</code>
+          </pre>
+        </section>
+
+        <section data-background-image="./images/ancient-antique-architectural-design-442420.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Basics needs - partial</h2>
+        </section>
+
+        <section>
+          <h2>Partial</h2>
+          <p>Goal: return a function to harldy wrapped some parameters</p>
+          <p>Why: function composition</p>
+        </section>
+
+        <section>
+          <h2>Implementation</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">function partial(funcToPartial, args...) {
+   return function () {
+      return funcToPartial.apply(this, args.concat(Array.from(arguments)));
+   };
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Usage</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const greet = (name, age) => `Hi ${name}, you have ${age} years old.`
+const boundGreet = partial(greet, 'Jack');
+
+boundGreet(42); // Hi Jack, you have 42 years old.</code>
+          </pre>
+        </section>
+
+        <section data-background-image="./images/ancient-antique-architectural-design-442420.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Data needs - map</h2>
+        </section>
+
+        <section>
+          <h2>Map</h2>
+          <p>Goal: convert a data to a new format</p>
+          <p>Why: adapt the data to your need</p>
+        </section>
+
+        <section>
+          <h2>Implementation</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">function map(arr, callback) {
+   const mapping = [];
+   const index = 0;
+   arr.forEach((entry) => {
+      mapping.push(callback.apply(this, [ entry, ++index ]);
+   };
+   return mapping;
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Usage</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const data = [1, 2, 3];
+
+map(data, (val) => {
+   return { num: val };
+}); // [{num:1},{num:2},{num:3}]</code>
+          </pre>
+        </section>
+
+        <section data-background-image="./images/ancient-antique-architectural-design-442420.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Data needs - flatten</h2>
+        </section>
+
+        <section>
+          <h2>Flatten</h2>
+          <p>Goal: convert an array of arrays (and more) to a one-level array</p>
+          <p>Why: ease to iterate</p>
+          <blockquote>Example of functional recursion</blockquote>
+        </section>
+
+        <section>
+          <h2>Implementation</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">function flatten(arr) {
+   return arr.reduce(
+    (flattenArray, entry) => {
+       return flattenArray.concat(Array.isArray(entry) ? flatten(entry) : entry);
+    },
+    []
+   );
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Usage</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const array = [1, [2, [3, [4]], 5]];
+
+flatten(array); // [1, 2, 3, 4, 5]</code>
+          </pre>
+        </section>
+
+        <section data-background-image="./images/ancient-antique-architectural-design-442420.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Advanced needs - debounce</h2>
+        </section>
+
+        <section>
+          <h2>Debounce</h2>
+          <p>Goal: delay the execution of a function</p>
+          <p>Why: avoid to execute many time the function into a short delay</p>
+        </section>
+
+        <section>
+          <h2>Implementation</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">function debounce(funcToDebounce, delay = 150) {
+   let token = null;
+   return function () {
+      const currentArgs = arguments;
+      if (token) {
+         clearTimeout(token);
+      }
+
+      token = setTimeout(() => {
+            token = null;
+            funcToDebounce.apply(this, currentArgs);
+      }, delay);
+   };
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Usage</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const greet = (name, age) => console.log(`Hi ${name}, you have ${age} years old.`)
+const boundGreet = debounce(greet, 500);
+
+boundGreet('Jack', 42);
+setTimeout(() => boundGreet('William', 18), 250);
+boundGreet('John', 24);
+// One log: Hi William, you have 18 years old</code>
+          </pre>
+        </section>
+
+        <section data-background-image="./images/ancient-antique-architectural-design-442420.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Advanced needs - compose</h2>
+        </section>
+
+        <section>
+          <h2>Compose (or pipelining)</h2>
+          <p>Goal: compose a set of functions, to chain them and return a new function</p>
+          <p>Why: increase composition</p>
+        </section>
+
+        <section>
+          <h2>Implementation</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">function compose(funcs...) {
+   return function () {
+      let lastArgs = arguments;
+      let lastReturn = undefined;
+
+      funcs.forEach((func) => {
+         lastReturn = func.apply(this, lastArgs);
+         lastArgs = [ lastReturn ];
+      });
+
+      return lastReturn;
+   };
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Usage</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const data = [2, 3, null, 1, 42, false];
+const myPipeline = compose(compact, initial, rest, sort);
+
+myPipeline(data); // [1, 3]
+// similar to sort(rest(initial(compact(data))))</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>ES6 feature: pipeline operator</h2>
+          <p>Which provides natively the "pipeline"</p>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const data = [2, 3, null, 1, 42, false];
+data |> compact |> initial |> rest |> sort; // [1, 3]
+
+// Or with indentation
+data
+   |> compact
+   |> initial
+   |> rest
+   |> sort; // [1, 3]</code>
+          </pre>
+        </section>
+
+        <section data-background-image="./images/astronomy-black-wallpaper-constellation-2150.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">God pattern - chaining</h2>
+        </section>
+
+        <section>
+          <h2>Chaining (A.K.A transduction)</h2>
+          <p>Goal: transform boilerplate code</p>
+          <p>Why: increase composition, readiblity and performance</p>
+        </section>
+
+        <section>
+          <h2>Example</h2>
+          <p>I have a list of users. I want</p>
+          <ul>
+            <li>To filter major users</li>
+            <li>To filter users with lastname starting with 'b'</li>
+            <li>To get the third user</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Boilerplate implementation</h2>
+          <p>Hard lisibility</p>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">let expectedUser = null;
+let potentialUser = null;
+let time = 0;
+
+for(const user : users) {
+   if (user.age > 18 && user.lowercase().startWith('b')) {
+      potentialUser = user;
+      index++;
+   }
+
+   if (index == 3) {
+      expectedUser = potentialUser;
+      break;
+   }
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>ES6 implementation</h2>
+          <p>Gain lisibility. But if I have 1000 users, I could iterate 2001 times</p>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const filtered = users
+   .filter((user) = user.age >= 18)
+   .filter((user) = user.lastname.lowercase().startWith('b'));
+
+const expectedUser = filtered.length > 2 ? filtered[2] : null;
+</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Functional implementation</h2>
+          <p>Gain lisibility, and performance</p>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const expectedUser = chain(users)
+   .filter((user) = user.age >= 18)
+   .filter((user) = user.lastname.lowercase().startWith('b'))
+   .get(3)
+   .value()</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Extrem functional implementation</h2>
+          <pre class="c-pre">
+            <code class="javascript u-no-max">const expectedUser = chain(users)
+   .filter(isUserMajor)
+   .filter(partialRight(isUserLastNameStartWith, 'b'))
+   .get(3)
+   .value()</code>
+          </pre>
+        </section>
+      </section>
+
+      <!-- What about strongly typing? -->
+      <section>
+        <section data-background-image="./images/coding-computer-developer-1181288.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">What about strongly typing?</h2>
+        </section>
+
+        <section data-background-image="./images/shocked.webp" data-background-size="contain" data-background-position="50% 50%">
+          <h2 class="c-title--white">Typing is a nice to have</h2>
+        </section>
+
+        <section>
+          <h2>Typing allows writing code</h2>
+          <ul>
+            <li>based on propositions</li>
+            <li>based on proof</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>In deep: proposition</h2>
+          <pre class="c-pre">
+            <code class="typescript u-no-max">declare function add(x: number, y: number): number;</code>
+          </pre>
+          <p>
+            <b>Proposition: If x and y are numbers, a number exists</b>
+          </p>
+        </section>
+
+        <section>
+          <h2>In deep: proof</h2>
+          <pre class="c-pre">
+            <code class="typescript u-no-max">function add(x: number, y: number): number {
+   return x + y;
+}</code>
+          </pre>
+          <p>
+            <b>Proof: x + y is a proof that a number exists</b>
+          </p>
+        </section>
+
+        <section data-background-image="./images/book-dark-enlightenment-1029141.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Types are propositions</h2>
+          <h2 class="c-title--white">Programs are proofs</h2>
+        </section>
+
+        <section data-background-image="./images/book-dark-enlightenment-1029141.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Based on "Curry-Howard Correspondence"</h2>
+          <h3 class="c-title--white">Used in Haskell programs</h3>
+          <a class="c-title--white" href="https://wiki.haskell.org/Curry-Howard-Lambek_correspondence" target="_blank">https://wiki.haskell.org/Curry-Howard-Lambek_correspondence</a>
+        </section>
+
+        <section>
+          <h2>So, what does it mean?</h2>
+        </section>
+
+        <section data-background-image="./images/ai-blur-codes-577585.jpg" data-background-size="cover" data-background-position="50% 50%">
+          <h2 class="c-title--white">Let the type system suggest the implementation</h2>
+        </section>
+
+        <section>
+          <h2>If I typed</h2>
+          <pre class="c-pre">
+            <code class="typescript u-no-max">function head&#x3C;T&#x3E;(list: T[]): T {
+   return list;
+}</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>I will have</h2>
+          <pre class="c-pre">
+            <code class="shell u-no-max">f[ts] Type 'T[]' is not assignable to type 'T'. (parameter) list: T[]</code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>With typing, this is much easier to have "total function"</h2>
+        </section>
+
+        <section data-background-image="./images/antelope-canyon-arizona-beam-33041.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">With typing we could always return <b>a value</b></h2>
+          <h3 class="c-title--white">With functional meaning</h3>
+          <h3 class="c-title--white">With less defensive code</h3>
+          <h4 class="c-title--white">At the end, we could have functors or monads</h4>
+        </section>
+
+        <section>
+          <h2>Example</h2>
+          <pre class="c-pre">
+            <code class="typescript u-no-max">async function fetchUser(username: string): Promise&lt;Either&lt;FetchError, User!&gt;&gt; {
+   const res = await fetch(`https:!//api.sugarpirate.com/users/${username}`);
+   if (!res.ok) { return left(new FetchError(`[${res.status}] ${res.statusText}`)) }
+   return right(await res.json());
+}</code>
+          </pre>
+        </section>
+      </section>
+
+      <!-- And beyhond? -->
+      <section>
+        <section data-background-image="./images/asphalt-dark-dawn-531321.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">And beyond?</h2>
+        </section>
+
+        <section data-background-image="./images/4k-wallpaper-calm-waters-dark-1252869.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">Functors</h2>
+          <h3 class="c-title--white">example: Promise</h3>
+        </section>
+
+        <section data-background-image="./images/4k-wallpaper-calm-waters-dark-1252869.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">Monad</h2>
+        </section>
+
+        <section data-background-image="./images/4k-wallpaper-calm-waters-dark-1252869.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">Reactive code</h2>
+        </section>
+      </section>
+
+      <!-- Resources - videos -->
+      <section>
+        <section data-background-image="./images/blur-book-stack-books-590493.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">Resources - videos</h2>
+        </section>
+
+        <section>
+          <h2>Basically, a lot of videos of <a href="https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q" target="_blank">funfunfunction</a></h2>
+        </section>
+
+        <section>
+          <h2>Higher-order functions</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/BMUiFMZr7vk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <section>
+          <h2>Promises</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/2d7s3spWAzo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <section>
+          <h2>Functors</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YLIH8TKbAh4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <section>
+          <h2>Monads</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/9QveBbn7t_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+      </section>
+
+      <!-- Resources - books -->
+      <section>
+        <section data-background-image="./images/blur-book-stack-books-590493.jpg" data-background-size="cover" data-background-position="0% 0%">
+          <h2 class="c-title--white">Resources - books</h2>
+        </section>
+
+        <section>
+          <h2>Functional JavaScript - Michael Fogus</h2>
+          <p><a href="http://shop.oreilly.com/product/0636920028857.do" target="_blank">Here the O'reilly link</a></p>
+          <img src="./images/oreilly-functional-javascript.gif" alt="" />
+        </section>
+      </section>
+
+      <!-- end !-->
+      <section data-background-image="./images/jim-carrey-thanks.webp" data-background-size="contain" data-background-position="50% 50%">
+        <h2 class="c-title--white">Many thanks</h2>
+      </section>
+    </div>
+  </div>
+  <script type="text/javascript" charset="UTF-8">
+    Reveal.initialize({
+      // Display presentation control arrows
+      'controls': true,
+
+      // Help the user learn the controls by providing hints, for example by
+      // bouncing the down arrow when they first encounter a vertical slide
+      'controlsTutorial': true,
+
+      // Determines where controls appear, "edges" or "bottom-right"
+      'controlsLayout': 'bottom-right',
+
+      // Visibility rule for backwards navigation arrows; "faded", "hidden"
+      // or "visible"
+      'controlsBackArrows': 'faded',
+
+      // Display a presentation progress bar
+      'progress': true,
+
+      // Set default timing of 2 minutes per slide
+      'defaultTiming': 120,
+
+      // Display the page number of the current slide
+      'slideNumber': false,
+
+      // Push each slide change to the browser history
+      'history': true,
+
+      // Enable keyboard shortcuts for navigation
+      'keyboard': true,
+
+      // Enable the slide overview mode
+      'overview': true,
+
+      // Vertical centering of slides
+      'center': true,
+
+      // Enables touch navigation on devices with touch input
+      'touch': true,
+
+      // Loop the presentation
+      'loop': false,
+
+      // Change the presentation direction to be RTL
+      'rtl': false,
+
+      // Randomizes the order of slides each time the presentation loads
+      'shuffle': false,
+
+      // Turns fragments on and off globally
+      'fragments': true,
+
+      // Flags if the presentation is running in an embedded mode,
+      // i.e. contained within a limited portion of the screen
+      'embedded': false,
+
+      // Flags if we should show a help overlay when the questionmark
+      // key is pressed
+      'help': true,
+
+      // Flags if speaker notes should be visible to all viewers
+      'showNotes': false,
+
+      // Global override for autoplaying embedded media (video/audio/iframe)
+      // - null: Media will only autoplay if data-autoplay is present
+      // - true: All media will autoplay, regardless of individual setting
+      // - false: No media will autoplay, regardless of individual setting
+      'autoPlayMedia': null,
+
+      // Number of milliseconds between automatically proceeding to the
+      // next slide, disabled when set to 0, this value can be overwritten
+      // by using a data-autoslide attribute on your slides
+      'autoSlide': 0,
+
+      // Stop auto-sliding after user input
+      'autoSlideStoppable': true,
+
+      // Use this method for navigation when auto-sliding
+      'autoSlideMethod': Reveal.navigateNext,
+
+      // Enable slide navigation via mouse wheel
+      'mouseWheel': false,
+
+      // Hides the address bar on mobile devices
+      'hideAddressBar': true,
+
+      // Opens links in an iframe preview overlay
+      // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+      // individually
+      'previewLinks': false,
+
+      // Transition style
+      'transition': 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Transition speed
+      'transitionSpeed': 'default', // default/fast/slow
+
+      // Transition style for full page slide backgrounds
+      'backgroundTransition': 'fade', // none/fade/slide/convex/concave/zoom
+
+      // Number of slides away from the current that are visible
+      'viewDistance': 3,
+
+      // Parallax background image
+      'parallaxBackgroundImage': '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+      // Parallax background size
+      'parallaxBackgroundSize': '', // CSS syntax, e.g. "2100px 900px"
+
+      // Number of pixels to move the parallax background per slide
+      // - Calculated automatically unless specified
+      // - Set to 0 to disable movement along an axis
+      'parallaxBackgroundHorizontal': null,
+      'parallaxBackgroundVertical': null,
+
+      // The display mode that will be used to show slides
+      'display': 'block',
+
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      'width': 1200,
+      'height': 800,
+
+      // Factor of the display size that should remain empty around the content
+      'margin': 0.1,
+
+      // Bounds for smallest/largest possible scale to apply to content
+      'minScale': 0.2,
+      'maxScale': 1.5,
+
+      'dependencies': [
+        // Syntax highlight for <code> elements
+        {
+          'src': 'https://unpkg.com/reveal.js@3.6.0/plugin/highlight/highlight.js',
+          'async': true,
+          'callback': function() {
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
+    });
+  </script>
+  </body>
+</html>

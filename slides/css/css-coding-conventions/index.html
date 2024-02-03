@@ -1,0 +1,768 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>CSS coding conventions</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/highlight.js@9.12.0/styles/idea.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/reveal.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/theme/white.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/css/main.css" />
+
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/highlight.js@9.12.0/lib/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/lib/js/head.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/js/reveal.js"></script>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-image="./images/maik-jonietz-535261-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                    <h2 class="c-title--white">CSS coding conventions</h2>
+                </section>
+
+                <section>
+                    <h2>Before we start, never forget this mantra</h2>
+                    <blockquote>
+                        <p>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
+                        <p>
+                            <i>Martin Fowler <a href="https://twitter.com/martinfowler?lang=fr" target="_blank">@martinfowler</a></i>
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/nathan-dumlao-609935-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">CSS basically</h2>
+                    </section>
+
+                    <section>
+                        <h2>Cascading Style Sheet</h2>
+                        <p>Powerfull style inheritance.</p>
+                        <p>Powerfull query selectors.</p>
+                        <p>Powerfull media management.</p>
+                        <p>Powerfull effect engine.</p>
+                    </section>
+
+                    <section data-background-image="./images/jonathan-mast-554319-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">However no style guidance per default</h2>
+                    </section>
+
+                    <section>
+                        <h2>What is the heck?</h2>
+                        <p>No code structuration.</p>
+                        <p>No file structuration.</p>
+                        <p>No limitation on queries.</p>
+                    </section>
+
+                    <section>
+                        <h2>A lot of possible queries...</h2>
+                        <p><a href="https://www.w3.org/TR/selectors-4/" target="_blank">https://www.w3.org/TR/selectors-4/</a></p>
+                        <img src="./images/css4.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>...with weird possiblities...</h2>
+                        <p><a href="https://css-tricks.com/spoooooky-css-selectors/" target="_blank">https://css-tricks.com/spoooooky-css-selectors/</a></p>
+                        <img src="./images/lobotomized-owl.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>...with complex combinations</h2>
+                        <p>From boostrap...</p>
+                        <img src="./images/complex-css.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>As results</h2>
+                        <p>Unexpected inheritance.</p>
+                        <p>Code hard to read.</p>
+                        <p>Code hard to maintain.</p>
+                        <p>Possible override on side CSS frameworks.</p>
+                        <p>Side CSS frameworks could override us!</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/rawpixel-632455-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">A first (and last) solution appears</h2>
+                    </section>
+
+                    <section>
+                        <h2>Generate CSS from JavaScript</h2>
+                        <p>This is not a recent solution (Dojo, Google apps, ...).</p>
+                        <p>But this solution appears again recently, through solution like css-in-js (JSS).</p>
+                    </section>
+
+                    <section>
+                        <h2>The idea</h2>
+                        <p>Define through JavaScript some styling.</p>
+                        <p>Generate a "random" CSS class name.</p>
+                        <p>Share some JavaScript variables (for color, status, etc ...).</p>
+                    </section>
+
+                    <section>
+                        <h2>Why this approach?</h2>
+                        <h3>Why not using directly CSS?</h3>
+                        <img src="./images/meme-too-hard.jpg" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>Thruly...</h2>
+                        <h3>Here a quote of one big contributor of one framework</h3>
+                        <blockquote>
+                            <p>
+                                CSS has been designed to style documents, not applications. Anyone that has tried to use CSS at scale knows how it requires too many restrictions
+                                and rules to make it work. In short, it's painful and not really a pleasure.
+                            </p>
+                            <p>
+                                <i><a href="https://moox.io/blog/farewell-css/" target="_blank">https://moox.io/blog/farewell-css/</a></i>
+                            </p>
+                        </blockquote>
+                    </section>
+
+                    <section>
+                        <h2>Curious, it was the same logic for JavaScript...</h2>
+                        <h3>And clearly, we don't use it anymore</h3>
+                        <img src="./images/javascript-trending.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>Anyway ...</h2>
+                        <p>We could share now some <b>CSS variables</b>.</p>
+                        <p>These variables are accessible through <b>domElement.style.getProperty()</b>.</p>
+                        <p>These variables are settable through <b>domElement.style.setProperty()</b>.</p>
+                    </section>
+
+                    <section>
+                        <h2>And ...</h2>
+                        <p>This is a mess to debug.</p>
+                        <p>Hardly recommended to use <b>sourcemaps</b>.</p>
+                        <p>Some tools like PostCSS do it without sharing JavaScript variables</p>
+                    </section>
+
+                    <section>
+                        <h2>See it in action (PostCSS)</h2>
+                        <img src="./images/postcss-output.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>See it in action (JSS)</h2>
+                        <img src="./images/jss-output.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>Could we have other solutions?</h2>
+                    </section>
+
+                    <section data-background-image="./images/street-figher-of-course.webp" data-background-size="50% 50%" data-background-position="50% 50%"></section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/matt-duncan-127528-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Another way: coding conventions</h2>
+                    </section>
+
+                    <section>
+                        <h2>We have some various CSS coding conventions</h2>
+                        <ul>
+                            <li>Utilities classes</li>
+                            <li>OOCSS</li>
+                            <li>SUITCSS</li>
+                            <li>BEM and variants</li>
+                            <li>AMCSS</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>In all cases, we have some avantages</h2>
+                    </section>
+
+                    <section>
+                        <h2>We could prefix!</h2>
+                        <h3><i>Bye bye unexpected overriding</i></h3>
+                    </section>
+
+                    <section>
+                        <h2>We could reuse it!</h2>
+                    </section>
+
+                    <section>
+                        <h2>We could organize it!</h2>
+                    </section>
+
+                    <section>
+                        <h2>This is humanly understandable!</h2>
+                    </section>
+
+                    <section data-background-image="./images/got-css.jpg" data-background-size="contain" data-background-position="50% 50%"></section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/anna-demianenko-12400-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Utilities classes</h2>
+                    </section>
+
+                    <section>
+                        <h2>Some frameworks use this approach</h2>
+                        <ul>
+                            <li>BootStrap</li>
+                            <li>Foundation</li>
+                            <li>Bulma</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>The goal: define a set of CSS classes...</h2>
+                        <ul>
+                            <li>For component</li>
+                            <li>For layout</li>
+                            <li>For animation</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>...and use it directly onto the DOM</h2>
+                        <pre class="c-pre">
+            <code class="html u-no-max"><button type="button" class="btn btn-primary">Primary</button>
+            </code>
+          </pre>
+                    </section>
+
+                    <section data-background-image="./images/daniel-cheung-129839-unsplash.jpg" data-background-size="contain" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Not sure this is the best way</h2>
+                    </section>
+
+                    <section>
+                        <h2>Because it could be hard to understand and refactor</h2>
+                        <pre class="c-pre">
+            <code class="html u-no-max"><div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">
+    <span class="border border-danger">Learn more</span>
+  </a>
+</div>
+            </code>
+          </pre>
+                    </section>
+
+                    <section data-background-image="./images/anna-pascale-628884-unsplash.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">We have loose some semantics</h2>
+                    </section>
+
+                    <section>
+                        <h2>Moreover, the prefix is often not used</h2>
+                        <h3>So we could have uncompatibilities</h3>
+                    </section>
+
+                    <section>
+                        <h2>Expecially when we use "simple naming"</h2>
+                        <h3>Bootstrap... Again!!</h3>
+                        <img src="./images/css-simple-naming.png" alt="" />
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/denys-nevozhai-191635-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">OOCSS SUITCSS</h2>
+                    </section>
+
+                    <section>
+                        <h2>OOCSS</h2>
+                        <ul>
+                            <li>Official website: <a href="http://oocss.org/" target="_blank">http://oocss.org/</a></li>
+                            <li><b>Separating container and content with CSS “objects”</b></li>
+                            <li>Like utilities classes except we try to regroup per component</li>
+                            <li>Each element has got a CSS class to understand the goal</li>
+                            <li>We use only CSS classes (and pseudo-classes)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <h3>For <a href="http://www.design-fluide.com/21-09-2011/le-css-oriente-objet-explique-avec-monsieur-patate/" target="_blank">further details</a></h3>
+                        <img src="./images/ocss.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>SUITCSS</h2>
+                        <ul>
+                            <li>Official website: <a href="http://suitcss.github.io/" target="_blank">http://suitcss.github.io/</a></li>
+                            <li><b>Structured class names and meaningful hyphens</b></li>
+                            <li>We use only CSS classes</li>
+                            <li>We have a naming conventions</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Naming convention</h2>
+                        <ul>
+                            <li>Prefix with ".u-" when we have an utility class</li>
+                            <li>
+                                <div>A component respect the following pattern</div>
+                                <div><b>[&lt;namespace&gt;-]&lt;ComponentName&gt;[-descendentName][--modifierName]</b></div>
+                                <ol>
+                                    <li>Where namespace is optional but help to prefix (in lowercase)</li>
+                                    <li>ComponentName is the name of your component (in pascal case)</li>
+                                    <li>-descendentName is the name of a sub component (in camel case)</li>
+                                    <li>--modifierName is a state (in camel case)</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example (CSS)</h2>
+                        <pre class="c-pre">
+            <code class="css u-no-max">.MyComponent {}
+.MyComponent.is-animating {}
+.MyComponent--modifier {}
+
+.MyComponent-part {}
+.MyComponent-anotherPart {}
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Example (HTML)</h2>
+                        <h3>Note: descendentName are only on one level</h3>
+                        <pre class="c-pre">
+            <code class="html u-no-max">&lt;article class=&quot;Tweet&quot;&gt;
+  &lt;header class=&quot;Tweet-header&quot;&gt;
+    &lt;img class=&quot;Tweet-avatar&quot; src=&quot;{{src}}&quot; alt=&quot;{{alt}}&quot;&gt;
+    &hellip;
+  &lt;/header&gt;
+  &lt;div class=&quot;Tweet-bodyText&quot;&gt;
+    &hellip;
+  &lt;/div&gt;
+&lt;/article&gt;
+            </code>
+          </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/tyssul-patel-368-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">BEM</h2>
+                    </section>
+
+                    <section>
+                        <h2>BEM</h2>
+                        <ul>
+                            <li>Official website: <a href="http://getbem.com/" target="_blank">http://getbem.com/</a></li>
+                            <li><b>Block, Element, Modifier</b></li>
+                            <li>We use only CSS classes (and pseudo-classes)</li>
+                            <li>We have a naming conventions</li>
+                            <li>We have a semantic</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Block</h2>
+                        <ul>
+                            <li>Encapsulates a standalone entity that is meaningful on its own</li>
+                            <li>Not depends of the type of HTML element</li>
+                            <li>Name should be short and in snake case</li>
+                            <li>Ex: .my-component, .button, ...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Element</h2>
+                        <ul>
+                            <li>Parts of a block and have no standalone meaning.</li>
+                            <li>Any element is semantically tied to its block.</li>
+                            <li>Name should be in snake case and append with its parent with "__"</li>
+                            <li>Ex: .block__elem, .block__elem__title ...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Modifier</h2>
+                        <ul>
+                            <li>Flags on blocks or elements.</li>
+                            <li>Used to notify a change on appearance, behavior or state.</li>
+                            <li>Name should be in snake case and append with its parent with "--"</li>
+                            <li>Ex: .block--color-black, .block__elem--mod ...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example (CSS)</h2>
+                        <pre class="c-pre">
+            <code class="css u-no-max">.button {
+	display: inline-block;
+	border-radius: 3px;
+	padding: 7px 12px;
+	border: 1px solid #D5D5D5;
+	background-image: linear-gradient(#EEE, #DDD);
+	font: 700 13px/18px Helvetica, arial;
+}
+.button--state-success {
+	color: #FFF;
+	background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+	border-color: #4A993E;
+}
+.button--state-danger {
+	color: #900;
+}
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Example (HTML)</h2>
+                        <pre class="c-pre">
+            <code class="html u-no-max">&lt;button class=&quot;button&quot;&gt;
+	Normal button
+&lt;/button&gt;
+&lt;button class=&quot;button button--state-success&quot;&gt;
+	Success button
+&lt;/button&gt;
+&lt;button class=&quot;button button--state-danger&quot;&gt;
+	Danger button
+&lt;/button&gt;
+            </code>
+          </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/tyssul-patel-368-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">AMCSS</h2>
+                    </section>
+
+                    <section>
+                        <h2>AMCSS</h2>
+                        <ul>
+                            <li>Official website: <a href="https://amcss.github.io/" target="_blank">https://amcss.github.io/</a></li>
+                            <li>We use only HTML attributes (and pseudo-classes)</li>
+                            <li>The CSS queries are "stronger" than classical CSS classes</li>
+                            <li>We have a "semantic"</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Big Picture</h2>
+                        <ul>
+                            <li>Attributes name are in camel case</li>
+                            <li>We could use a prefix onto the attribute name</li>
+                            <li>The attribute contains value(s) to applying styling and behavior / state</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example (CSS)</h2>
+                        <pre class="c-pre">
+            <code class="css u-no-max">[am-button] { /* Default button styles */ }
+[am-button~="primary"] { /* Primary colours */ }
+[am-button~="large"] { /* Large sizing */ }
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Example (HTML)</h2>
+                        <pre class="c-pre">
+            <code class="html u-no-max">&lt;a am-button=&quot;primary large&quot;&gt;Large primary button&lt;/a&gt;
+&lt;a am-button&gt;Default button&lt;/a&gt;
+&lt;a am-button=&quot;info small&quot;&gt;Small info button&lt;/a&gt;
+&lt;a am-button=&quot;danger extra-small&quot;&gt;Extra-small danger button&lt;/a&gt;
+            </code>
+          </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/kelly-sikkema-455242-unsplash.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">In conclusion</h2>
+                    </section>
+
+                    <section>
+                        <h2>CSS coding conventions are very powerfull</h2>
+                        <ul>
+                            <li>Easy to write, read, maintain</li>
+                            <li>Modular</li>
+                            <li>Reusable</li>
+                            <li>Good integration into preprocessors like Less or Sass</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Two good candidates</h2>
+                        <ul>
+                            <li>BEM</li>
+                            <li>AMCSS</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>BEM</th>
+                                    <th>AMCSS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pros</td>
+                                    <td>
+                                        <div>Semantic & Conventions</div>
+                                        <div>Code structuration</div>
+                                        <div>Easy to use and maintain</div>
+                                    </td>
+                                    <td>
+                                        <div>Semantic</div>
+                                        <div>Use of "stronger" CSS query</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Cons</td>
+                                    <td>
+                                        <div>Have sometimes <b>!important</b> due to side frameworks</div>
+                                        <div>Nothing for utilities and mixins</div>
+                                    </td>
+                                    <td>
+                                        <div>No conventions</div>
+                                        <div>Attributes values have the same problem as CSS utilities frameworks</div>
+                                        <div>Nothing for utilities and mixins</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section data-background-image="./images/frank-mckenna-117065-unsplash.jpg" data-background-size="cover" data-background-position="0% 100%">
+                        <h2>BEM has got some variants</h2>
+                    </section>
+
+                    <section>
+                        <h2>Where we could have</h2>
+                        <ul>
+                            <li>BEM</li>
+                            <li>Utilities classes</li>
+                            <li>Mixins classes</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>For utilities, mixins and others</h2>
+                        <ul>
+                            <li>We use camel case</li>
+                            <li>We use CSS classes</li>
+                            <li>
+                                <div>We prefix with a value</div>
+                                <ol>
+                                    <li><b>.u-</b> for utility class</li>
+                                    <li><b>.m-</b> for mixin class</li>
+                                    <li><b>a-</b> for animation</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example - Mixins</h2>
+                        <pre class="c-pre">
+            <code class="less u-no-max">.m-text-selection(@color: white; @backgroundColor: black) {
+  &::selection {
+    background-color: @backgroundColor;
+    color: @color;
+  }
+}
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Example - Utilities</h2>
+                        <pre class="c-pre">
+            <code class="less u-no-max">.u-no-border {
+  border: 0 solid transparent;
+}
+
+.u-no-margin {
+  .m-same-margin(0);
+}
+
+            </code>
+          </pre>
+                    </section>
+
+                    <section>
+                        <h2>Example - Animations</h2>
+                        <pre class="c-pre">
+            <code class="less u-no-max">@key-frames a-blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+            </code>
+          </pre>
+                    </section>
+                </section>
+
+                <section data-background-image="./images/brad-pitt-thanks.webp" data-background-size="50% 50%" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Many thanks</h2>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" charset="UTF-8">
+            Reveal.initialize({
+                // Display presentation control arrows
+                controls: true,
+
+                // Help the user learn the controls by providing hints, for example by
+                // bouncing the down arrow when they first encounter a vertical slide
+                controlsTutorial: true,
+
+                // Determines where controls appear, "edges" or "bottom-right"
+                controlsLayout: 'bottom-right',
+
+                // Visibility rule for backwards navigation arrows; "faded", "hidden"
+                // or "visible"
+                controlsBackArrows: 'faded',
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Set default timing of 2 minutes per slide
+                defaultTiming: 120,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Push each slide change to the browser history
+                history: true,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+
+                // Change the presentation direction to be RTL
+                rtl: false,
+
+                // Randomizes the order of slides each time the presentation loads
+                shuffle: false,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Flags if we should show a help overlay when the questionmark
+                // key is pressed
+                help: true,
+
+                // Flags if speaker notes should be visible to all viewers
+                showNotes: false,
+
+                // Global override for autoplaying embedded media (video/audio/iframe)
+                // - null: Media will only autoplay if data-autoplay is present
+                // - true: All media will autoplay, regardless of individual setting
+                // - false: No media will autoplay, regardless of individual setting
+                autoPlayMedia: null,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Use this method for navigation when auto-sliding
+                autoSlideMethod: Reveal.navigateNext,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+                // individually
+                previewLinks: false,
+
+                // Transition style
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
+
+                // The display mode that will be used to show slides
+                display: 'block',
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                width: 1200,
+                height: 800,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.1,
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.2,
+                maxScale: 1.5,
+
+                dependencies: [
+                    // Syntax highlight for <code> elements
+                    {
+                        src: 'https://unpkg.com/reveal.js@3.6.0/plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        },
+                    },
+                ],
+            });
+        </script>
+    </body>
+</html>

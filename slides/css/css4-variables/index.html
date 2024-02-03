@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>CSS4 variables</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/highlight.js@9.12.0/styles/idea.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/reveal.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="https://unpkg.com/reveal.js@3.6.0/css/theme/white.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/css/main.css" />
+
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/highlight.js@9.12.0/lib/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/lib/js/head.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://unpkg.com/reveal.js@3.6.0/js/reveal.js"></script>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-image="./images/pankaj-patel-551095-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                    <h2 class="c-title--white">CSS4 variables</h2>
+                </section>
+
+                <section>
+                    <h2>Before we start, never forget this mantra</h2>
+                    <blockquote>
+                        <p>
+                            "Software craftsmanship is not about writing the perfect piece of code. It is about continuously improving your skills, so your future code will be
+                            better."
+                        </p>
+                        <p><i>@yonatanm</i></p>
+                    </blockquote>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/kayle-kaupanger-608668-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">Overview</h2>
+                    </section>
+
+                    <section>
+                        <h2>What are CSS4 variables?</h2>
+                        <p>They are a nice way to include true a programmative variable which includes a value</p>
+                        <p>A first notion of "CSS variables" where included with CSS preprocessors like LESS, Stylus, SASS</p>
+                    </section>
+
+                    <section>
+                        <h2>A "CSS variable" in LESS</h2>
+                        <pre class="c-pre">
+                <code class="less u-no-max">@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+#header {
+  color: @light-blue;
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>What are the benefits?</h2>
+                        <ul>
+                            <li>A cleaner code (moreover with semantic name on variables)</li>
+                            <li>A most reusable code (duplicating values versus using value)</li>
+                            <li>Increase update velocity</li>
+                            <li>Increase bug resolution velocity</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/charles-deluvio-451759-unsplash.jpg" data-background-size="cover">
+                        <h2 class="c-title--white">I want to use it!</h2>
+                    </section>
+
+                    <section>
+                        <h2>Good news! 87% of browers are compatible</h2>
+                        <img src="./images/caniuse.png" alt="" />
+                    </section>
+
+                    <section>
+                        <h2>And for IE11?</h2>
+                        <p>You have got an excellent <b>ponyfill</b></p>
+                        <p>
+                            <a href="https://github.com/jhildenbiddle/css-vars-ponyfill" target="_blank">CSS-VARS-PONYFILL</a>
+                        </p>
+                        <pre class="c-pre">
+                <code class="html u-no-max"><script src="https://unpkg.com/css-vars-ponyfill"></script>
+<script>
+// Call using defaults
+cssVars();
+
+// Or call with options
+cssVars({
+  variables: {
+    color: 'red',
+    unknown: '5px'
+  }
+});
+</script>
+                </code>
+              </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/lee-campbell-86958-unsplash.jpg" data-background-size="cover">
+                        <h2 class="c-title--white">Let's code!</h2>
+                    </section>
+
+                    <section>
+                        <h2>Where to declare my CSS variable?</h2>
+                        <p>You have to declare it into a "CSS rule" block</p>
+                        <pre class="c-pre">
+                <code class="css u-no-max">.block {
+   /* CSS Rule block */
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>How to declare my CSS variable?</h2>
+                        <p>Like a CSS property, prefixing with <b>--</b></p>
+                        <pre class="c-pre">
+                <code class="css u-no-max">.block {
+   --color: blue
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2 class="c-title--red">WARNING</h2>
+                        <p>Like a CSS property, we have to specify a valid <b>CSS property value</b></p>
+                        <pre class="c-pre">
+                <code class="css u-no-max">:root {
+ --size: 20;
+ --other-size: 20px;
+}
+
+div {
+  font-size: var(--size)px; /*WRONG*/
+  line-height: var(--other-side); /*GOOD*/
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>Scoping?</h2>
+                        <p>Like JavaScript, CSS variables have a scoping. We could have:</p>
+                        <ul>
+                            <li>Local scope</li>
+                            <li>Global scope</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Locale scope</h2>
+                        <p>Only for the div elements</p>
+                        <pre class="c-pre">
+                <code class="css u-no-max">.block {
+   --color: blue
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>Global scope</h2>
+                        <p>For all elements</p>
+                        <pre class="c-pre">
+                <code class="css u-no-max">:root {
+   --color: blue
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>How to use my CSS variable?</h2>
+                        <p>A new CSS method is available, <b>var</b></p>
+                        <pre class="c-pre">
+                <code class="css u-no-max">:root {
+  --color: red;
+  --font: 'Arial';
+}
+
+.block {
+   color: var(--color);
+   font-family: var(--font);
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>Hold on, var has got two parameters!</h2>
+                        <p>The second argument is a "default value"</p>
+                        <p>The CSS engine will use it if the variable cannot be found, or <u>the associated value is not a valid one</u></p>
+                        <pre class="c-pre">
+                <code class="css u-no-max">.component .header {
+  color: var(--header-color, blue);
+}
+
+.component .text {
+  color: var(--text-color, black);
+}
+
+.component {
+  --text-color: #080;
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>One more thing</h2>
+                        <p>We could use CSS variables directly into the style attribute!</p>
+                        <pre class="c-pre">
+                <code class="html u-no-max">&#x3C;section style=&#x22;--color: red&#x22;&#x3E;&#x3C;/section&#x3E;
+                </code>
+              </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/oliver-sjostrom-593671-unsplash.jpg" data-background-size="cover">
+                        <h2 class="c-title--white">Further details on scoping</h2>
+                    </section>
+
+                    <section>
+                        <h2>One question</h2>
+                        <p>If we have a local variable and a global variable with the same name, who wins?</p>
+                        <p>This is the <u>last local variable</u> (like JavaScript)</p>
+                        <pre class="c-pre">
+                <code class="css u-no-max">:root {
+  /* Global scope */
+  --color: red;
+  --font: 'Arial';
+}
+
+.block {
+   /* --color === blue, --font === 'Arial' */
+   --color: blue;
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>Sorry, I have lied :(</h2>
+                        <p>On a previous slide, I said that a local variable is limited to the CSS rule block. <b>That's not fairly true</b></p>
+                        <p>Like other CSS properties, CSS variables applied the CSS logic, which are:</p>
+                        <ul>
+                            <li>Inheritance of CSS rules</li>
+                            <li>Cascading of CSS rules</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>So, we could have</h2>
+                        <pre class="c-pre">
+                <code class="css u-no-max">div {
+  --color: red;
+}
+
+div.test {
+  color: var(--color)
+}
+
+div.ew {
+  color: var(--color)
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>And we have a new scope when using media queries or supports</h2>
+                        <pre class="c-pre">
+                <code class="css u-no-max">:root {
+   --color: red;
+}
+
+@media screen and (min-width: 600px) {
+   --color: green;
+}
+
+@supports (display: grid) {
+   --color: blue;
+}
+                </code>
+              </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/luca-laurence-547660-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">In practice</h2>
+                    </section>
+
+                    <section>
+                        <h2>Nesting module</h2>
+                        <p>If we use nesting CSS module (available with CSS preprocessors), variables will be propagated on nested rules</p>
+                        <p>What happens if we apply some coding style like BEM?</p>
+                        <p><b>Gracefully with CSS inheritance and cascading, the CSS variables will be propagated!</b></p>
+                    </section>
+
+                    <section>
+                        <h2>BEM example</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/sap61k27/embedded/result,html,css/"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>Ease to declare a theming...</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/8go3rb2c/embedded/result,html,css/"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>... and change it on the fly!</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/uLvvpva4/embedded/result,html,css,js/"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/irvan-smith-563894-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">JavaScript API</h2>
+                    </section>
+
+                    <section>
+                        <h2>Update of CSSStyleDeclaration Object</h2>
+                        <p>Each dom element has got a <b>style</b> property</p>
+                        <p>This property is a type of CSSStyleDeclaration</p>
+                        <p>CSSStyleDeclaration allows to modify easily the style of your DOM element</p>
+                    </section>
+
+                    <section>
+                        <h2>Basic example</h2>
+                        <p>
+                            For futher details,
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty" target="_blank">go to the developer mozilla page</a>
+                        </p>
+                        <pre class="c-pre">
+                <code class="javascript u-no-max">var declaration = document.styleSheets[0].rules[0].style;
+declaration.setProperty('margin', '1px 2px');
+// Equivalent to:
+// declaration.margin = '1px 2px';
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>So, basically ...</h2>
+                        <p>CSSStyleDeclaration exposes a setProperty to modify a value</p>
+                        <p>CSSStyleDeclaration exposes a getProperty to retrieve a value</p>
+                    </section>
+
+                    <section>
+                        <h2>We can use it for CSS variables!</h2>
+                        <p>To read / update a CSS variable of the current node element</p>
+                        <pre class="c-pre">
+                <code class="javascript u-no-max">const root = document.documentElement
+const element = document.querySelector('.my-element');
+
+root.style.setProperty('--bg', 'black');
+root.style.setProperty('--bg-text', 'grey');
+element.style.setProperty('--bg-text', 'white');
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>A basic usage (as editor)</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/h9ewz5Ln/embedded/result,html,css,js/"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>A basic usage (as editor)</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/x76aq7t0/embedded/result,html,css,js/"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>We can made some awesome style!</h2>
+                        <iframe class="c-iframe" src="https://jsfiddle.net/ntwxrgjh/embedded/result,html,css,js/"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/nicolas-thomas-533958-unsplash.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">CSS preprocessor</h2>
+                    </section>
+
+                    <section>
+                        <h2>PostCSS deals with it</h2>
+                        <p>Using the <a href="http://cssnext.io/" target="_blank">CSSNext plugin</a></p>
+                        <p>Using the <a href="https://www.npmjs.com/package/postcss-preset-env" target="_blank">Preset-Env plugin</a></p>
+                    </section>
+
+                    <section>
+                        <h2>LESS seems not to deal with it</h2>
+                        <p>You could use it, but you should prefer the LESS way.</p>
+                    </section>
+
+                    <section>
+                        <h2>SASS seems to deal with it</h2>
+                        <p>You could wrap some methods for that</p>
+                        <pre class="c-pre">
+                <code class="sass u-no-max">@function color($color-name) {
+  @return var(--color-#{$color-name});
+}
+                </code>
+              </pre>
+                    </section>
+
+                    <section>
+                        <h2>SASS seems to deal with it</h2>
+                        <p>OR define a tiny function for that</p>
+                        <p>See the <a href="https://codepen.io/vank0/pen/kkGvAb" target="_blank">following plunker</a></p>
+                        <pre class="c-pre">
+                <code class="sass u-no-max">@function var($variable) {
+  @return unquote('var(' + $variable + ')');
+}
+                </code>
+              </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background-image="./images/skyfall.jpg" data-background-size="cover" data-background-position="0% 0%">
+                        <h2 class="c-title--white">This is the end</h2>
+                    </section>
+
+                    <section>
+                        <h2>Main resources</h2>
+                        <p>W3C spec: <a href="https://www.w3.org/TR/css-variables-1/" target="_blank">https://www.w3.org/TR/css-variables-1/</a></p>
+                        <p>
+                            Google Dev:
+                            <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank"
+                                >https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care</a
+                            >
+                        </p>
+                        <p>
+                            MDN:
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank"
+                                >https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables</a
+                            >
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Other resources</h2>
+                        <p>Codepen with SASS: <a href="https://codepen.io/vank0/pen/kkGvAb" target="_blank">https://codepen.io/vank0/pen/kkGvAb</a></p>
+                        <p>
+                            Building theme:
+                            <a href="https://cloudfour.com/thinks/building-themes-with-css4-color-features/" target="_blank"
+                                >https://cloudfour.com/thinks/building-themes-with-css4-color-features/</a
+                            >
+                        </p>
+                        <p>
+                            Player:
+                            <a href="https://googlechrome.github.io/samples/css-custom-properties/index.html" target="_blank"
+                                >https://googlechrome.github.io/samples/css-custom-properties/index.html</a
+                            >
+                        </p>
+                    </section>
+                </section>
+
+                <section data-background-image="./images/carlton-dancing.gif" data-background-size="auto" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Many thanks</h2>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" charset="UTF-8">
+            Reveal.initialize({
+                // Display presentation control arrows
+                controls: true,
+
+                // Help the user learn the controls by providing hints, for example by
+                // bouncing the down arrow when they first encounter a vertical slide
+                controlsTutorial: true,
+
+                // Determines where controls appear, "edges" or "bottom-right"
+                controlsLayout: 'bottom-right',
+
+                // Visibility rule for backwards navigation arrows; "faded", "hidden"
+                // or "visible"
+                controlsBackArrows: 'faded',
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Set default timing of 2 minutes per slide
+                defaultTiming: 120,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Push each slide change to the browser history
+                history: true,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+
+                // Change the presentation direction to be RTL
+                rtl: false,
+
+                // Randomizes the order of slides each time the presentation loads
+                shuffle: false,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Flags if we should show a help overlay when the questionmark
+                // key is pressed
+                help: true,
+
+                // Flags if speaker notes should be visible to all viewers
+                showNotes: false,
+
+                // Global override for autoplaying embedded media (video/audio/iframe)
+                // - null: Media will only autoplay if data-autoplay is present
+                // - true: All media will autoplay, regardless of individual setting
+                // - false: No media will autoplay, regardless of individual setting
+                autoPlayMedia: null,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Use this method for navigation when auto-sliding
+                autoSlideMethod: Reveal.navigateNext,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+                // individually
+                previewLinks: false,
+
+                // Transition style
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
+
+                // The display mode that will be used to show slides
+                display: 'block',
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                width: 1200,
+                height: 800,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.1,
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.2,
+                maxScale: 1.5,
+
+                dependencies: [
+                    // Syntax highlight for <code> elements
+                    {
+                        src: 'https://unpkg.com/reveal.js@3.6.0/plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        },
+                    },
+                ],
+            });
+        </script>
+    </body>
+</html>
