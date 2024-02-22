@@ -1,33 +1,33 @@
 {
-  "name": "slides",
-  "description": "Go on: https://rochejul.github.io/slides/ to see the slides app",
-  "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {
-    "http-server": "14.1.1",
-    "prettier": "^3.2.4"
-  },
-  "scripts": {
-    "dev:format": "prettier --write './slides/**/*.{js,mjs,ts,json,md,html}' ./index.html",
-    "start": "http-server --port 3005 --cors"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rochejul/slides.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rochejul/slides/issues"
-  },
-  "homepage": "https://github.com/rochejul/slides#readme",
-  "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
-  },
-  "volta": {
-    "node": "20.11.0",
-    "npm": "10.2.4"
-  }
+    "name": "slides",
+    "description": "Go on: https://rochejul.github.io/slides/ to see the slides app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "devDependencies": {
+        "http-server": "14.1.1",
+        "prettier": "^3.2.4"
+    },
+    "scripts": {
+        "dev:format": "prettier --write './slides/**/*.{js,mjs,ts,json,md,html}' ./index.html",
+        "start": "http-server --port 3005 --cors --ssl --cert cert.pem"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rochejul/slides.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/rochejul/slides/issues"
+    },
+    "homepage": "https://github.com/rochejul/slides#readme",
+    "engines": {
+        "node": ">=20.0.0",
+        "npm": ">=10.0.0"
+    },
+    "volta": {
+        "node": "20.11.0",
+        "npm": "10.2.4"
+    }
 }
