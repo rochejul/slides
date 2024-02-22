@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dependencies: [
             // Syntax highlight for <code> elements
             {
-                src: '/shared/frameworks/reveal.js@3.6.0/plugins/highlight.js',
+                src: `${location.hostname === 'rochejul.github.io' ? '/slides' : ''}/shared/frameworks/reveal.js@3.6.0/plugins/highlight.js`,
                 async: true,
                 callback: function () {
                     hljs.initHighlightingOnLoad();
