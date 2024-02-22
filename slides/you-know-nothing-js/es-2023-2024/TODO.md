@@ -2,6 +2,8 @@ What the web can do: https://thewebshowcase.withgoogle.com/
 
 -   Observables
     -   https://twitter.com/i/bookmarks?post_id=1737773777885270426
+-   Storage bucket API
+    -   https://wicg.github.io/storage-buckets/explainer
 -   Close Watcher API
     -   https://twitter.com/i/bookmarks?post_id=1737659403107529107
 -   Transition view API
