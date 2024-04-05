@@ -6,13 +6,17 @@ What the web can do: https://thewebshowcase.withgoogle.com/
     -   https://wicg.github.io/storage-buckets/explainer
 -   Close Watcher API
     -   https://twitter.com/i/bookmarks?post_id=1737659403107529107
+    -   https://developer.chrome.com/blog/new-in-chrome-120
 -   Transition view API
     -   https://twitter.com/i/bookmarks?post_id=1732020295467204946
     -   https://twitter.com/bramus/status/1749461824817311947?t=uNLFsjTi8FYt0S-ka9eXjg&s=19
 -   Page Visibility Api
     -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=page_visibility&params=&sectionId=features&subSectionId=browser_apis
+    -   https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
 -   Broadcast channel api
     -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=broadcast_channel&params=&sectionId=features&subSectionId=browser_apis
+    -   https://developer.chrome.com/blog/broadcastchannel
+    -   https://developer.mozilla.org/fr/docs/Web/API/Broadcast_Channel_API
 -   Set
     -   https://twitter.com/i/bookmarks?post_id=1597947853598785537
 -   Temporal
@@ -59,3 +63,4 @@ What the web can do: https://thewebshowcase.withgoogle.com/
     -   https://2022.stateofjs.com/en-US/features/language/#promise_all_settled
     -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=promise_any&params=&sectionId=features&subSectionId=language
     -   https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2022&blockId=top_level_await&params=&sectionId=features&subSectionId=language
+    -   https://twitter.com/wesbos/status/1771229279826682162?t=RbOZWn8a2_VLsMocaNDsnA&s=03

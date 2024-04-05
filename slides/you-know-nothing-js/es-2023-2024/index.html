@@ -80,34 +80,160 @@
 
                     <section>
                         <h2>Array</h2>
+                        <ul>
+                            <li>Grouping</li>
+                            <li>Async helpers</li>
+                            <li>New utility methods</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Array & grouping</h2>
+                        <pre class="c-pre">
+            <code class="javascript u-no-max">const sequence = [1, 2, 3]; // will never change
+sequence.group((n) => n%2 ? 'even' : 'odd'); // => {even: [2], odd: [1, 3]}</code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h2>Array & async helper</h2>
+                        <pre class="c-pre">
+            <code class="javascript u-no-max">async function* asynGen(n) {
+   for (let i = 0; i < n; ++i) { yield i * 2 }
+}
+const multiply = (n) => n * 2
+await Array.fromAsync(asyncGen(2), multiply); // [2, 4]</code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h2>Array & new utility methods</h2>
+                        <ul>
+                            <li>findLast</li>
+                            <li>findLastIndex</li>
+                            <li>at</li>
+                        </ul>
                     </section>
 
                     <section>
                         <h2>Set</h2>
+                        <div>A sound of maths</div>
+                        <ul>
+                            <li>intersection</li>
+                            <li>union</li>
+                            <li>difference</li>
+                            <li>symmetricDifference</li>
+                            <li>isSubsetOf</li>
+                            <li>isSupersetOf</li>
+                            <li>isDisjointFrom</li>
+                        </ul>
                     </section>
 
                     <section>
                         <h2>RegExp</h2>
+                        <div>New operators</div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">// difference/subtraction (in A but not in B)
+[A--B]
+
+// intersection (in both A and B)
+[A&&B]
+
+// nested character classes (needed to enable the above)
+[A--[0-9]]</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>Weakmap</h2>
+                        <div>Symbols as WeakMap keys</div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const weakmap = new WeakMap();
+const key = Symbol('itsKey');
+const value = 'Random';
+weakmap.set(key, value);
+console.log(weakmap.get(key)); // Random</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>Intl</h2>
+                        <div>Split strings into sentences, words or graphemes with "Intl.Segmenter"</div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const segmenter = new Intl.Segmenter(
+    'en', { granularity: 'sentence' // 'word', 'grapheme' }
+);
+
+console.log(
+    Array.from(
+        segmenter.segment(`I'm like 🫣. But you are, too! 🫵`),
+        s => s.segment
+    )
+)// ['I'm like 🫣. ', ' But you are, too! ', '🫵']</code>
                     </section>
 
                     <section>
                         <h2>Temporal</h2>
+                        <div>New successor of the Date object (bye bye Moment.js)</div>
+                        <div><a href="https://tc39.es/proposal-temporal/docs/index.html" target="_blank">Full documentation</a></div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">let now = Temporal.Now.plainDate(); // To replace new Date();
+let currentYear = now.getFullYear();
+console.log(currentYear);</code>
+                        </pre>
                     </section>
 
                     <section>
                         <h2>Unicode formatting</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const wellFormedStr = "Hello, World!";
+const illFormedStr = "Hello, \uD800 World!";
+
+console.log(wellFormedStr.isWellFormed()); // true 
+console.log(illFormedStr.isWellFormed()); // false
+console.log(wellFormedStr.toWellFormed()); // Hello, World!
+console.log(illFormedStr.toWellFormed()); // Hello, � World!</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>Error</h2>
+                        <div>Add the optional cause property for debugging and simplify production issue analysis</div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">function buildRSA(p, q) {
+    if (!Number.isInteger(p) || !Number.isInteger(q)) {
+        throw new Error("RSA key generation requires integer inputs.", {
+        cause: { code: "NonInteger", values: [p, q] },
+        });
+    }
+    if (!areCoprime(p, q)) {
+        throw new Error("RSA key generation requires two coprime integers.", {
+        cause: { code: "NonCoprime", values: [p, q] },
+        });
+    }
+}</code>
+                </pre>
+                    </section>
+
+                    <section>
+                        <h2>Promise</h2>
+                        <div>New utility methods</div>
+                        <ul>
+                            <li>Promise.allSettled(promises) (called when all promises are done, resolved or not)</li>
+                            <li>Promise.any(promises) (called when the first promise is resolved)</li>
+                            <li>Promise.withResolvers() (return an object with the promise, the resolve and reject methods</li>
+                        </ul>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">async function readFile(file) {
+   const { promise, resolve, reject } = Promise.withResolvers();
+   const reader = new FileReader();
+   reader.onload = resolve;
+   reader.onerror = reject;
+   reader.onabort = reject;
+   reader.readAsText(file);
+   return promise;
+}</code>
+                </pre>
                     </section>
                 </section>
 
@@ -118,23 +244,170 @@
                     </section>
 
                     <section>
-                        <h2>Observables</h2>
+                        <h2>Array & non mutating methods</h2>
+                        <div>A sound of functional</div>
+                        <pre class="c-pre">
+            <code class="javascript u-no-max">const sequence = [1, 2, 3]; // will never change
+sequence.spliced(2, 2); // => [3]
+sequence.toReversed(); // => [3, 2, 1]
+sequence.toSorted(); // => [1, 2, 3]
+sequence.with(2, 6); // => [1, 2, 6]</code>
+</pre>
                     </section>
 
                     <section>
-                        <h2>Array - non mutating methods</h2>
+                        <h2>Record & Tuple</h2>
+                        <div>Records and Tuples can only contain primitives and other Records and Tuples. You could think of Records and Tuples as "compound primitives". By being thoroughly based on primitives, not objects, Records and Tuples are deeply immutable.</div>
                     </section>
 
                     <section>
                         <h2>Record</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const proposal = #{
+    id: 1234,
+    title: "Record & Tuple proposal",
+    contents: `...`,
+    // tuples are primitive types so you can put them in records:
+    keywords: #["ecma", "tc39", "proposal", "record", "tuple"],
+};
+
+// Accessing keys like you would with objects!
+console.log(proposal.title); // Record & Tuple proposal
+console.log(proposal.keywords[1]); // tc39
+
+// Spread like objects!
+const proposal2 = #{
+    ...proposal,
+    title: "Stage 2: Record & Tuple",
+};
+console.log(proposal2.title); // Stage 2: Record & Tuple
+console.log(proposal2.keywords[1]); // tc39
+
+// Object functions work on Records:
+console.log(Object.keys(proposal)); // ["contents", "id", "keywords", "title"]</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>Tuple</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const measures = #[42, 12, 67, "measure error: foo happened"];
+
+// Accessing indices like you would with arrays!
+console.log(measures[0]); // 42
+console.log(measures[3]); // measure error: foo happened
+
+// Slice and spread like arrays!
+const correctedMeasures = #[
+    ...measures.slice(0, measures.length - 1),
+    -1
+];
+console.log(correctedMeasures[0]); // 42
+console.log(correctedMeasures[3]); // -1
+
+// or use the .with() shorthand for the same result:
+const correctedMeasures2 = measures.with(3, -1);
+console.log(correctedMeasures2[0]); // 42
+console.log(correctedMeasures2[3]); // -1
+
+// Tuples support methods similar to Arrays
+console.log(correctedMeasures2.map(x => x + 1)); // #[43, 13, 68, 0]]</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>Pipeline operator</h2>
+                        <div>The pipeline operator is a syntax sugar for chaining functions in a readable manner. It promises to make functional programming in JavaScript more intuitive and code more readable.</div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const double = (x) => x * 2;
+const addFive = (x) => x + 5;
+                                
+// Before: const result = addFive(double(10));
+const result = 10 |> double |> addFive; // 25</code>
+                </pre>
+                    </section>
+
+                    <section>
+                        <h2>Observables</h2>
+                        <div>They are <a href="https://github.com/WICG/observable" target="_blank">in your browser</a> now!</div>
+                        <div>(if not on chrome, do: <a href="chrome://flags/#observable-api" target="_blank">chrome://flags/#observable-api</a>)</div>
+                    </section>
+
+                    <section>
+                        <h2>Observables & Conversion</h2>
+                        <div>Use of Observable.from on:</div>
+                        <ul>
+                            <li>Observable (in which case it just returns the given object)</li>
+                            <li>AsyncIterable (anything with Symbol.asyncIterator)</li>
+                            <li>Iterable (anything with Symbol.iterator)</li>
+                            <li>Promise (or any thenable)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Observables & your own instance</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const observable = new Observable((subscriber) => {
+    let i = 0;
+    setInterval(() => {
+        if (i >= 10) subscriber.complete();
+        else subscriber.next(i++);
+    }, 2000);
+});
+
+observable.subscribe({
+    next: console.log, // Print each value the Observable produces
+    complete: console.info, // optional
+    error: console.error, // optional
+});</code>
+                </pre>
+                    </section>
+
+                    <section>
+                        <h2>Observables & AbortController</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">// An observable that synchronously emits unlimited data during subscription.
+let observable = new Observable((subscriber) => {
+    let i = 0;
+    while (true) {
+        subscriber.next(i++);
+    }
+});
+
+let controller = new AbortController();
+observable.subscribe({
+    next: (data) => {
+        if (data > 100) controller.abort();
+    }}, {signal: controller.signal},
+});</code>
+                </pre>
+                    </section>
+
+                    <section>
+                        <h2>Observables & <a href="https://github.com/tc39/proposal-iterator-helpers" target="_blank">Operators</a></h2>
+                        <div>Part 1</div>
+                        <ul>
+                            <li>takeUntil (Returns an observable that mirrors the one that this method is called on, until the input observable emits its first value)</li>
+                            <li>finally (like Promise.prototype.finally)</li>
+                            <li>map</li>
+                            <li>filter</li>
+                            <li>take (takes an integer as an argument. It returns an iterator that produces, at most, the given number of elements produced by the underlying iterator)</li>
+                            <li>drop (takes an integer as an argument. It skips the given number of elements produced by the underlying iterator before itself producing any remaining elements)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Observables & <a href="https://github.com/tc39/proposal-iterator-helpers" target="_blank">Operators</a></h2>
+                        <div>Part 2</div>
+                        <ul>
+                            <li>flatMap</li>
+                            <li>reduce</li>
+                            <li>toArray</li>
+                            <li>forEach</li>
+                            <li>some</li>
+                            <li>every</li>
+                            <li>find</li>
+                        </ul>
                     </section>
                 </section>
 
@@ -145,19 +418,98 @@
                     </section>
 
                     <section>
+                        <h2>Observables & Events</h2>
+                        <div>Use <b>on</b> instead of <b>addEventListener</b></div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">// Filtering and mapping:
+element
+    .on('click')
+    .filter((e) => e.target.matches('.foo'))
+    .map((e) => ({ x: e.clientX, y: e.clientY }))
+    .subscribe({ next: handleClickAtPoint });</code>
+                </pre>
+                    </section>
+
+                    <section>
                         <h2>Close Watcher API</h2>
+                        <div>Unified way to handle modal/side panel close (with Esc or back gesture on mobile device)</div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const watcher = new CloseWatcher();
+
+watcher.addEventListener("cancel", () => {
+    console.log("CloseWatcher cancel event");
+});
+watcher.addEventListener("close", () => {
+    document.querySelector("#sidebar").classList.remove("open");
+});</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>Page Visibility API</h2>
+                        <div>Api to let you know if your current document (page, iframe) is visible for the user or not</div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        audio.pause();
+    } else {
+        audio.play();
+    }
+});</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>Broadcast Channel API</h2>
+                        <p>Simple message bus that allows pub/sub semantics between windows/tabs, iframes, web workers, and service workers<b> on the same origin</b></p>
+                        <p>It doesn't replace the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API" target="_blank">MessageChanel api</a> (for web workers) or <b>window.postMessage() (for windows)</b></p>
+                    </section>
+                    <section>
+                        <h2>Broadcast Channel API</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">// Connect to the channel named "my_bus".
+const channel = new BroadcastChannel('my_bus');
+
+// Send a message on "my_bus".
+channel.postMessage('This is a test message.');
+channel.postMessage(new Blob(['foo', 'bar'], {type: 'plain/text'}));
+// Strings, Objects, Arrays, Blobs, ArrayBuffer, Map
+
+// Listen for messages on "my_bus".
+channel.onmessage = function(e) {
+    console.log('Received', e.data);
+};
+
+// Close the channel when you're done.
+channel.close();</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>Storage Bucket API</h2>
+                        <p>Ability to create multiple storage buckets, where the user agent may choose to delete each bucket independently of other buckets</p>
+                        <ul>
+                            <li>More control over prioritization and organization</li>
+                            <li>Divide and organize their data.</li>
+                            <li>Be smart with quota usage by keeping track of quota usage per bucket</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Storage Bucket API</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const draftsBucket = await navigator.storageBuckets.open(
+    "drafts", { durability: "strict", persisted: true });
+
+const draftBlob = await draftsBucket.createBlob(
+    ["Message text."], { type: "text/plain" });
+
+const draftFile = await draftsBucket.createFile(
+    ["Attachment data"], "attachment.txt",
+    { type: "text/plain", lastModified: Date.now() });
+
+// We could list history, add handlers on modifications, etc...</code>
+                </pre>
                     </section>
                 </section>
 
@@ -180,14 +532,112 @@
 
                     <section>
                         <h2>EcmaScript - Decorators</h2>
+                        <div>We have now an official version to augment the behavior of classes, properties or method</div>
+                        <div>It allows decorators composition and decorators with parameters</div>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">@requireAuth
+@requireAdmin
+class SampleClass {
+    @trackExecution
+    performAction(parameter1, parameter2) {
+    // Method implementation goes here
+    }
+
+    @validateParam(0, 10)
+    multiply(a, b) {
+        return a * b;
+    }
+}</code>
+                </pre>
+                    </section>
+
+                    <section>
+                        <h2>EcmaScript - Decorators</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">function decoratorFactory(config) {
+    return function decorator(target, key, descriptor) {
+        // Customize the behavior of the decorator based on the 'config' argument.
+        // Modify the 'descriptor' or take other actions as needed.
+        // Descriptor is the same contract used for Object.defineProperty
+    };
+}</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>EcmaScript - Realm</h2>
+                        <p>Mechanism for creating isolated JavaScript environments</p>
+                        <p>Useful for secure code execution and sandboxing, allowing you to run code in a controlled and isolated context</p>
+                    </section>
+
+                    <section>
+                        <h2>EcmaScript - Realm</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const igorsRealm = new Realm();
+igorsRealm.evaluate('this'); // Throws a TypeError
+igorsRealm.evaluate('new Array()'); // Throws a TypeError
+igorsRealm.evaluate('Object.keys({})'); // Throws a TypeError
+
+const doubleFunction = igorsRealm.evaluate('num => num * 2');
+doubleFunction(10); // returns 20
+
+const processNumber = igorsRealm.evaluate('(number, callback) => callback(number + 5)');
+processNumber(5, (result => console.log(result))); // Logs 10 (5 + 5)</code>
+                </pre>
                     </section>
 
                     <section>
                         <h2>JavaScript - Web Component</h2>
+                        <p>To declare a Web component, we need some imperative</p>
+                        <p>this is not great for server side rendering, even to build static HTML</p>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">const host = document.getElementById('host');
+const shadowRoot = host.attachShadow({mode: 'open'});
+shadowRoot.innerHTML = '<h1>Hello Shadow DOM</h1>';</code>
+                </pre>
+                    </section>
+
+                    <section>
+                        <h2>JavaScript - Web Component</h2>
+                        <p>Now we have a declarative way to define a shadow dom</p>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">&lt;menu-toggle&gt;
+    &lt;template shadowrootmode=&quot;open&quot;&gt;
+        &lt;button&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+        &lt;/button&gt;
+    &lt;/template&gt;
+    Open Menu
+&lt;/menu-toggle&gt;</code>
+                </pre>
+                    </section>
+
+                    <section>
+                        <h2>JavaScript - Web Component</h2>
+                        <p>It's ease hydration, avoid flash styling and could be used for server side rendering</p>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">class MenuToggle extends HTMLElement {
+    constructor() {
+        super();
+
+        // Detect whether we have SSR content already:
+        if (this.shadowRoot) {
+        // A Declarative Shadow Root exists!
+        // wire up event listeners, references, etc.:
+        const button = this.shadowRoot.firstElementChild;
+        button.addEventListener('click', toggle);
+        } else {
+        // A Declarative Shadow Root doesn't exist.
+        // Create a new shadow root and populate it:
+        const shadow = this.attachShadow({mode: 'open'});
+        shadow.innerHTML = `<button><slot></slot></button>`;
+        shadow.firstChild.addEventListener('click', toggle);
+        }
+    }
+}
+
+customElements.define('menu-toggle', MenuToggle);</code>
+                </pre>
                     </section>
                 </section>
 
@@ -200,7 +650,22 @@
                     <section>
                         <h2>Official</h2>
                         <ul>
-                            <li><a href="xxxx" target="_blank">xxxx</a></li>
+                            <li><a href="https://wicg.github.io/storage-buckets/explainer" target="_blank">Storage Bucket API</a></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Google</h2>
+                        <ul>
+                            <li><a href="https://thewebshowcase.withgoogle.com/" target="_blank">The Web show case</a></li>
+                            <li><a href="https://developer.chrome.com/docs/css-ui/declarative-shadow-dom" target="_blank">Declarative Shadow DOM</a></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Misc</h2>
+                        <ul>
+                            <li><a href="https://www.sitepoint.com/javascript-decorators-what-they-are/" target="_blank">Decorators, what they are</a></li>
                         </ul>
                     </section>
                 </section>
