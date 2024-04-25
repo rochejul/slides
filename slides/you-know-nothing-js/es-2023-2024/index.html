@@ -522,6 +522,100 @@ const draftFile = await draftsBucket.createFile(
 
                     <section>
                         <h2>Transition View API</h2>
+                        <p>The idea: provides a simplified way to create animations between pages and to remove the scrolling position between pages</p>
+                    </section>
+
+                    <section>
+                        <h2><a href="https://codepen.io/bramus/pen/MWLZoRd" target="_blank">Example</a></h2>
+                        <iframe class="c-iframe" src="https://codepen.io/bramus/embed/MWLZoRd?default-tab=result" scrolling="no" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>How it works?</h2>
+                        <ul>
+                            <li>We use a method to update the DOM to notify we want a transition.</li>
+                            <li>The browser creates a state and generates a screenshot.</li>
+                            <li>The browser creates a pseudo-element structure between the two pages.</li>
+                            <li>The browser applies the animation.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Update DOM</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">document.startViewTransition(() => updateTheDOMSomehow(data));
+// if the callback is async, then we could use an async method to render the DOM
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Pseudo-element structure (overview)</h2>
+                        <pre class="c-pre">
+                            <code class="text u-no-max">::view-transition
+└─ ::view-transition-group(root)
+    └─ ::view-transition-image-pair(root)
+        ├─ ::view-transition-old(root)
+        └─ ::view-transition-new(root);</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Pseudo-element structure (details)</h2>
+                        <ul>
+                            <li>::view-transition is used to define a background color for the transition</li>
+                            <li>::view-transition-old(root) is a screenshot of the old view</li>
+                            <li>::view-transition-new(root) is a live representation of the new view</li>
+                            <li>::view-transition-image-pair(root) is used for the fading effect</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>What about ::view-transition-group(xxx)?</h2>
+                        <p>Usually, we have only one group: root (which represents the whole page)</p>
+                        <p>However we could associate an element to a specific name and set a specific transition</p>
+                        <p>(e.g. if we have the same header, we could change the content in another way)</p>
+                    </section>
+
+                    <section>
+                        <h2>Pseudo-element structure (overview)</h2>
+                        <pre class="c-pre">
+                            <code class="text u-no-max">::view-transition
+├─ ::view-transition-group(root)
+│  └─ ::view-transition-image-pair(root)
+│     ├─ ::view-transition-old(root)
+│     └─ ::view-transition-new(root)
+└─ ::view-transition-group(sidebar)
+    └─ ::view-transition-image-pair(sidebar)
+        ├─ ::view-transition-old(sidebar)
+        └─ ::view-transition-new(sidebar)</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>::view-transition-group(xxx) usage</h2>
+                        <pre class="c-pre">
+                            <code class="css u-no-max">.sidebar {
+    view-transition-name: sidebar;
+}
+
+/* Entry transition */
+::view-transition-new(sidebar):only-child {
+  animation: 300ms cubic-bezier(0, 0, 0.2, 1) both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+/* Exit transition */
+::view-transition-old(sidebar):only-child {
+  animation: 150ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-right;
+}</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2><a href="https://simple-set-demos.glitch.me/enter-exit-sidebar/" target="_blank">Example</a></h2>
+                        <iframe class="c-iframe" src="https://simple-set-demos.glitch.me/enter-exit-sidebar/" scrolling="no" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
                     </section>
                 </section>
 
