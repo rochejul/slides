@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Breaking CSS - CSS5</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/frameworks/highlight.js@9.12.0/idea.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/frameworks/reveal.js@3.6.0/reveal.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/frameworks/reveal.js@3.6.0/css/theme/white.css" />
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/css/main.css" />
+
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/highlight.js@9.12.0/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/reveal.js@3.6.0/head.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/reveal.js@3.6.0/reveal.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/init.js"></script>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-image="./images/maik-jonietz-535261-unsplash.jpg" data-background-size="cover" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Breaking CSS</h2>
+                    <h3 class="c-title--white"><u>CSS5</u></h3>
+                </section>
+
+                <section>
+                    <h2>Before we start, never forget this mantra</h2>
+                    <blockquote>
+                        <p>
+                            CSS has been designed to style documents, not applications. Anyone that has tried to use CSS at scale knows how it requires too many restrictions and
+                            rules to make it work. In short, it's painful and not really a pleasure.
+                        </p>
+                        <p><i>Maxime Thirouin</i></p>
+                    </blockquote>
+                </section>
+
+                <!-- Goal -->
+                <section data-background-image="./images/goal.jpg" data-background-size="cover" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Goal</h2>
+                    <h3 class="c-title--white">Discover <i>some</i> CSS5 features</h3>
+                    <h4 class="c-title--white">And then invalidate the previous mantra :)</h4>
+                </section>
+
+                <!-- Basics -->
+                <section>
+                    <section data-background-image="./images/main.webp" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Big picture</h2>
+                    </section>
+
+                    <section>
+                        <h2>What is the Chrome DevTools?</h2>
+                        <p>This is the superhero tools for Web devs</p>
+                        <ul>
+                            <li>It contains debugging tools</li>
+                            <li>It contains editing tools</li>
+                            <li>It contains inspecting and profiling tools</li>
+                            <li>It contains emulating tools</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <!-- Basic -->
+                <section>
+                    <section data-background-image="./images/basic.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">You and the Console</h2>
+                    </section>
+
+                    <section>
+                        <h2>For DOM inspection</h2>
+                        <p><i>$$(cssSelector[, rootElement])</i> will search any elements into the page</p>
+                        <img src="./resources/cdt-console-dom-search.gif" alt="" />
+                    </section>
+                </section>
+
+                <!-- Intermediate - 1 -->
+                <section>
+                    <section data-background-image="./images/intermediate.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">You and CDT's commands</h2>
+                    </section>
+
+                    <section>
+                        <h2>Command Menu</h2>
+                        <p>Type <i>Control+Shift+P</i> (Windows / Linux) or <i>Command+Shift+P</i> (Mac) to see all available command.</p>
+                        <img src="./resources/command-menu.avif" alt="" />
+                    </section>
+                </section>
+
+                <!-- Intermediate - 2 -->
+                <section>
+                    <section data-background-image="./images/intermediate-2.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">You and CDT's editors</h2>
+                    </section>
+
+                    <section>
+                        <h2>We have a ton of editors</h2>
+                        <p>They ease the definition of some CSS properties, HTML rendering, etc...</p>
+                    </section>
+                </section>
+
+                <!-- Advanced -->
+                <section>
+                    <section data-background-image="./images/advanced.png" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Advanced</h2>
+                    </section>
+
+                    <section>
+                        <a class="c-source" href="https://web.dev/lcp/" target="_blank" title="Source">[?]</a>
+                        <h2>Find easily Largest Contentful Paint (LCP)</h2>
+                        <img src="./resources/lcp.jpg" alt="" />
+                    </section>
+                </section>
+
+                <!-- Resources -->
+                <section>
+                    <section data-background-image="./images/resources.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Resources</h2>
+                    </section>
+
+                    <section>
+                        <h2>Main entry points</h2>
+                        <ul>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/devtools/" target="_blank">The Chrome Dev Tools doc</a>
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/intl/en_uk/chrome/canary/" target="_blank">Chrome Canary</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <!-- Many thanks -->
+                <section data-background-image="./images/thank-you.webp" data-background-size="contain" data-background-position="50% 50%">
+                    <h2 class="c-title--white">Many thanks</h2>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
