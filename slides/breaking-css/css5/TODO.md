@@ -36,6 +36,8 @@ https://developer.chrome.com/blog/tether-elements-to-each-other-with-css-anchor-
 https://developer.chrome.com/blog/anchor-positioning-api
 https://x.com/ChallengesCss/status/1797938453998653634?t=fEWVHwqe8myMH1Mt7hTHFw&s=03
 https://anchor-tool.com/
+https://x.com/coryrylan/status/1802353391156314125?t=lPu4rcomScmIbNgC6bq5eQ&s=03
+https://x.com/css/status/1806319068494147847?t=J5Owl1LmXdCOHXQFq8I7Dw&s=03
 
 position-try-options - https://x.com/jh3yy/status/1778949931178328110?t=ClPn_BjzwsWkbHVBKi6LpQ&s=03
 
@@ -65,6 +67,8 @@ https://x.com/jh3yy/status/1732553845530566855
 
 :has - https://x.com/argyleink/status/1747318890995327202
 nesting - https://x.com/argyleink/status/1747318890995327202
+https://x.com/argyleink/status/1804262846072787000
+
 container units- https://x.com/argyleink/status/1747318890995327202
 subgrid - https://x.com/argyleink/status/1747318890995327202
 field-sizing - https://x.com/jh3yy/status/1735719206715297956
@@ -80,8 +84,15 @@ https://x.com/jh3yy/status/1692586829961187741
 https://x.com/jh3yy/status/1691507355668586500
 https://x.com/bramus/status/1689396888951197698
 https://scroll-driven-animations.style/
+https://x.com/jecfish/status/1808019086942617800?t=gSpnF_q9uKRP6GkZlXa8Jg&s=03
 
 @starting-style - https://x.com/_davideast/status/1797684456012271827?t=BNj2Y6KY5aF1P7OOEWNpFw&s=03
 https://x.com/jh3yy/status/1798167382474854818?t=SWxccCGkZHIg5LC_k50kug&s=03
 
 ::details-content - https://x.com/css/status/1798687223833125063?t=9k4IyZmf2MCCLcfBHWmPbw&s=03
+
+inset-area: https://x.com/ChallengesCss/status/1805621389577064468?t=teBlnq2PbHMQFZxZYCQG9A&s=03
+
+case insensitive quzry selector: https://x.com/davidwalshblog/status/1805377270141317160?t=54i6C9LhkWrxHapC84i4Rw&s=03
+
+if https://x.com/stefanjudis/status/1802970762703462882?t=gltc3z3ACFH6CeDmMYmjBQ&s=03
