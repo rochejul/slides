@@ -25,6 +25,9 @@ fetchpriority attrbiute - https://developer.mozilla.org/en-US/docs/Web/API/HTMLI
 inert attribute - https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inert
 map tag - https://medium.com/@olansileismail1/exploring-the-latest-html5-features-of-2023-whats-new-for-web-developers-3cc51895c3cd
 popover - https://x.com/i/bookmarks?post_id=1793736874315686004
+ruby: https://x.com/ChromiumDev/status/1818100442724786224?t=C0JFol_PnpFJGoHYkXBALg&s=03
+dialog: https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog
+https://x.com/argyleink/status/1818782336554877305?t=VWCRk20pHUhHkiOyQaGGTA&s=03
 
 # CSS
 
@@ -32,6 +35,8 @@ popover - https://x.com/i/bookmarks?post_id=1793736874315686004
 
 write mode - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_writing_modes
 logical properties - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values
+
+https://x.com/jh3yy/status/1814041895011533056?t=LzbDgjx_-Hq4_jq4bQFrvQ&s=03
 
 ## Nouveau
 
@@ -82,3 +87,12 @@ https://x.com/reactive_dude/status/1695674826109681730
 https://x.com/jh3yy/status/1692586829961187741
 https://x.com/jh3yy/status/1691507355668586500
 https://x.com/bramus/status/1689396888951197698
+
+dialog and popover animation: https://x.com/Una/status/1821926648020705540?t=TPPGejWB8OymhPVoxzonyg&s=03
+https://x.com/stackblitz/status/1823009673777127426?t=gvK8XbFavCpWJldEPXHu9g&s=03
+
+file input button customization: https://x.com/codewithshripal/status/1824084464542368214?t=vzvAzlh8DSr_F-nFCY4urQ&s=03
+
+## javascript
+
+settiemout + args: https://x.com/sebastienlorber/status/1820810399316332894?t=80B8s4IjcyyhedtEdczt4A&s=03

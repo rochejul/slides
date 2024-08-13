@@ -1,3 +1,11 @@
+https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types
 https://x.com/mattpocockuk/status/1803348270799896789?t=i9eY43A4UVbSxb5KoDfkOA&s=03
 https://x.com/mattpocockuk/status/1802707952303825130?t=a5eNORT5PPBAGbEi-ddVpg&s=03
 https://x.com/mattpocockuk/status/1803059557800796652?t=yFpBldAfvwKGeujI1SItfQ&s=03
+https://x.com/mattpocockuk/status/1818768392792555610?t=5rRVvxE0WTRKtqRMCKUxRA&s=03
+https://x.com/mattpocockuk/status/1821926395380986219?t=yQAf_CF1E_z1G7O5UQPDbg&s=03
+https://x.com/mattpocockuk/status/1822917967316676787?t=iboQgV1UxXZBiNMCSCBp3w&s=03
+https://x.com/mattpocockuk/status/1823284205763121573?t=ewBqRs9llhOruWfuzAeq8g&s=09
+https://x.com/colinhacks/status/1824052417820021173?t=Jm4JQ7D3BDXM8STzP7Oa3g&s=03
+https://x.com/mattpocockuk/status/1824437686909702197?t=Yf0swBjhccax5xmSKGaxUA&s=03
+https://x.com/mattpocockuk/status/1826560704461066443?t=nhU15ECauXkmQgIihkRL8Q&s=03
