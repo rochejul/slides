@@ -1,16 +1,21 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="./resources/assets/favicon.ico" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Julien Roche's slides and games</title>
+
+        <script type="module" src="./resources/components/logo/index.js"></script>
+        <link rel="stylesheet" href="./resources/theme.css" />
+
         <link rel="prefetch" href="./slides/reactive-everywhere" as="document" />
         <link rel="prefetch" href="./slides/css/css-coding-conventions" as="document" />
         <link rel="prefetch" href="./slides/css/css-tricks" as="document" />
         <link rel="prefetch" href="./slides/css/css4-variables" as="document" />
         <link rel="prefetch" href="./slides/breaking-css/css5" as="document" />
         <link rel="prefetch" href="./slides/javascript/javascript-functional-programming" as="document" />
-        <link rel="prefetch" href="./slides/you-know-nothing-js/chrome-dev-tool" as="document" />
+        <link rel="prefetch" href="./slides/you-know-nothing-js/chrome-dev-tools" as="document" />
         <link rel="prefetch" href="./slides/you-know-nothing-js/console-api" as="document" />
         <link rel="prefetch" href="./slides/you-know-nothing-js/es-2023-2024" as="document" />
         <link rel="prefetch" href="./games/langton-ant" as="document" />
@@ -19,276 +24,288 @@
         <link rel="prefetch" href="./games/snake" as="document" />
     </head>
 
-    <body>
-        <h1>Slides & Games</h1>
-        <hr />
-        <ul>
-            <li>
-                <div>Slides</div>
-                <ul>
-                    <li>
-                        <a href="./slides/reactive-everywhere" target="_blank" title="Reactive everywhere?">Reactive everywhere?</a>
-                    </li>
-                    <li>
-                        <div>Around CSS</div>
-                        <ul>
-                            <li>
-                                <a href="./slides/css/css-coding-conventions" target="_blank" title="CSS Coding Conventions">CSS Coding Conventions</a>
-                            </li>
-                            <li>
-                                <a href="./slides/css/css-tricks" target="_blank" title="CSS Tricks">CSS Tricks</a>
-                            </li>
-                            <li>
-                                <a href="./slides/css/css4-variables/" target="_blank" title="CSS4 Variables">CSS4 Variables</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div>Around JavaScript</div>
-                        <ul>
-                            <li>
-                                <a href="./slides/javascript/javascript-functional-programming" target="_blank" title="JavaScript Functional Programming"
-                                    >JavaSCript Functional Programming</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div>You know nothing JS</div>
-                        <ul>
-                            <li>
-                                <a href="./slides/you-know-nothing-js/chrome-dev-tools" target="_blank" title="Chrome Dev Tools">Chrome Dev Tools</a>
-                            </li>
-                            <li>
-                                <a href="./slides/you-know-nothing-js/console-api" target="_blank" title="Console API">Console API</a>
-                            </li>
-                            <li>
-                                <a href="./slides/you-know-nothing-js/es-2023-2024" target="_blank" title="ES 2023/2024">ES 2023/2024</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div>Breaking CSS</div>
-                        <ul>
-                            <li>
-                                <a href="./slides/breaking-css/css5" target="_blank" title="CSS5">CSS5</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>Games</div>
-                <ul>
-                    <li>
-                        <a href="./games/langton-ant" target="_blank" title="Langton's ant">Langton's ant</a>
-                    </li>
-                    <li>
-                        <a href="./games/maze-runner" target="_blank" title="Maze runner">Maze runner</a>
-                    </li>
-                    <li>
-                        <a href="./games/mine-sweeper" target="_blank" title="Mine sweeper">Mine sweeper</a>
-                    </li>
-                    <li>
-                        <a href="./games/snake" target="_blank" title="Snake">Snake (use of RxJs)</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <br />
-        <h1>Awesome Resources</h1>
-        <hr />
-        <ul>
-            <li>
-                <div>Learning game</div>
-                <ul>
-                    <li>
-                        <a href="http://gabinaureche.com/logicalornot/" target="_blank" title="Logical (Or Not)">Logical (Or Not)</a>
-                    </li>
-                    <li>
-                        <a href="http://flukeout.github.io/" target="_blank" title="CSS Diner">CSS Diner</a>
-                    </li>
-                    <li>
-                        <a href="http://flexboxfroggy.com/" target="_blank" title="Flexbox Froggy">Flexbox Froggy</a>
-                    </li>
-                    <li>
-                        <a href="http://www.flexboxdefense.com/" target="_blank" title="Flexbox Defense">Flexbox Defense</a>
-                    </li>
-                    <li>
-                        <a href="https://cssgridgarden.com/" target="_blank" title="CSS Garden">CSS Garden</a>
-                    </li>
-                    <li>
-                        <a href="https://codingfantasy.com/games/css-grid-attack/play" target="_blank" title="Grid Attack">Grid Attack</a>
-                    </li>
-                    <li>
-                        <a href="https://www.guess-css.app/" target="_blank" title="Guess CSS">Guess CSS</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>State of the art</div>
-                <ul>
-                    <li>
-                        <a href="https://stateofjs.com/en-US" target="_blank" title="State of JavaScript">State of JavaScript</a>
-                    </li>
-                    <li>
-                        <a href="https://stateofcss.com/en-US" target="_blank" title="State of CSS">State of CSS</a>
-                    </li>
-                    <li>
-                        <a href="https://stateofhtml.com/en-US" target="_blank" title="State of HTML">State of HTML</a>
-                    </li>
-                    <li>
-                        <a href="https://whatwebcando.today/" target="_blank">https://whatwebcando.today/</a>
-                    </li>
-                    <li>
-                        <a href="https://caniuse.com/" target="_blank">https://caniuse.com/</a>
-                    </li>
-                    <li>
-                        <a href="https://www.caniemail.com/" target="_blank">https://www.caniemail.com/</a>
-                    </li>
-                    <li>
-                        <a href="https://caniuse.email/" target="_blank">https://caniuse.email/</a>
-                    </li>
-                    <li>
-                        <a href="https://a11ysupport.io/" target="_blank">https://a11ysupport.io/</a>
-                    </li>
-                    <li>
-                        <a href="https://rosettacode.org/" target="_blank">https://rosettacode.org/</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/GoogleChrome/web.dev/tree/main/src/site/content/en/blog" target="_blank"
-                            >https://github.com/GoogleChrome/web.dev/tree/main/src/site/content/en/blog</a
-                        >
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>Cookbook</div>
-                <ul>
-                    <li>
-                        <a href="https://github.com/fraxken/ebook_nodejs/blob/main/en/README.md" target="_blank">NodeJs Ebook</a>
-                    </li>
-                    <li>
-                        <div>Service Worker</div>
-                        <ul>
-                            <li>
-                                <a href="https://jakearchibald.com/2014/offline-cookbook/" target="_blank">https://jakearchibald.com/2014/offline-cookbook/</a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/mozilla/serviceworker-cookbook" target="_blank">https://github.com/mozilla/serviceworker-cookbook</a>
-                            </li>
-                            <li>
-                                <a href="https://ponyfoo.com/articles/serviceworker-revolution" target="_blank">https://ponyfoo.com/articles/serviceworker-revolution</a>
-                            </li>
-                            <li>
-                                <a href="https://serviceworke.rs/" target="_blank">https://serviceworke.rs/</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>Awesome Lists</div>
-                <ul>
-                    <li>
-                        <a href="https://github.com/obetomuniz/awesome-webcomponents" target="_blank">Web components (old)</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank">NodeJS</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/sindresorhus/awesome-npm" target="_blank">NPM - basics</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/feross/awesome-mad-science" target="_blank">NPM - advanced</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/sorrycc/awesome-javascript" target="_blank">JavaScript</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/stoeffel/awesome-fp-js" target="_blank">Functional JS</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/dustinspecker/awesome-eslint" target="_blank">Eslint</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/bnb/awesome-developer-streams" target="_blank">Developer Stream</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/anaibol/awesome-serverless" target="_blank">Serverless</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/heynickc/awesome-ddd" target="_blank">Domain-Driven Design</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>CSS resources</div>
-                <ul>
-                    <li>
-                        <a href="https://codyhouse.co/nuggets" target="_blank">One minute tutorial with modern effects</a>
-                    </li>
-                    <li>
-                        <a href="https://css-tip.com/" target="_blank">CSS tips</a>
-                    </li>
-                    <li>
-                        <a href="https://hallofshame.design/" target="_blank">Dark patterns</a>
-                    </li>
-                    <li>
-                        <a href="https://x.com/Div_pradeep/status/1820772847909749069?t=6_YQU3gT9_iRNe8dfIB8ZQ&s=03" target="_blank">nth-child Selector Cheatsheet</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>Rust resources</div>
-                <ul>
-                    <li>
-                        <a href="https://marabos.nl/atomics/" target="_blank">Rust Atomics and Locks</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>Accessibility</div>
-                <ul>
-                    <li>
-                        <a href="https://www.accessguide.io/" target="_blank">Friendly introduction of accessibility</a>
-                    </li>
-                    <li>
-                        <a href="https://a11y-guidelines.orange.com/en/articles/aria-status-messages/" target="_blank">Use ARIA for status messages</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>Tools</div>
-                <ul>
-                    <li>
-                        <a href="https://designer.sendune.com/" target="_blank">Email template generator</a>
-                    </li>
-                    <li>
-                        <a href="https://css-shape.com/rounded-edge/" target="_blank">Rounded edge generator</a>
-                    </li>
-                    <li>
-                        <a href="https://css-generators.com/" target="_blank">Various css generator</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div>Design</div>
-                <ul>
-                    <li><a href="https://github.com/javabuddy/best-system-design-resources" target="_blank">100+ Best System Design Resources for Interview and Learning</a></li>
-                    <li><a href="https://scs-architecture.org/" target="_blank">Self Contained System (SCS)</a></li>
-                    <li><a href="https://github.com/ddd-by-examples/library" target="_blank">Domain Driven Design by examples</a></li>
-                </ul>
-            </li>
-            <li>
-                <div>Misc.</div>
-                <ul>
-                    <li><a href="https://www.frameworkheroes.com/news" target="_blank">List of news letter per framework</a></li>
-                    <li><a href="https://algorithmsbook.com/" target="_blank">Algorithms for decision making</a></li>
-                    <li><a href="https://www.kamilgrzybek.com/blog/posts/modular-monolith-primer" target="_blank">Modular monolith: a primer</a></li>
-                    <li><a href="https://labs.iximiuz.com/playgrounds?category=linux" target="_blank">Linux instances playground</a></li>
-                </ul>
-            </li>
-        </ul>
+    <body class="page">
+        <header class="page__header">
+            <aside class="page__header__logo">
+                <jro-logo></jro-logo>
+            </aside>
+            <section class="page__header__title">
+                <p>Welcome on Julien's page</p>
+                <p class="page__header__title__sub">Where you come find slides, games/poc, and resources</p>
+            </div>
+        </header>
+
+        <article class="page__content">
+            <h1>Slides & Games</h1>
+            <hr />
+            <ul>
+                <li>
+                    <div>Slides</div>
+                    <ul>
+                        <li>
+                            <a href="./slides/reactive-everywhere" target="_blank" title="Reactive everywhere?">Reactive everywhere?</a>
+                        </li>
+                        <li>
+                            <div>Around CSS</div>
+                            <ul>
+                                <li>
+                                    <a href="./slides/css/css-coding-conventions" target="_blank" title="CSS Coding Conventions">CSS Coding Conventions</a>
+                                </li>
+                                <li>
+                                    <a href="./slides/css/css-tricks" target="_blank" title="CSS Tricks">CSS Tricks</a>
+                                </li>
+                                <li>
+                                    <a href="./slides/css/css4-variables/" target="_blank" title="CSS4 Variables">CSS4 Variables</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div>Around JavaScript</div>
+                            <ul>
+                                <li>
+                                    <a href="./slides/javascript/javascript-functional-programming" target="_blank" title="JavaScript Functional Programming"
+                                        >JavaSCript Functional Programming</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div>You know nothing JS</div>
+                            <ul>
+                                <li>
+                                    <a href="./slides/you-know-nothing-js/chrome-dev-tools" target="_blank" title="Chrome Dev Tools">Chrome Dev Tools</a>
+                                </li>
+                                <li>
+                                    <a href="./slides/you-know-nothing-js/console-api" target="_blank" title="Console API">Console API</a>
+                                </li>
+                                <li>
+                                    <a href="./slides/you-know-nothing-js/es-2023-2024" target="_blank" title="ES 2023/2024">ES 2023/2024</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div>Breaking CSS</div>
+                            <ul>
+                                <li>
+                                    <a href="./slides/breaking-css/css5" target="_blank" title="CSS5">CSS5</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Games</div>
+                    <ul>
+                        <li>
+                            <a href="./games/langton-ant" target="_blank" title="Langton's ant">Langton's ant</a>
+                        </li>
+                        <li>
+                            <a href="./games/maze-runner" target="_blank" title="Maze runner">Maze runner</a>
+                        </li>
+                        <li>
+                            <a href="./games/mine-sweeper" target="_blank" title="Mine sweeper">Mine sweeper</a>
+                        </li>
+                        <li>
+                            <a href="./games/snake" target="_blank" title="Snake">Snake (use of RxJs)</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <br />
+            <h1>Awesome Resources</h1>
+            <hr />
+            <ul>
+                <li>
+                    <div>Learning game</div>
+                    <ul>
+                        <li>
+                            <a href="http://gabinaureche.com/logicalornot/" target="_blank" title="Logical (Or Not)">Logical (Or Not)</a>
+                        </li>
+                        <li>
+                            <a href="http://flukeout.github.io/" target="_blank" title="CSS Diner">CSS Diner</a>
+                        </li>
+                        <li>
+                            <a href="http://flexboxfroggy.com/" target="_blank" title="Flexbox Froggy">Flexbox Froggy</a>
+                        </li>
+                        <li>
+                            <a href="http://www.flexboxdefense.com/" target="_blank" title="Flexbox Defense">Flexbox Defense</a>
+                        </li>
+                        <li>
+                            <a href="https://cssgridgarden.com/" target="_blank" title="CSS Garden">CSS Garden</a>
+                        </li>
+                        <li>
+                            <a href="https://codingfantasy.com/games/css-grid-attack/play" target="_blank" title="Grid Attack">Grid Attack</a>
+                        </li>
+                        <li>
+                            <a href="https://www.guess-css.app/" target="_blank" title="Guess CSS">Guess CSS</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>State of the art</div>
+                    <ul>
+                        <li>
+                            <a href="https://stateofjs.com/en-US" target="_blank" title="State of JavaScript">State of JavaScript</a>
+                        </li>
+                        <li>
+                            <a href="https://stateofcss.com/en-US" target="_blank" title="State of CSS">State of CSS</a>
+                        </li>
+                        <li>
+                            <a href="https://stateofhtml.com/en-US" target="_blank" title="State of HTML">State of HTML</a>
+                        </li>
+                        <li>
+                            <a href="https://whatwebcando.today/" target="_blank">https://whatwebcando.today/</a>
+                        </li>
+                        <li>
+                            <a href="https://caniuse.com/" target="_blank">https://caniuse.com/</a>
+                        </li>
+                        <li>
+                            <a href="https://www.caniemail.com/" target="_blank">https://www.caniemail.com/</a>
+                        </li>
+                        <li>
+                            <a href="https://caniuse.email/" target="_blank">https://caniuse.email/</a>
+                        </li>
+                        <li>
+                            <a href="https://a11ysupport.io/" target="_blank">https://a11ysupport.io/</a>
+                        </li>
+                        <li>
+                            <a href="https://rosettacode.org/" target="_blank">https://rosettacode.org/</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/GoogleChrome/web.dev/tree/main/src/site/content/en/blog" target="_blank"
+                                >https://github.com/GoogleChrome/web.dev/tree/main/src/site/content/en/blog</a
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Cookbook</div>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/fraxken/ebook_nodejs/blob/main/en/README.md" target="_blank">NodeJs Ebook</a>
+                        </li>
+                        <li>
+                            <div>Service Worker</div>
+                            <ul>
+                                <li>
+                                    <a href="https://jakearchibald.com/2014/offline-cookbook/" target="_blank">https://jakearchibald.com/2014/offline-cookbook/</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/mozilla/serviceworker-cookbook" target="_blank">https://github.com/mozilla/serviceworker-cookbook</a>
+                                </li>
+                                <li>
+                                    <a href="https://ponyfoo.com/articles/serviceworker-revolution" target="_blank">https://ponyfoo.com/articles/serviceworker-revolution</a>
+                                </li>
+                                <li>
+                                    <a href="https://serviceworke.rs/" target="_blank">https://serviceworke.rs/</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Awesome Lists</div>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/obetomuniz/awesome-webcomponents" target="_blank">Web components (old)</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank">NodeJS</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sindresorhus/awesome-npm" target="_blank">NPM - basics</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/feross/awesome-mad-science" target="_blank">NPM - advanced</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sorrycc/awesome-javascript" target="_blank">JavaScript</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/stoeffel/awesome-fp-js" target="_blank">Functional JS</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dustinspecker/awesome-eslint" target="_blank">Eslint</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/bnb/awesome-developer-streams" target="_blank">Developer Stream</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/anaibol/awesome-serverless" target="_blank">Serverless</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/heynickc/awesome-ddd" target="_blank">Domain-Driven Design</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>CSS resources</div>
+                    <ul>
+                        <li>
+                            <a href="https://codyhouse.co/nuggets" target="_blank">One minute tutorial with modern effects</a>
+                        </li>
+                        <li>
+                            <a href="https://css-tip.com/" target="_blank">CSS tips</a>
+                        </li>
+                        <li>
+                            <a href="https://hallofshame.design/" target="_blank">Dark patterns</a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/Div_pradeep/status/1820772847909749069?t=6_YQU3gT9_iRNe8dfIB8ZQ&s=03" target="_blank">nth-child Selector Cheatsheet</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Rust resources</div>
+                    <ul>
+                        <li>
+                            <a href="https://marabos.nl/atomics/" target="_blank">Rust Atomics and Locks</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Accessibility</div>
+                    <ul>
+                        <li>
+                            <a href="https://www.accessguide.io/" target="_blank">Friendly introduction of accessibility</a>
+                        </li>
+                        <li>
+                            <a href="https://a11y-guidelines.orange.com/en/articles/aria-status-messages/" target="_blank">Use ARIA for status messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Tools</div>
+                    <ul>
+                        <li>
+                            <a href="https://designer.sendune.com/" target="_blank">Email template generator</a>
+                        </li>
+                        <li>
+                            <a href="https://css-shape.com/rounded-edge/" target="_blank">Rounded edge generator</a>
+                        </li>
+                        <li>
+                            <a href="https://css-generators.com/" target="_blank">Various css generator</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Design</div>
+                    <ul>
+                        <li><a href="https://github.com/javabuddy/best-system-design-resources" target="_blank">100+ Best System Design Resources for Interview and Learning</a></li>
+                        <li><a href="https://scs-architecture.org/" target="_blank">Self Contained System (SCS)</a></li>
+                        <li><a href="https://github.com/ddd-by-examples/library" target="_blank">Domain Driven Design by examples</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Misc.</div>
+                    <ul>
+                        <li><a href="https://www.frameworkheroes.com/news" target="_blank">List of news letter per framework</a></li>
+                        <li><a href="https://algorithmsbook.com/" target="_blank">Algorithms for decision making</a></li>
+                        <li><a href="https://www.kamilgrzybek.com/blog/posts/modular-monolith-primer" target="_blank">Modular monolith: a primer</a></li>
+                        <li><a href="https://labs.iximiuz.com/playgrounds?category=linux" target="_blank">Linux instances playground</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
     </body>
 </html>

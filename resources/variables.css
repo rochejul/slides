@@ -1,0 +1,9 @@
+:root {
+    --color-dark: #0a0d12;
+    --color-grey: #81827f;
+    --color-white: white;
+    --color-red: #ac8aa3;
+    --color-blue: #171f3a;
+
+    --font: system-ui, sans-serif;
+}
