@@ -2,13 +2,13 @@
 
 :host {
     --image-size: 7rem;
-    --avatar-size: 8rem;
+    --logo-size: 8rem;
     --border-size: 0.25rem;
     --border-size-max: 1rem;
     --border-radius-size: 10rem;
 }
 
-.avatar {
+.logo {
     anchor-name: --anchor-el;
     background-color: var(--color-dark);
     border: var(--border-size) solid var(--color-grey);
@@ -16,11 +16,11 @@
     box-shadow: var(--border-size) var(--border-size) var(--border-size-max) var(--border-size) var(--color-grey);
     display: block;
     font-family: var(--font);
-    height: var(--avatar-size);
+    height: var(--logo-size);
     position: relative;
-    width: var(--avatar-size);
+    width: var(--logo-size);
 
-    & .avatar__wrapper {
+    & .logo__wrapper {
         align-items: center;
         border: var(--border-size) solid transparent;
         border-radius: var(--border-radius-size);
@@ -30,7 +30,7 @@
         overflow: hidden;
         width: var(--image-size);
 
-        & .avatar__wrapper__image {
+        & .logo__wrapper__image {
             height: var(--image-size);
             object-fit: scale-down;
             width: var(--image-size);
@@ -38,33 +38,33 @@
     }
 }
 
-.avatar::after {
+.logo::after {
     border: var(--border-size) solid var(--color-grey);
     border-radius: var(--border-radius-size);
     content: '';
-    height: var(--avatar-size);
+    height: var(--logo-size);
     position: absolute;
     left: calc(-1 * var(--border-size));
     top: calc(-1 * var(--border-size));
-    width: var(--avatar-size);
+    width: var(--logo-size);
 }
 
-.avatar:hover .avatar__wrapper__image {
+.logo:hover .logo__wrapper__image {
     animation:
         blur 250ms ease 125ms infinite,
         shake 250ms ease 125ms infinite;
 }
 
-.avatar:hover::after {
+.logo:hover::after {
     animation: 250ms linear 125ms infinite alternate wave;
 }
 
-.avatar-notice {
+.logo-notice {
     display: none;
     color: var(--color-white);
     background: var(--color-dark);
     border-radius: 0.75rem;
-    bottom: anchor(bottom);
+    bottom: anchor(bottom, 3rem);
     font-family: var(--font);
     font-weight: bold;
     left: anchor(right);
@@ -75,7 +75,7 @@
     position-anchor: --anchor-el;
 }
 
-.avatar:hover + .avatar-notice {
+.logo:hover + .logo-notice {
     display: initial;
 }
 
