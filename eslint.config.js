@@ -6,7 +6,7 @@ import prettier from 'eslint-plugin-prettier';
 export default [
     js.configs.recommended,
     {
-        files: ['resources/**/*.js', 'slides/**/*.js', 'shared/init.js'],
+        files: ['resources/**/*.js', 'slides/**/*.js', 'shared/init.js', 'service-worker.js'],
         languageOptions: {
             ecmaVersion: 'latest',
             sourceType: 'module',
