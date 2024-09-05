@@ -1,0 +1,4 @@
+{
+    "eslint.workingDirectories": [{ "mode": "location" }],
+    "eslint.useFlatConfig": true
+}
