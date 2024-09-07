@@ -1,0 +1,33 @@
+@import url('../../variables.css');
+
+:host {
+    all: initial;
+    display: inline-block;
+    font-family: var(--font);
+}
+
+.resource {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.resource::before {
+    background-image: url('../../assets/icons8-doctor-who-64.png');
+    background-size: contain;
+    content: '';
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: -1.5rem;
+}
+
+.resource:link {
+    color: var(--color-white);
+}
+
+.resource:visited {
+    color: var(--color-white);
+}

@@ -6,6 +6,10 @@
     --border-size: 0.25rem;
     --border-size-max: 1rem;
     --border-radius-size: 10rem;
+
+    all: initial;
+    display: inline-block;
+    font-family: var(--font);
 }
 
 .logo {
@@ -15,7 +19,6 @@
     border-radius: var(--border-radius-size);
     box-shadow: var(--border-size) var(--border-size) var(--border-size-max) var(--border-size) var(--color-grey);
     display: block;
-    font-family: var(--font);
     height: var(--logo-size);
     position: relative;
     width: var(--logo-size);
@@ -66,7 +69,6 @@
     border: 1px solid var(--color-grey);
     border-radius: 0.75rem;
     cursor: not-allowed;
-    font-family: var(--font);
     font-weight: bold;
     left: anchor(right);
     line-height: 1.5;

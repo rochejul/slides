@@ -19,6 +19,7 @@ body {
         background-image: url('./assets/CUUcfgz-doctor-who-hd-wallpaper.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+        box-shadow: 0 0.5rem 0.75rem 0.5rem rgba(0, 0, 0, 0.4);
         display: flex;
         flex-direction: row;
         margin-block-end: 1rem;
@@ -46,6 +47,21 @@ body {
         overflow: auto;
         scrollbar-color: var(--color-red) var(--color-blue);
         scrollbar-width: thin;
+    }
+
+    & .page__footer {
+        align-items: center;
+        background-clip: border-box;
+        background-image: url('./assets/CUUcfgz-doctor-who-hd-wallpaper.jpg');
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        height: 6rem;
+        justify-content: center;
+        margin-block-end: 1rem;
     }
 }
 
