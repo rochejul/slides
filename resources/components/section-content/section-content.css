@@ -1,0 +1,42 @@
+@import url('../../variables.css');
+
+:host {
+    all: initial;
+    display: block;
+    font-family: var(--font);
+}
+
+.card {
+    border: 1px solid var(--color-red);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: var(--color-white);
+    font-family: var(--font);
+    height: 100%;
+    min-height: 10vh;
+    overflow: hidden;
+    padding: 0 10rem 2rem 2rem;
+    position: relative;
+}
+
+.card::after {
+    background-image: url('../../assets/dalek-dw-1024x576.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all linear 500ms;
+    width: 10rem;
+}
+
+.card:hover {
+    padding-inline-end: 15rem;
+}
+
+.card:hover::after {
+    width: 15rem;
+}

@@ -47,6 +47,15 @@ body {
         overflow: auto;
         scrollbar-color: var(--color-red) var(--color-blue);
         scrollbar-width: thin;
+
+        & .page__content__section {
+            display: grid;
+            column-gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            padding-block-end: 3rem;
+            padding-block-start: 1rem;
+            row-gap: 6rem;
+        }
     }
 
     & .page__footer {

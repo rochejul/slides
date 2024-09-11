@@ -8,6 +8,7 @@
 
         <link rel="import" href="./resources/components/logo/logo.html" />
         <link rel="import" href="./resources/components/resource/resource.html" />
+        <link rel="import" href="./resources/components/section-content/section-content.html" />
         <link rel="import" href="./resources/components/section-title/section-title.html" />
         <link rel="stylesheet" href="./resources/theme.css" />
 
@@ -40,11 +41,10 @@
             </div>
         </header>
 
-        <article class="page__content">
+        <section class="page__content">
             <jro-section-title label="Slides & Games"></jro-section-title>
-            <ul>
-                <li>
-                    <div>Slides</div>
+            <section class="page__content__section">
+                <jro-section-content label="Slides">
                     <ul>
                         <li>
                             <a href="./slides/reactive-everywhere" target="_blank" title="Reactive everywhere?">Reactive everywhere?</a>
@@ -96,9 +96,8 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>Games</div>
+                </jro-section-content>
+                <jro-section-content label="Games">
                     <ul>
                         <li>
                             <a href="./games/langton-ant" target="_blank" title="Langton's ant">Langton's ant</a>
@@ -113,13 +112,12 @@
                             <a href="./games/snake" target="_blank" title="Snake">Snake (use of RxJs)</a>
                         </li>
                     </ul>
-                </li>
-            </ul>
-            <br />
+                </jro-section-content>
+            </section>
+
             <jro-section-title label="Awesome Resources"></jro-section-title>
-            <ul>
-                <li>
-                    <div>Learning game</div>
+            <section class="page__content__section">
+                <jro-section-content label="Learning game">
                     <ul>
                         <li>
                             <a href="http://gabinaureche.com/logicalornot/" target="_blank" title="Logical (Or Not)">Logical (Or Not)</a>
@@ -143,9 +141,9 @@
                             <a href="https://www.guess-css.app/" target="_blank" title="Guess CSS">Guess CSS</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>State of the art</div>
+                </jro-section-content>
+
+                <jro-section-content label="State of the art">
                     <ul>
                         <li>
                             <a href="https://stateofjs.com/en-US" target="_blank" title="State of JavaScript">State of JavaScript</a>
@@ -180,9 +178,9 @@
                             >
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>Cookbook</div>
+                </jro-section-content>
+
+                <jro-section-content label="Cookbook">
                     <ul>
                         <li>
                             <a href="https://github.com/fraxken/ebook_nodejs/blob/main/en/README.md" target="_blank">NodeJs Ebook</a>
@@ -208,9 +206,9 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>Awesome Lists</div>
+                </jro-section-content>
+
+                <jro-section-content label="Awesome Lists">
                     <ul>
                         <li>
                             <a href="https://github.com/obetomuniz/awesome-webcomponents" target="_blank">Web components (old)</a>
@@ -243,9 +241,9 @@
                             <a href="https://github.com/heynickc/awesome-ddd" target="_blank">Domain-Driven Design</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>CSS resources</div>
+                </jro-section-content>
+
+                <jro-section-content label="CSS resources">
                     <ul>
                         <li>
                             <a href="https://codyhouse.co/nuggets" target="_blank">One minute tutorial with modern effects</a>
@@ -260,17 +258,17 @@
                             <a href="https://x.com/Div_pradeep/status/1820772847909749069?t=6_YQU3gT9_iRNe8dfIB8ZQ&s=03" target="_blank">nth-child Selector Cheatsheet</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>Rust resources</div>
+                </jro-section-content>
+
+                <jro-section-content label="Rust resources">
                     <ul>
                         <li>
                             <a href="https://marabos.nl/atomics/" target="_blank">Rust Atomics and Locks</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>Accessibility</div>
+                </jro-section-content>
+
+                <jro-section-content label="Accessibility">
                     <ul>
                         <li>
                             <a href="https://www.accessguide.io/" target="_blank">Friendly introduction of accessibility</a>
@@ -279,9 +277,9 @@
                             <a href="https://a11y-guidelines.orange.com/en/articles/aria-status-messages/" target="_blank">Use ARIA for status messages</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>Tools</div>
+                </jro-section-content>
+
+                <jro-section-content label="Tools">
                     <ul>
                         <li>
                             <a href="https://designer.sendune.com/" target="_blank">Email template generator</a>
@@ -296,17 +294,17 @@
                             <a href="https://css-shape.com/" target="_blank">Various css shapes</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <div>Design</div>
+                </jro-section-content>
+
+                <jro-section-content label="Design">
                     <ul>
                         <li><a href="https://github.com/javabuddy/best-system-design-resources" target="_blank">100+ Best System Design Resources for Interview and Learning</a></li>
                         <li><a href="https://scs-architecture.org/" target="_blank">Self Contained System (SCS)</a></li>
                         <li><a href="https://github.com/ddd-by-examples/library" target="_blank">Domain Driven Design by examples</a></li>
                     </ul>
-                </li>
-                <li>
-                    <div>Misc.</div>
+                </jro-section-content>
+
+                <jro-section-content label="Misc.">
                     <ul>
                         <li><a href="https://www.frameworkheroes.com/news" target="_blank">List of news letter per framework</a></li>
                         <li><a href="https://algorithmsbook.com/" target="_blank">Algorithms for decision making</a></li>
@@ -314,9 +312,9 @@
                         <li><a href="https://labs.iximiuz.com/playgrounds?category=linux" target="_blank">Linux instances playground</a></li>
                         <li><a href="https://catalogue.projectsbyif.com/" target="_blank" title="UX Desing patterns catalog">UX Desing patterns catalog</a></li>
                     </ul>
-                </li>
-            </ul>
-        </article>
+                </jro-section-content>
+            </section>
+        </section>
 
         <footer class="page__footer">
             <jro-resource label="Twitter" url="https://x.com/rochejul"></jro-resource>

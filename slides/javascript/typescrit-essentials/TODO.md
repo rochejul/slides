@@ -10,3 +10,4 @@ https://x.com/colinhacks/status/1824052417820021173?t=Jm4JQ7D3BDXM8STzP7Oa3g&s=0
 https://x.com/mattpocockuk/status/1824437686909702197?t=Yf0swBjhccax5xmSKGaxUA&s=03
 https://x.com/mattpocockuk/status/1826560704461066443?t=nhU15ECauXkmQgIihkRL8Q&s=03
 https://x.com/mattpocockuk/status/1830935305639145678?t=VWKkfY6DHF1vrfgATQcKwQ&s=03
+https://www.totaltypescript.com/concepts/how-to-use-ts-expect-error
