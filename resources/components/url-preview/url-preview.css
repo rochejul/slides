@@ -1,0 +1,70 @@
+@import url('../../variables.css');
+
+:host {
+    all: initial;
+    display: inline-block;
+    font-family: var(--font);
+}
+
+.url {
+    anchor-name: --anchor-el;
+}
+
+.url:link {
+    color: var(--color-grey);
+}
+
+.url:visited {
+    color: var(--color-red);
+}
+
+.url-preview {
+    border: 1px solid var(--color-black);
+    border-radius: 0.5rem;
+    display: flex;
+    top: anchor(bottom);
+    left: anchor(right);
+    pointer-events: none;
+    position-anchor: --anchor-el;
+    position: absolute;
+
+    height: 25vh;
+    width: 25vw;
+    z-index: 10000;
+
+    & .url-preview__header {
+        left: 0px;
+        overflow: hidden;
+        position: absolute;
+        right: 0px;
+        text-overflow: ellipsis;
+        top: 0px;
+        white-space: nowrap;
+        z-index: 10;
+
+        & .url-preview__header__link {
+            text-decoration: underline;
+        }
+    }
+
+    & .url-preview__content {
+        border: none;
+        flex: 1 1 auto;
+        margin: 0.5rem;
+        overflow: hidden;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+    }
+}
+
+.url__icon {
+    background: url('../../assets/icons8-doctor-who-51.png');
+    background-color: var(--color-white);
+    background-size: contain;
+    display: inline-block;
+    cursor: all-scroll;
+    height: 1.2rem;
+    margin-inline-start: 1rem;
+    vertical-align: middle;
+    width: 1.2rem;
+}

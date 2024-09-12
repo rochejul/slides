@@ -55,6 +55,10 @@ body {
             padding-block-end: 3rem;
             padding-block-start: 1rem;
             row-gap: 6rem;
+
+            & li {
+                margin-block: 1rem;
+            }
         }
     }
 
@@ -72,12 +76,4 @@ body {
         justify-content: center;
         margin-block-end: 1rem;
     }
-}
-
-:link {
-    color: var(--color-grey);
-}
-
-:visited {
-    color: var(--color-red);
 }

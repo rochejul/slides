@@ -10,6 +10,8 @@
         <link rel="import" href="./resources/components/resource/resource.html" />
         <link rel="import" href="./resources/components/section-content/section-content.html" />
         <link rel="import" href="./resources/components/section-title/section-title.html" />
+        <link rel="import" href="./resources/components/url-preview/url-preview.html" />
+
         <link rel="stylesheet" href="./resources/theme.css" />
 
         <link rel="prefetch" href="./slides/reactive-everywhere" as="document" />
@@ -47,19 +49,19 @@
                 <jro-section-content label="Slides">
                     <ul>
                         <li>
-                            <a href="./slides/reactive-everywhere" target="_blank" title="Reactive everywhere?">Reactive everywhere?</a>
+                            <jro-url-preview label="Reactive everywhere?" src="./slides/reactive-everywhere"></jro-url-preview>
                         </li>
                         <li>
                             <div>Around CSS</div>
                             <ul>
                                 <li>
-                                    <a href="./slides/css/css-coding-conventions" target="_blank" title="CSS Coding Conventions">CSS Coding Conventions</a>
+                                    <jro-url-preview label="CSS Coding Conventions" src="./slides/css/css-coding-conventions"></jro-url-preview>
                                 </li>
                                 <li>
-                                    <a href="./slides/css/css-tricks" target="_blank" title="CSS Tricks">CSS Tricks</a>
+                                    <jro-url-preview label="CSS Tricks" src="./slides/css/css-tricks"></jro-url-preview>
                                 </li>
                                 <li>
-                                    <a href="./slides/css/css4-variables/" target="_blank" title="CSS4 Variables">CSS4 Variables</a>
+                                    <jro-url-preview label="CSS4 Variables" src="./slides/css/css4-variables/"></jro-url-preview>
                                 </li>
                             </ul>
                         </li>
@@ -67,9 +69,7 @@
                             <div>Around JavaScript</div>
                             <ul>
                                 <li>
-                                    <a href="./slides/javascript/javascript-functional-programming" target="_blank" title="JavaScript Functional Programming"
-                                        >JavaSCript Functional Programming</a
-                                    >
+                                    <jro-url-preview label="JavaScript Functional Programming" src="./slides/javascript/javascript-functional-programming"></jro-url-preview>
                                 </li>
                             </ul>
                         </li>
@@ -77,13 +77,13 @@
                             <div>You know nothing JS</div>
                             <ul>
                                 <li>
-                                    <a href="./slides/you-know-nothing-js/chrome-dev-tools" target="_blank" title="Chrome Dev Tools">Chrome Dev Tools</a>
+                                    <jro-url-preview label="Chrome Dev Tools" src="./slides/you-know-nothing-js/chrome-dev-tools"></jro-url-preview>
                                 </li>
                                 <li>
-                                    <a href="./slides/you-know-nothing-js/console-api" target="_blank" title="Console API">Console API</a>
+                                    <jro-url-preview label="Console API" src="./slides/you-know-nothing-js/console-api"></jro-url-preview>
                                 </li>
                                 <li>
-                                    <a href="./slides/you-know-nothing-js/es-2023-2024" target="_blank" title="ES 2023/2024">ES 2023/2024</a>
+                                    <jro-url-preview label="ES 2023/2024" src="./slides/you-know-nothing-js/es-2023-2024"></jro-url-preview>
                                 </li>
                             </ul>
                         </li>
@@ -91,7 +91,7 @@
                             <div>Breaking CSS</div>
                             <ul>
                                 <li>
-                                    <a href="./slides/breaking-css/css5" target="_blank" title="CSS5">CSS5</a>
+                                    <jro-url-preview label="CSS5" src="./slides/breaking-css/css5"></jro-url-preview>
                                 </li>
                             </ul>
                         </li>
@@ -100,16 +100,16 @@
                 <jro-section-content label="Games">
                     <ul>
                         <li>
-                            <a href="./games/langton-ant" target="_blank" title="Langton's ant">Langton's ant</a>
+                            <jro-url-preview label="Langton's ant" src="./games/langton-ant"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="./games/maze-runner" target="_blank" title="Maze runner">Maze runner</a>
+                            <jro-url-preview label="Maze runner" src="./games/maze-runner"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="./games/mine-sweeper" target="_blank" title="Mine sweeper">Mine sweeper</a>
+                            <jro-url-preview label="Mine sweeper" src="./games/mine-sweeper"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="./games/snake" target="_blank" title="Snake">Snake (use of RxJs)</a>
+                            <jro-url-preview label="Snake (use of RxJs)" src="./games/snake"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
@@ -120,25 +120,25 @@
                 <jro-section-content label="Learning game">
                     <ul>
                         <li>
-                            <a href="http://gabinaureche.com/logicalornot/" target="_blank" title="Logical (Or Not)">Logical (Or Not)</a>
+                            <jro-url-preview label="Logical (Or Not)" src="http://gabinaureche.com/logicalornot/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="http://flukeout.github.io/" target="_blank" title="CSS Diner">CSS Diner</a>
+                            <jro-url-preview label="CSS Diner" src="http://flukeout.github.io/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="http://flexboxfroggy.com/" target="_blank" title="Flexbox Froggy">Flexbox Froggy</a>
+                            <jro-url-preview label="Flexbox Froggy" src="http://flexboxfroggy.com/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="http://www.flexboxdefense.com/" target="_blank" title="Flexbox Defense">Flexbox Defense</a>
+                            <jro-url-preview label="Flexbox Defense" src="http://www.flexboxdefense.com/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://cssgridgarden.com/" target="_blank" title="CSS Garden">CSS Garden</a>
+                            <jro-url-preview label="CSS Garden" src="https://cssgridgarden.com/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://codingfantasy.com/games/css-grid-attack/play" target="_blank" title="Grid Attack">Grid Attack</a>
+                            <jro-url-preview label="Grid Attack" src="https://codingfantasy.com/games/css-grid-attack/play"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://www.guess-css.app/" target="_blank" title="Guess CSS">Guess CSS</a>
+                            <jro-url-preview label="Guess CSS" src="https://www.guess-css.app/"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
@@ -146,36 +146,34 @@
                 <jro-section-content label="State of the art">
                     <ul>
                         <li>
-                            <a href="https://stateofjs.com/en-US" target="_blank" title="State of JavaScript">State of JavaScript</a>
+                            <jro-url-preview label="State of JavaScript" src="https://stateofjs.com/en-US"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://stateofcss.com/en-US" target="_blank" title="State of CSS">State of CSS</a>
+                            <jro-url-preview label="State of CSS" src="https://stateofcss.com/en-US"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://stateofhtml.com/en-US" target="_blank" title="State of HTML">State of HTML</a>
+                            <jro-url-preview label="State of HTML" src="https://stateofhtml.com/en-US"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://whatwebcando.today/" target="_blank">https://whatwebcando.today/</a>
+                            <jro-url-preview label="https://whatwebcando.today/" src="https://whatwebcando.today/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://caniuse.com/" target="_blank">https://caniuse.com/</a>
+                            <jro-url-preview label="https://caniuse.com/" src="https://caniuse.com/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://www.caniemail.com/" target="_blank">https://www.caniemail.com/</a>
+                            <jro-url-preview label="https://www.caniemail.com/" src="https://www.caniemail.com/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://caniuse.email/" target="_blank">https://caniuse.email/</a>
+                            <jro-url-preview label="https://caniuse.email/" src="https://caniuse.email/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://a11ysupport.io/" target="_blank">https://a11ysupport.io/</a>
+                            <jro-url-preview label="https://a11ysupport.io/" src="https://a11ysupport.io/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://rosettacode.org/" target="_blank">https://rosettacode.org/</a>
+                            <jro-url-preview label="https://rosettacode.org/" src="https://rosettacode.org/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/GoogleChrome/web.dev/tree/main/src/site/content/en/blog" target="_blank"
-                                >https://github.com/GoogleChrome/web.dev/tree/main/src/site/content/en/blog</a
-                            >
+                            <jro-url-preview label="https://github.com/GoogleChrome/web.dev/tree/main/src/site/content/en/blog" src="https://github.com/GoogleChrome/web.dev/tree/main/src/site/content/en/blog"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
@@ -183,25 +181,25 @@
                 <jro-section-content label="Cookbook">
                     <ul>
                         <li>
-                            <a href="https://github.com/fraxken/ebook_nodejs/blob/main/en/README.md" target="_blank">NodeJs Ebook</a>
+                            <jro-url-preview label="NodeJs Ebook" src="https://github.com/fraxken/ebook_nodejs/blob/main/en/README.md"></jro-url-preview>
                         </li>
                         <li>
                             <div>Service Worker</div>
                             <ul>
                                 <li>
-                                    <a href="https://jakearchibald.com/2014/offline-cookbook/" target="_blank">https://jakearchibald.com/2014/offline-cookbook/</a>
+                                    <jro-url-preview label="https://jakearchibald.com/2014/offline-cookbook/" src="https://jakearchibald.com/2014/offline-cookbook/"></jro-url-preview>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/mozilla/serviceworker-cookbook" target="_blank">https://github.com/mozilla/serviceworker-cookbook</a>
+                                    <jro-url-preview label="https://github.com/mozilla/serviceworker-cookbook" src="https://github.com/mozilla/serviceworker-cookbook"></jro-url-preview>
                                 </li>
                                 <li>
-                                    <a href="https://ponyfoo.com/articles/serviceworker-revolution" target="_blank">https://ponyfoo.com/articles/serviceworker-revolution</a>
+                                    <jro-url-preview label="https://ponyfoo.com/articles/serviceworker-revolution" src="https://ponyfoo.com/articles/serviceworker-revolution"></jro-url-preview>
                                 </li>
                                 <li>
-                                    <a href="https://serviceworke.rs/" target="_blank">https://serviceworke.rs/</a>
+                                    <jro-url-preview label="https://serviceworke.rs/" src="https://serviceworke.rs/"></jro-url-preview>
                                 </li>
                                 <li>
-                                    <a href="https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/service-workers" target="_blank">https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/service-workers</a>
+                                    <jro-url-preview label="https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/service-workers" src="https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/service-workers"></jro-url-preview>
                                 </li>
                             </ul>
                         </li>
@@ -211,34 +209,34 @@
                 <jro-section-content label="Awesome Lists">
                     <ul>
                         <li>
-                            <a href="https://github.com/obetomuniz/awesome-webcomponents" target="_blank">Web components (old)</a>
+                            <jro-url-preview label="Web components (old)" src="https://github.com/obetomuniz/awesome-webcomponent"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank">NodeJS</a>
+                            <jro-url-preview label="NodeJS" src="https://github.com/sindresorhus/awesome-nodejs"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/sindresorhus/awesome-npm" target="_blank">NPM - basics</a>
+                            <jro-url-preview label="NPM - basics" src="https://github.com/sindresorhus/awesome-npm"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/feross/awesome-mad-science" target="_blank">NPM - advanced</a>
+                            <jro-url-preview label="NPM - advanced" src="https://github.com/feross/awesome-mad-science"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/sorrycc/awesome-javascript" target="_blank">JavaScript</a>
+                            <jro-url-preview label="JavaScript" src="https://github.com/sorrycc/awesome-javascript"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/stoeffel/awesome-fp-js" target="_blank">Functional JS</a>
+                            <jro-url-preview label="Functional JS" src="https://github.com/stoeffel/awesome-fp-js"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/dustinspecker/awesome-eslint" target="_blank">Eslint</a>
+                            <jro-url-preview label="Eslint" src="https://github.com/dustinspecker/awesome-eslint"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/bnb/awesome-developer-streams" target="_blank">Developer Stream</a>
+                            <jro-url-preview label="Developer Stream" src="https://github.com/bnb/awesome-developer-streams"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/anaibol/awesome-serverless" target="_blank">Serverless</a>
+                            <jro-url-preview label="Serverless" src="https://github.com/anaibol/awesome-serverless"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://github.com/heynickc/awesome-ddd" target="_blank">Domain-Driven Design</a>
+                            <jro-url-preview label="Domain-Driven Design" src="https://github.com/heynickc/awesome-ddd"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
@@ -246,16 +244,16 @@
                 <jro-section-content label="CSS resources">
                     <ul>
                         <li>
-                            <a href="https://codyhouse.co/nuggets" target="_blank">One minute tutorial with modern effects</a>
+                            <jro-url-preview label="One minute tutorial with modern effects" src="https://codyhouse.co/nuggets"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://css-tip.com/" target="_blank">CSS tips</a>
+                            <jro-url-preview label="CSS tips" src="https://css-tip.com/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://hallofshame.design/" target="_blank">Dark patterns</a>
+                            <jro-url-preview label="Dark patterns" src="https://hallofshame.design/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://x.com/Div_pradeep/status/1820772847909749069?t=6_YQU3gT9_iRNe8dfIB8ZQ&s=03" target="_blank">nth-child Selector Cheatsheet</a>
+                            <jro-url-preview label="nth-child Selector Cheatsheet" src="https://x.com/Div_pradeep/status/1820772847909749069?t=6_YQU3gT9_iRNe8dfIB8ZQ&s=03"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
@@ -263,7 +261,7 @@
                 <jro-section-content label="Rust resources">
                     <ul>
                         <li>
-                            <a href="https://marabos.nl/atomics/" target="_blank">Rust Atomics and Locks</a>
+                            <jro-url-preview label="Rust Atomics and Locks" src="https://marabos.nl/atomics/"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
@@ -271,10 +269,10 @@
                 <jro-section-content label="Accessibility">
                     <ul>
                         <li>
-                            <a href="https://www.accessguide.io/" target="_blank">Friendly introduction of accessibility</a>
+                            <jro-url-preview label="Friendly introduction of accessibility" src="https://www.accessguide.io/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://a11y-guidelines.orange.com/en/articles/aria-status-messages/" target="_blank">Use ARIA for status messages</a>
+                            <jro-url-preview label="Use ARIA for status messages" src="https://a11y-guidelines.orange.com/en/articles/aria-status-messages/"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
@@ -282,35 +280,51 @@
                 <jro-section-content label="Tools">
                     <ul>
                         <li>
-                            <a href="https://designer.sendune.com/" target="_blank">Email template generator</a>
+                            <jro-url-preview label="Email template generator" src="https://designer.sendune.com/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://css-shape.com/rounded-edge/" target="_blank">Rounded edge generator</a>
+                            <jro-url-preview label="Rounded edge generator" src="https://css-shape.com/rounded-edge/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://css-generators.com/" target="_blank">Various css generator</a>
+                            <jro-url-preview label="Various css generator" src="https://css-generators.com/"></jro-url-preview>
                         </li>
                         <li>
-                            <a href="https://css-shape.com/" target="_blank">Various css shapes</a>
+                            <jro-url-preview label="Various css shapes" src="https://css-shape.com/"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
 
                 <jro-section-content label="Design">
                     <ul>
-                        <li><a href="https://github.com/javabuddy/best-system-design-resources" target="_blank">100+ Best System Design Resources for Interview and Learning</a></li>
-                        <li><a href="https://scs-architecture.org/" target="_blank">Self Contained System (SCS)</a></li>
-                        <li><a href="https://github.com/ddd-by-examples/library" target="_blank">Domain Driven Design by examples</a></li>
+                        <li>
+                            <jro-url-preview label="100+ Best System Design Resources for Interview and Learning" src="https://github.com/javabuddy/best-system-design-resources"></jro-url-preview>
+                        </li>
+                        <li>
+                            <jro-url-preview label="Self Contained System (SCS)" src="https://scs-architecture.org/"></jro-url-preview>
+                        </li>
+                        <li>
+                            <jro-url-preview label="Domain Driven Design by examples" src="https://github.com/ddd-by-examples/library"></jro-url-preview>
+                        </li>
                     </ul>
                 </jro-section-content>
 
                 <jro-section-content label="Misc.">
                     <ul>
-                        <li><a href="https://www.frameworkheroes.com/news" target="_blank">List of news letter per framework</a></li>
-                        <li><a href="https://algorithmsbook.com/" target="_blank">Algorithms for decision making</a></li>
-                        <li><a href="https://www.kamilgrzybek.com/blog/posts/modular-monolith-primer" target="_blank">Modular monolith: a primer</a></li>
-                        <li><a href="https://labs.iximiuz.com/playgrounds?category=linux" target="_blank">Linux instances playground</a></li>
-                        <li><a href="https://catalogue.projectsbyif.com/" target="_blank" title="UX Desing patterns catalog">UX Desing patterns catalog</a></li>
+                        <li>
+                            <jro-url-preview label="List of news letter per framework" src="https://www.frameworkheroes.com/news"></jro-url-preview>
+                        </li>
+                        <li>
+                            <jro-url-preview label="Algorithms for decision making" src="https://algorithmsbook.com/"></jro-url-preview>
+                        </li>
+                        <li>
+                            <jro-url-preview label="Modular monolith: a primer" src="https://www.kamilgrzybek.com/blog/posts/modular-monolith-primer"></jro-url-preview>
+                        </li>
+                        <li>
+                            <jro-url-preview label="Linux instances playground" src="https://labs.iximiuz.com/playgrounds?category=linux"></jro-url-preview>
+                        </li>
+                        <li>
+                            <jro-url-preview label="UX Desing patterns catalog" src="https://catalogue.projectsbyif.com/"></jro-url-preview>
+                        </li>
                     </ul>
                 </jro-section-content>
             </section>
