@@ -5,6 +5,20 @@ body {
     height: 100%;
 }
 
+.page--loading {
+    & .page__header {
+        display: none;
+    }
+
+    & .page__content {
+        display: none;
+    }
+
+    & .page__footer {
+        display: none;
+    }
+}
+
 .page {
     background-color: var(--color-dark);
     color: var(--color-white);
@@ -13,6 +27,18 @@ body {
     font-family: var(--font);
     margin-inline: 1rem;
     overflow: hidden;
+
+    & .page__loader {
+        background-image: url(./assets/CUUcfgz-doctor-who-hd-wallpaper.jpg);
+        background-position: 50% 50%;
+        background-size: cover;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1000000;
+    }
 
     & .page__header {
         background-clip: border-box;

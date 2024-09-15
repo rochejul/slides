@@ -6,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Julien Roche's slides and games</title>
 
+        <link rel="stylesheet" href="./resources/theme.css" />
+
         <link rel="import" href="./resources/components/logo/logo.html" />
         <link rel="import" href="./resources/components/resource/resource.html" />
         <link rel="import" href="./resources/components/section-content/section-content.html" />
         <link rel="import" href="./resources/components/section-title/section-title.html" />
         <link rel="import" href="./resources/components/url-preview/url-preview.html" />
-
-        <link rel="stylesheet" href="./resources/theme.css" />
 
         <link rel="prefetch" href="./slides/reactive-everywhere" as="document" />
         <link rel="prefetch" href="./slides/css/css-coding-conventions" as="document" />
@@ -31,7 +31,9 @@
         <script type="module" src="./resources/app.js"></script>
     </head>
 
-    <body class="page">
+    <body class="page page--loading">
+        <div class="page__loader"></div>
+
         <header class="page__header">
             <aside class="page__header__logo">
                 <jro-logo></jro-logo>
