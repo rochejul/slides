@@ -11,8 +11,10 @@ async function loadWebComponent(url) {
     document.body.appendChild(scriptElement);
 }
 
-const importElements = document.head.querySelectorAll('link[rel="import"]');
+export async function loadWebComponents() {
+    const importElements = document.head.querySelectorAll('link[rel="import"]');
 
-for (const importElement of importElements) {
-    await loadWebComponent(importElement.href);
+    for (const importElement of importElements) {
+        await loadWebComponent(importElement.href);
+    }
 }

@@ -1,10 +1,12 @@
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js', { type: 'module' }).then(
-        (registration) => {
-            console.log('Service worker registration succeeded:', registration);
-        },
-        (error) => {
-            console.error(`Service worker registration failed: ${error}`);
-        },
-    );
+import { loadWebComponents } from './html-import.js';
+import { initializeServiceWorker } from './sw.js';
+
+await loadWebComponents();
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', async () => {
+        await initializeServiceWorker();
+    });
+} else {
+    await initializeServiceWorker();
 }

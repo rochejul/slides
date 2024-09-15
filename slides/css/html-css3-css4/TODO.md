@@ -29,6 +29,7 @@ https://x.com/ChromiumDev/status/1833233917328982343?t=uY_dsxCF7wW0P0Im0G2XOA&s=
 ruby: https://x.com/ChromiumDev/status/1818100442724786224?t=C0JFol_PnpFJGoHYkXBALg&s=03
 dialog: https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog
 https://x.com/argyleink/status/1818782336554877305?t=VWCRk20pHUhHkiOyQaGGTA&s=03
+https://x.com/ChromiumDev/status/1835060959531913332?t=MxsXeRu8aNzVcDdS4koDxg&s=09
 
 # CSS
 
