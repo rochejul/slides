@@ -1,5 +1,15 @@
+const alloweddVariants = ['default', 'red', 'black', 'drawing'];
+
+function getVariant(variantValue) {
+    if (alloweddVariants.includes(variantValue)) {
+        return `card--variant-${variantValue}`;
+    }
+
+    return 'card--variant-default';
+}
+
 class SectionContent extends HTMLElement {
-    static observedAttributes = ['label'];
+    static observedAttributes = ['label', 'variant'];
 
     #root;
 
@@ -27,6 +37,12 @@ class SectionContent extends HTMLElement {
         }
 
         h2Element.textContent = this.getAttribute('label');
+
+        const cardElement = this.#root.querySelector('.card');
+        const variant = getVariant(this.getAttribute('variant'));
+
+        cardElement.classList.remove('card--variant-default', 'card--variant-red', 'card--variant-black', 'card--variant-drawing');
+        cardElement.classList.add(variant);
     }
 }
 

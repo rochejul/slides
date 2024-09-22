@@ -33,6 +33,22 @@
     width: 10rem;
 }
 
+.card.card--variant-default::after {
+    background-image: url('../../assets/dalek-dw-1024x576.jpg');
+}
+
+.card.card--variant-red::after {
+    background-image: url('../../assets/El De Falsarius Freak Dalek Ipsum.jpg');
+}
+
+.card.card--variant-black::after {
+    background-image: url('../../assets/wallpaperflare.com_wallpaper.jpg');
+}
+
+.card.card--variant-drawing::after {
+    background-image: url('../../assets/wallpaperflare.com_wallpaper2.jpg');
+}
+
 .card:hover {
     padding-inline-end: 15rem;
 }
