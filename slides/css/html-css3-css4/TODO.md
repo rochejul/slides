@@ -35,6 +35,8 @@ https://x.com/ChromiumDev/status/1835060959531913332?t=MxsXeRu8aNzVcDdS4koDxg&s=
 
 ## PAs vraiment nouveau:
 
+https://x.com/e_opore/status/1838296734516092980?s=03
+
 write mode - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_writing_modes
 logical properties - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values
 

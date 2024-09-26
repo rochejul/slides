@@ -1,0 +1,9 @@
+-   https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints
+-   https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+-   https://webrtchacks.com/bad-lighting-fix-with-javascript-webcam-exposure/
+-   https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos
+-   https://x.com/denicmarko/status/1837801294385279290?t=w6HJYxqCbS2ZEbT3mvP9DA&s=03
+-   https://medium.com/@likovalevl/video-streaming-with-javascript-the-easy-way-45ecd7ec3f08
+-   https://x.com/davidm_ml/status/1838542099634888967?s=03
+-   https://webrtc.org/
+-   https://x.com/BilliCodes/status/1838825114529370542
