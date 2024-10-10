@@ -8,3 +8,9 @@
 -   https://x.com/BilliCodes/status/1841004845655859570?t=UhwcV_n-xz4eEU-kDdfx6w&s=03
 -   https://x.com/BilliCodes/status/1840620661951041881?t=bDI9DCg8S9llaCwLvSRynA&s=03
 -   https://x.com/BilliCodes/status/1839898265476534734?t=Z38o_zHRA7b-Ktb4lrW9jw&s=03
+-   https://x.com/BilliCodes/status/1843896797103808627?t=rJFN43qBuD-H3HhrjYqKqA&s=03
+-   https://x.com/denicmarko/status/1843292731751456817?t=Yneej8B-NCfqDJA3ZDERIw&s=03
+-   https://x.com/anatudor/status/1842569374609363071?t=WkpaX-u7YKWIqqbVPF2A_Q&s=03
+-   https://x.com/davidm_ml/status/1842550726716801337?t=p5xx-5rwYIfshDWCq-uDEg&s=03
+-   https://x.com/wesbos/status/1841867095102939139?t=iPD2PhVwE78IUnPJqZzcAA&s=09
+-   https://x.com/paul_uiux/status/1841437472711938322?t=YeZ850PSOMXdjBvxukH5nA&s=03

@@ -77,6 +77,7 @@
     position: absolute;
     position-anchor: --anchor-el;
     top: anchor(bottom);
+    z-index: 10000;
 }
 
 .logo:hover + .logo-notice {

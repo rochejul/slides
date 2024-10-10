@@ -7,4 +7,6 @@
     --color-green: #558287;
     --color-purple: #381d6a;
     --font: system-ui, sans-serif;
+
+    --anchor-el-for-url-preview: none;
 }
