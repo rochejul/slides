@@ -42,59 +42,742 @@
                     <h4 class="c-title--white">And then invalidate the previous mantra :)</h4>
                 </section>
 
-                <!-- Basics -->
+                <!-- CSS evolutions -->
                 <section>
                     <section data-background-image="./images/main.webp" data-background-size="cover" data-background-position="50% 50%">
-                        <h2 class="c-title--white">Big picture</h2>
+                        <h2 class="c-title--white">CSS evolutions</h2>
                     </section>
 
                     <section>
-                        <h2>What is the Chrome DevTools?</h2>
-                        <p>This is the superhero tools for Web devs</p>
+                        <h2>At the beginning, there was nothing</h2>
+                        <p>Only blanck pages :'(</p>
+                    </section>
+
+                    <section>
+                        <h2>Then appeared CSS</h2>
                         <ul>
-                            <li>It contains debugging tools</li>
-                            <li>It contains editing tools</li>
-                            <li>It contains inspecting and profiling tools</li>
-                            <li>It contains emulating tools</li>
+                            <li>Where we could mutualize some styling</li>
+                            <li>Where we have a query selector api to find the elements to style</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Then appeared the iPhone</h2>
+                        <ul>
+                            <li>And first definitions of transitions</li>
+                            <li>And first definitions of animations</li>
+                            <li>And first evolutions of font sizing and strategy</li>
+                            <li>And first evolutions of colors</li>
+                            <li>And first evolutions of layout</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Then appeared the covid</h2>
+                        <ul>
+                            <li>With color definition evolutions</li>
+                            <li>With image/color manipulation evolutions</li>
+                            <li>With grid layouting</li>
+                            <li>With more gradient capabilities</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Now, in present time</h2>
+                        <ul>
+                            <li>We expect to have a better structuration of our code</li>
+                            <li>We expect to resolve usages (tooltip, positioning)</li>
+                            <li>We expect to apply styling only for containers (in an age of Web Components)</li>
+                            <li>We expect advanced manipulation, animation, etc...</li>
                         </ul>
                     </section>
                 </section>
 
-                <!-- Basic -->
+                <!-- Nesting -->
                 <section>
                     <section data-background-image="./images/basic.jpg" data-background-size="cover" data-background-position="50% 50%">
-                        <h2 class="c-title--white">You and the Console</h2>
+                        <h2 class="c-title--white">Nesting</h2>
                     </section>
 
                     <section>
-                        <h2>For DOM inspection</h2>
-                        <p><i>$$(cssSelector[, rootElement])</i> will search any elements into the page</p>
-                        <img src="./resources/cdt-console-dom-search.gif" alt="" />
+                        <h2>A long time ago, some CSS conventions appeared</h2>
+                        <p>Giving the possiblity to structure our code</p>
+                        <p>With <a href="../../css/css-coding-conventions/index.html" target="_blank">an awesome presentation</a> :)</p>
+                    </section>
+
+                    <section>
+                        <pre><code class="css u-no-max">.button {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 7px 12px;
+    border: 1px solid #D5D5D5;
+    background-image: linear-gradient(#EEE, #DDD);
+}
+
+.button--state-success {
+    color: #FFF;
+    background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+    border-color: #4A993E;
+}
+
+.button__label {
+    font: 700 13px/18px Helvetica, arial;
+}
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>With some CSS preprocessors, we were able to regroup more the code</h2>
+                        <p>Less, Stylus, Sass</p>
+                    </section>
+
+                    <section>
+                        <pre><code class="css u-no-max">.button {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 7px 12px;
+    border: 1px solid #D5D5D5;
+    background-image: linear-gradient(#EEE, #DDD);
+
+    &--state-success {
+        color: #FFF;
+        background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+        border-color: #4A993E;
+    }
+    
+    &__label {
+        font: 700 13px/18px Helvetica, arial;
+    }
+}
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>CSS5 offers a similar base</h2>
+                        <ul>
+                            <li>We should define the full name</li>
+                            <li>We can't apply on CSS pseudo-elements</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <pre><code class="css u-no-max">.page {
+    & .page__loader {
+    }
+}
+
+.page:hover {
+    /* we can't have &:hover */
+}
+</code></pre>
                     </section>
                 </section>
 
-                <!-- Intermediate - 1 -->
+                <!-- Function and Mixin -->
+                <section>
+                    <section data-background-image="./images/basic.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Function and Mixin</h2>
+                    </section>
+
+                    <section>
+                        <h2>Disclaimer: still in progress/discussion</h2>
+                    </section>
+
+                    <section>
+                        <h2>Function</h2>
+                        <p>Create our own CSS function such as <i>attr()</i></p>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <pre><code class="css u-no-max">@function --negative (--value) {
+   result: calc(-1 * var(--value));
+}
+
+html { padding: --negative(var(--gap)); }
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Function & Conditional Rules</h2>
+                        <p>A function could contains Conditional rules through media queries, supports, containers, etc...</p>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <pre><code class="css u-no-max">@function --suitable-font-size() {
+    result: 16px;
+
+    @media (width > 1000px) {
+        result: 20px;
+    }
+}
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Mixins</h2>
+                        <p>Create utilities classes but not used them in the DOM</p>
+                    </section>
+
+                    <section>
+                        <h2>Remember</h2>
+                        <p>CSS libraries such as BootStrap, Foundation, Bulma, ... provide utilities classes</p>
+                        <p>The idea: have some CSS classes to pilot the margin, padding, layout, etc...</p>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <pre><code class="html u-no-max">&lt;button
+    class=&quot;btn btn-primary dropdown-toggle&quot;
+    type=&quot;button&quot;
+    data-bs-toggle=&quot;dropdown&quot;
+    aria-expanded=&quot;false&quot;&gt;
+    Dropdown
+&lt;/button&gt;</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Cons</h2>
+                        <p>The DOM could be hard to read</p>
+                        <p>The component's CSS is not stateless: we have to know what could be present in the DOM to define the CSS</p>
+                    </section>
+
+                    <section>
+                        <h2>Mixins</h2>
+                        <p>We define a concrete utilities class and we use it only in CSS side (everything in one place)</p>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <pre><code class="css u-no-max">@mixin --center-content {
+    display: grid;
+    place-content: center;
+}
+
+body {
+    @apply --center-content;
+    /*
+        display: grid;
+        place-content: center;
+    */
+}
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Mixins could have parameters</h2>
+                        <pre><code class="css u-no-max">@mixin --gradient-text(
+    --from: mediumvioletred;
+    --to: teal;
+    --angle: to bottom right;
+    ) {
+    color: var(--from, var(--to));
+
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+        --gradient: linear-gradient(var(--angle), var(--from), var(--to));
+        background: var(--gradient, var(--from));
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+h1 {
+    @apply --gradient-text(pink, powderblue);
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <!-- Scoping -->
+                <section>
+                    <section data-background-image="./images/basic.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Scoping</h2>
+                    </section>
+
+                    <section>
+                        <h2>A long time ago, media queries appeared</h2>
+                        <p>Allowing to apply some styling depending of the size of the viewport</p>
+                        <pre><code class="css u-no-max">media(max-width: 50rem) {
+/*Awesome style in progress*/
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Here comes container queries</h2>
+                        <p>Allowing to apply some styling depending of the size of the element</p>
+                        <pre><code class="css u-no-max">@container (min-width: 700px) {
+/*Awesome style in progress*/
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>First declare your HTML</h2>
+                        <pre><code class="html u-no-max">&lt;div class=&quot;post&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;h2&gt;Card title&lt;/h2&gt;
+        &lt;p&gt;Card content&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Then define the container type of the root element</h2>
+                        <p>It could be size, inline-size, or normal.</p>
+                        <pre><code class="css u-no-max">.post {
+    container-type: inline-size;
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Finally your container rules</h2>
+                        <pre><code class="css u-no-max">@container (min-width: 700px) {
+    .card h2 {
+        font-size: 2em;
+    }
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>@scope</h2>
+                        <p>
+                            With @scope you can limit the reach of your selectors. You do this by setting the scoping root which determines the upper boundary of the subtree you
+                            want to target. With a scoping root set, the contained style rules –named scoped style rules– can only select from that limited subtree of the DOM.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Example</h2>
+                        <pre><code class="css u-no-max">@scope (.card) {
+    img {
+        border-color: green;
+    }
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <iframe class="c-iframe" src="https://codepen.io/web-dot-dev/embed/YzdOydZ?height=1000&theme-id=dark&default-tab=result&editable=false"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>Advantage?</h2>
+                        <p>It's allowing you to move away from methodologies such as BEM because you no longer need to name those in-between elements.</p>
+                        <p>Then we could simplify the way to declare our CSS</p>
+                    </section>
+
+                    <section>
+                        <h2>@scope and to()</h2>
+                        <p>We could restrict the inheritance by providing a stop element</p>
+                        pre><code class="css u-no-max">@scope (.card) to (.card__content) {
+    img {
+        border-color: green;
+    }
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <iframe class="c-iframe" src="https://codepen.io/web-dot-dev/embed/wvREKRj?height=1000&theme-id=dark&default-tab=result&editable=false"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>@scope and :scope</h2>
+                        <p>We could augment the scope by using <i>:scope</i> depending of the container described in <i>@scope</i></p>
+                        <pre><code class="css u-no-max">@scope (.card) {
+    :scope {
+        /* Selects the matched .card itself */
+    }
+
+    img {
+        /* Selects img elements that are a child of .card */
+    }
+    
+    :scope img {
+        /* Also selects img elements that are a child of .card */
+    }
+
+    & img {
+        /* Also selects img elements that are a child of .card */
+    }
+}</code></pre>
+                    </section>
+                </section>
+
+                <!-- New units -->
                 <section>
                     <section data-background-image="./images/intermediate.jpg" data-background-size="cover" data-background-position="50% 50%">
-                        <h2 class="c-title--white">You and CDT's commands</h2>
+                        <h2 class="c-title--white">New units</h2>
                     </section>
 
                     <section>
-                        <h2>Command Menu</h2>
-                        <p>Type <i>Control+Shift+P</i> (Windows / Linux) or <i>Command+Shift+P</i> (Mac) to see all available command.</p>
-                        <img src="./resources/command-menu.avif" alt="" />
+                        <h2>CSS already provides a ton of units</h2>
+                        <p><a href="../../css/css-tricks/index.html" target="_blank">As you can see in this presentation</a></p>
+                    </section>
+
+                    <section>
+                        <h2>Why to provide more?</h2>
+                        <p>To provide new way to define somthing (color, dimension/length, etc...)</p>
+                        <p>To be more accurate</p>
+                    </section>
+
+                    <section>
+                        <h2>Length units</h2>
+                        <ul>
+                            <li><i>ex</i>: Equal to the lowercase letter height.</li>
+                            <li><i>cap</i>: Equal to the uppercase letter height.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Container query length units</h2>
+                        <p>These units specify a length relative to the dimensions of a query container.</p>
+                        <p>They should be used in a <i>@container</i> block and the value is between 0 to 100.</p>
+                        <ul>
+                            <li><i>cqw</i>: 1% of a query container's width</li>
+                            <li><i>cqh</i>: 1% of a query container's height</li>
+                            <li><i>cqi</i>: 1% of a query container's inline size</li>
+                            <li><i>cqb</i>:  1% of a query container's block size</li>
+                            <li><i>cqmin</i>: The smaller value of either cqi or cqb</li>
+                            <li><i>cqmax</i>:  The larger value of either cqi or cqb</li>
+                        </ul>
                     </section>
                 </section>
 
-                <!-- Intermediate - 2 -->
+                <!-- New CSS functions -->
                 <section>
-                    <section data-background-image="./images/intermediate-2.jpg" data-background-size="cover" data-background-position="50% 50%">
-                        <h2 class="c-title--white">You and CDT's editors</h2>
+                    <section data-background-image="./images/intermediate.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">New CSS functions</h2>
                     </section>
 
                     <section>
-                        <h2>We have a ton of editors</h2>
-                        <p>They ease the definition of some CSS properties, HTML rendering, etc...</p>
+                        <h2>A lot of maths functions in our CSS!</h2>
+                    </section>
+
+                    <section>
+                        <h2>sign()</h2>
+                        <p>It contains one calculation, and returns -1 if the numeric value of the argument is negative, +1 if the numeric value of the argument is positive, 0⁺ if the numeric value of the argument is 0⁺, and 0⁻ if the numeric value of the argument is 0⁻.</p>
+                    </section>
+
+                    <section>
+                        <h2>round()</h2>
+                        <p>It returns a rounded number based on a selected rounding strategy.</p>
+                        <pre><code class="css u-no-max">width: round(var(--width), 50px);
+/*Default behavior*/
+width: round(nearest, var(--width), 50px);
+/*Round value up to the nearest integer multiple of interval*/
+width: round(up, 101px, var(--interval)); 
+/*Round value  down to the nearest integer multiple of interval*/
+width: round(down, var(--height), var(--interval)); 
+/*Round value to the nearest integer multiple of interval*/
+margin: round(to-zero, -105px, 10px); 
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Trigonometry</h2>
+                        <p>Used for gradient, timing function, etc...</p>
+                        <div class="c-layout c-layout--two-columns">
+                            <div>
+                                <ul>
+                                    <li><i>sin()</i></li>
+                                    <li><i>asin()</i></li>
+                                    <li><i>cos()</i></li>
+                                    <li><i>acos()</i></li>
+                                    <li><i>tan()</i></li>
+                                    <li><i>atan()</i></li>
+                                    <li><i>atan2()</i></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <ul>
+                                    <li><i>pow()</i></li>
+                                    <li><i>hypot()</i></li>
+                                    <li><i>log()</i></li>
+                                    <li><i>exp()</i></li>
+                                    <li><i>sqrt()</i></li>
+                                    <li><i>mod()</i></li>
+                                    <li><i>abs()</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Shape CSS functions</h2>
+                        <p>To be used on a <i>clip-path</i> or <i>shape-outside</i> or <i>offset-path</i> property</p>
+                        <ul>
+                            <li><i>circle()</i>: it defines a circle using a radius and a position</i></li>
+                            <li><i>ellipse()</i>: it defines an ellipse using a radius and a position</i></li>
+                            <li><i>polygon()</i>: it defines a polygon by providing one or more pairs of coordinates</i></li>
+                            <li><i>rect()</i>: it defines a rectangle</i></li>
+                            <li><i>xywh()</i>: it defines a rectangle using the specified distances from the left (x) and top (y) edges of the containing block</i></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Image CSS functions</h2>
+                        <p>To be used to generate an image  (for background, border, etc...)</p>
+                        <ul>
+                            <li><i>conic-gradient()</i>: it creates an image consisting of a gradient with color transitions rotated around a center point</i></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Color CSS functions</h2>
+                        <p>To be used on <i>color</i> properties (font, border, etc...)</p>
+                        <ul>
+                            <li><i>accent-color()</i>: we provide the accent (bright color that contrasts with the more utilitarian background and foreground colors within a color scheme) color for user-interface controls </li>
+                            <li><i>light-dark()</i>: we provide two colors; one for light mode, one for dark mode.</li>
+                            <li><i>oklab()</i>: color based on the Wide Gamut Colors.</li>
+                            <li><i>lch()</i>: color based on the Wide Gamut Colors.</li>
+                            <li><i>lab()</i>: color based on the Wide Gamut Colors.</li>
+                            <li><i>oklch()</i>: color based on the Wide Gamut Colors.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Filter CSS functions</h2>
+                        <p>To be used on a <i>filter</i> property</p>
+                        <p>Not really new but it was officialled</p>
+                        <ul>
+                            <li><i>blur()</i>: blur the color (from 0 to 1)</i></li>
+                            <li><i>brightness()</i>: birghter the color (from 0 to 1)</i></li>
+                            <li><i>contrast()</i>: contrast the color (from 0 to 1)</i></li>
+                            <li><i>grayscale()</i>: grayscale the color (from 0 to 1)</i></li>
+                            <li><i>hue-rotate()</i>: applies a color rotation</i></li>
+                            <li><i>invert()</i>: invert the color (from 0 to 1)</i></li>
+                        </ul>
+                    </section>
+                </section>
+
+                <!-- Improvements for selectors -->
+                <section>
+                    <section data-background-image="./images/intermediate-2.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Improvements for selectors</h2>
+                    </section>
+
+                    <section>
+                        <h2>Case insensitive query selector</h2>
+                        <pre><code class="css u-no-max">[class=somename i] {
+ /*...*/
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>:has</h2>
+                        <p>This pseudo-class presents a way of selecting a parent element or a previous sibling element with respect to a reference element by taking a relative selector list as an argument.</p>
+                        <pre><code class="css u-no-max">
+/*adjusts styling after &lt;h1&gt; headings if they are immediately
+followed by an &lt;h2&gt; heading*/
+h1:has(+ h2) {
+    /* ... */
+}
+
+/*adjusts styling after &lt;form&gt; if a form element has got the focus*/
+form:has(:focus) {
+    /* ... */
+}
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Range contexts</h2>
+                        <p>For <i>@media</i>  and <i>@container</i></p>
+                        <pre><code class="css u-no-max">@media (400px < width < 1000px) {
+ /*...*/
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Variables in range</h2>
+                        <p>For <i>@media</i>  and <i>@container</i></p>
+                        <pre><code class="css u-no-max">@media (var(--small) < width < var(--large)) {
+ /*...*/
+}</code></pre>
+                    </section>
+                </section>
+
+                <!-- Improvements for text -->
+                <section>
+                    <section data-background-image="./images/intermediate-2.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Improvements for text</h2>
+                    </section>
+
+                    <section>
+                        <h2>hanging-punctuation</h2>
+                        <p>With value <i>pretty</i> which is similar to <i>wrap</i> but with better layout</p>
+                        <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation" target="_blank">WIP</a></p>
+                    </section>
+
+                    <section>
+                        <h2>initial-letter</h2>
+                        <p>Sets the size and sink for dropped, raised, and sunken initial letters.</p>
+                        <p>It should be used on the pseudo-class <i>::first-letter</i></p>
+                        <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial-letter" target="_blank">WIP</a></p>
+                    </section>
+
+                    <section>
+                        <h2>text-wrap</h2>
+                        <p>specifies whether a punctuation mark should hang at the start or end of a line of text. Hanging punctuation may be placed outside the line box.</p>
+                    </section>
+
+                    <section>
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="./snippets/text-wrap.html"></iframe>
+                    </section>
+                </section>
+
+                <!-- Improvements for rendering -->
+                <section>
+                    <section data-background-image="./images/intermediate-2.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Improvements for rendering</h2>
+                    </section>
+
+                    <section>
+                        <h2>Media queries and monochrome</h2>
+                        <p>We could have a <i>monochrome</i> condition on media queries to apply specific styling.</p>
+                        <p>This is very helpful when we want to optimize the layout for printers</p>
+                        <pre><code class="css u-no-max">@​media print and (monochrome) { /*...*/ }
+@​media (monochrome: 2) { /*...*/ }
+@​media (monochrome: 0) { /*non-monochrome*/ }</code></pre>
+                    </section>
+
+                    <section>
+                        <a
+                            class="c-source"
+                            href="https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/"
+                            target="_blank"
+                            title="Source"
+                            >[?]</a
+                        >
+                        <h2>overflow: clip;</h2>
+                        <p><i>overflow: clip;</i> is similar to <i>overflow: hidden;</i> except it forbids scrolling entirely, through any mechanism, and therefore the box is not a scroll container.</p>
+                        <p><i>overflow: hidden;</i> allows programatic scrolling on the container.</p>
+                    </section>
+
+                    <section>
+                        <h2>paint-order</h2>
+                        <p>Lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.</p>
+                    </section>
+
+                    <section>
+                        <h2><a href="https://nerdy.dev/css-paint-order" target="_blank">Example</a></h2>
+                        <pre><code class="css u-no-max">/* Normal */
+paint-order: normal;
+
+/* Single values */
+paint-order: stroke; /* draw the stroke first,
+then fill and markers */
+paint-order: markers; /* draw the markers first,
+then fill and stroke */
+
+/* Multiple values */
+paint-order: stroke fill; /* draw the stroke first,
+then the fill, then the markers */
+paint-order: markers stroke fill; /* draw markers,
+then stroke, then fill */</code></pre>
+                    </section>
+                </section>
+
+                <!-- Improvements for animation -->
+                <section>
+                    <section data-background-image="./images/intermediate-2.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Improvements for animation</h2>
+                    </section>
+
+                    <section>
+                        <h2>calc-size(auto)</h2>
+                        <p>We are able to animate unknowned sized elements</p>
+                    </section>
+
+                    <section>
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="./snippets/calc-size-auto.html"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>@starting-style</h2>
+                        <p>Transitions but you have to declare an animation which is visible to anyone to apply some starting effects.</p>
+                        <pre><code class="css u-no-max">@keyframes blur {
+    0% {
+        filter: blur(0px);
+    }
+
+    50% {
+        filter: blur(0.125rem);
+    }
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>@starting-style</h2>
+                        <p>It provide starting styles for elements that do not have a previous state, defining the property values to transition from.</p>
+                        <p>The element will transition from its <i>@starting-style</i> styles when it is first rendered in the DOM, or when it transitions from <i>display: none </i>to a visible value.</p>
+                    </section>
+
+                    <section>
+                        <h2>@starting-style</h2>
+                        <pre><code class="css u-no-max">[popover]:popover-open {
+    opacity: 1;
+    transform: scaleX(1);
+
+    @starting-style {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>@starting-style</h2>
+                        <p>The at-rule is nested to the selector where the transition is declared or could contain the rulesets.</p>
+                        <pre><code class="css u-no-max">[popover]:popover-open {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+@starting-style {
+    [popover]:popover-open {
+        opacity: 0;
+        transform: scaleX(0);
+    }  
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="./snippets/starting-style.html"></iframe>
+                    </section>
+                </section>
+
+                <!-- Improvements (Misc.) -->
+                <section>
+                    <section data-background-image="./images/intermediate-2.jpg" data-background-size="cover" data-background-position="50% 50%">
+                        <h2 class="c-title--white">Improvements (Misc.)</h2>
+                    </section>
+
+                    <section>
+                        <h2>if</h2>
+                        <p>Affect a variable or a property based on a custom property state</p>
+                        <pre><code class="css u-no-max">.element {
+   background-color:
+    if(style(--variant: success),
+    var(--color-green-50), /* Matched condition */
+    var(--color-blue-50);  /* Default style */
+    );
+}
+
+.element-advanced {
+    background-color: if(
+       style(--variant: success), var(--color-success-60), 
+       style(--variant: warning), var(--color-warning-60),
+       style(--variant: danger), var(--color-danger-60), 
+       style(--variant: primary), var(--color-primary)
+    );
+ }</code></pre>
                     </section>
                 </section>
 
@@ -105,9 +788,9 @@
                     </section>
 
                     <section>
-                        <a class="c-source" href="https://web.dev/lcp/" target="_blank" title="Source">[?]</a>
-                        <h2>Find easily Largest Contentful Paint (LCP)</h2>
-                        <img src="./resources/lcp.jpg" alt="" />
+                        <h2>View transitions</h2>
+                        <p>API for navigation styling in your app.</p>
+                        <p><a href="../../you-know-nothing-js/es-2023-2024/index.html" target="_blank">See these slides</a></p>
                     </section>
                 </section>
 
@@ -121,10 +804,40 @@
                         <h2>Main entry points</h2>
                         <ul>
                             <li>
-                                <a href="https://developer.chrome.com/docs/devtools/" target="_blank">The Chrome Dev Tools doc</a>
+                                <a href="https://mxb.dev/blog/old-dogs-new-css-tricks/" target="_blank">Old Dogs, new CSS Tricks</a>
                             </li>
                             <li>
-                                <a href="https://www.google.com/intl/en_uk/chrome/canary/" target="_blank">Chrome Canary</a>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries" target="_blank">Container queries</a>
+                            </li>
+                            <li>
+                                <a href="https://drafts.csswg.org/css-mixins/" target="_blank">Css Mixins</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/css-ui/at-scope" target="_blank">Limit the reach of your selectors with the CSS @scope at-rule</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style" target="_blank">@starting-style</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Misc.</h2>
+                        <ul>
+                            <li>
+                                <a href="https://ishadeed.com/article/css-container-style-queries/" target="_blank">CSS Style Queries</a>
+                            </li>
+                            <li>
+                                <a href="https://nerdy.dev/bem-in-css-after-all" target="_blank">BEM with native CSS nesting</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/w3c/csswg-drafts/issues/9350" target="_blank">Functions and Mixins draft</a>
+                            </li>
+                            <li>
+                                <a href="https://ishadeed.com/article/container-query-units/" target="_blank">CSS Container Query Units</a>
+                            </li>
+                            <li>
+                                <a href="https://geoffgraham.me/conditionals-on-custom-properties/" target="_blank">Conditionals on Custom Properties</a>
                             </li>
                         </ul>
                     </section>

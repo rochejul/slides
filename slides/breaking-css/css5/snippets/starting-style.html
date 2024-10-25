@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>@starting-style</title>
+        <style>
+            .player {
+                display: flex;
+                flex-direction: row;
+
+                & .player__code {
+                    flex: 1 1 auto;
+                }
+
+                & .player__preview {
+                    flex: 2 2 auto;
+                }
+            }
+
+            div.demo {
+                background-color: yellow;
+                border: 1px solid black;
+                display: none;
+                height: 150px;
+                width: 150px;
+
+                /* No background color declared */
+                transition: background-color 3s;
+            }
+
+            div.demo.showing {
+                /* The background color which will be used when the showing class is inserted and after 3 seconds of delay. */
+                background-color: skyblue;
+                display: block;
+            }
+
+            @starting-style {
+                div.demo.showing {
+                    /*The background color which will be used immediatelly when the showing class is inserted. */
+                    background-color: red;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="player">
+            <aside class="player__code">
+                <pre><code>
+div {
+    /* No background color declared */
+    display: none;
+    transition: background-color 3s;
+}
+    
+div.showing {
+    /* The background color which will be used when the showing class is inserted and after 3 seconds of delay. */
+    background-color: skyblue;
+    display: block; /* The element will be rendered then @starting-style will be called */
+}
+    
+@starting-style {
+    div.showing {
+        /*The background color which will be used immediatelly when the showing class is inserted. */
+        background-color: red;
+    }
+}
+                </code></pre>
+            </aside>
+            <article class="player__preview">
+                <button>Click me</button>
+                <div class="demo"></div>
+            </article>
+        </section>
+        <script>
+            const buttonElement = document.querySelector('button');
+            const demoElement = document.querySelector('.demo');
+            buttonElement.addEventListener('click', () => demoElement.classList.toggle('showing'), false);
+        </script>
+    </body>
+</html>

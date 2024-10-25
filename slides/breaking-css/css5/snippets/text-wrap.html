@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Text wrap</title>
+        <style>
+            p {
+                border: 1px solid #c5c5c5;
+                text-wrap: nowrap;
+                width: 250px;
+            }
+
+            .nowrap {
+                text-wrap: nowrap;
+            }
+
+            .wrap {
+                text-wrap: wrap;
+            }
+
+            .balance {
+                text-wrap: balance;
+            }
+
+            .pretty {
+                text-wrap: pretty;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form name="player">
+            <label>
+                <input type="radio" name="textWrap" value="nowrap" checked />
+                <span>nowrap</span>
+            </label>
+            <label>
+                <input type="radio" name="textWrap" value="wrap" />
+                <span>wrap</span>
+            </label>
+            <label>
+                <input type="radio" name="textWrap" value="balance" />
+                <span>balance</span>
+            </label>
+            <label>
+                <input type="radio" name="textWrap" value="pretty" />
+                <span>pretty</span>
+            </label>
+        </form>
+        <p>«For a moment, nothing happened. Then, after a second or so, nothing continued to happen.»</p>
+        <script>
+            const formElement = document.querySelector('form');
+            const pElement = document.querySelector('p');
+
+            formElement.addEventListener('submit', (event) => event.preventDefault(), false);
+            formElement.addEventListener(
+                'change',
+                (event) => {
+                    pElement.setAttribute('class', event.srcElement.value.replaceAll(' ', '_'));
+                },
+                false,
+            );
+        </script>
+    </body>
+</html>

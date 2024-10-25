@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>calc-size(auto)</title>
+        <style>
+            .content {
+                margin-bottom: 8rem;
+            }
+
+            .contentmain > * + :not(h2):not(h3) {
+                margin-top: 1rem;
+            }
+
+            .btn {
+                border: none;
+                border-radius: 0.25em;
+                padding: 0.5em 0.75em;
+                font-size: inherit;
+                cursor: pointer;
+            }
+
+            .card {
+                border: 1px solid black;
+                border-radius: 0.5rem;
+                margin-top: 1rem;
+                padding: 1rem;
+            }
+
+            .card-body {
+                height: 0;
+                font-size: 0.85rem;
+                overflow: hidden;
+                transition: height 0.3s ease-in-out;
+            }
+
+            .card-body.expand {
+                height: auto;
+            }
+
+            .card-body.expand.calc-size {
+                height: var(--height);
+                height: calc-size(auto);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="container">
+                <button class="btn" id="btn1">Expand normal</button>
+                <div class="card">
+                    <div class="card-header">Normal expansion</div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit in libero odit, dignissimos corrupti dolore voluptatibus praesentium sapiente corporis nam
+                        aspernatur consequuntur reprehenderit dolorem voluptate! Soluta, perferendis nam quibusdam sunt culpa eius id voluptate iste dolor eaque odio, recusandae
+                        velit nemo corrupti reprehenderit? Ex deleniti deserunt fugiat velit repellat corporis. Ex deleniti deserunt fugiat velit repellat corporis.
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="container">
+                <button class="btn" id="btn2">Expand calc-size()</button>
+                <div class="card">
+                    <div class="card-header">Using calc-size()</div>
+                    <div class="card-body calc-size" style="--height: 50px">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit in libero odit, dignissimos corrupti dolore voluptatibus praesentium sapiente corporis nam
+                        aspernatur consequuntur reprehenderit dolorem voluptate! Soluta, perferendis nam quibusdam sunt culpa eius id voluptate iste dolor eaque odio, recusandae
+                        velit nemo corrupti reprehenderit? Ex deleniti deserunt fugiat velit repellat corporis. Ex deleniti deserunt fugiat velit repellat corporis.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const btn1Element = document.querySelector('#btn1');
+            btn1Element.addEventListener(
+                'click',
+                (event) => {
+                    btn1Element.parentElement.querySelector('.card-body').classList.toggle('expand');
+                },
+                false,
+            );
+
+            const btn2Element = document.querySelector('#btn2');
+            btn2Element.addEventListener(
+                'click',
+                (event) => {
+                    btn2Element.parentElement.querySelector('.card-body').classList.toggle('expand');
+                },
+                false,
+            );
+        </script>
+    </body>
+</html>
