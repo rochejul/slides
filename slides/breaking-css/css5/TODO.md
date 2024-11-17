@@ -12,11 +12,6 @@ https://x.com/ChallengesCss/status/1805621389577064468?t=teBlnq2PbHMQFZxZYCQG9A&
 position-try-options - https://x.com/jh3yy/status/1778949931178328110?t=ClPn_BjzwsWkbHVBKi6LpQ&s=03
 https://x.com/wesbos/status/1856724739336859713?t=A1AztjxYqLYZq7EAb5KqlA&s=03
 
-custom state - https://fullystacked.net/custom-pseudo-classes/
-
-field-sizing - https://x.com/jh3yy/status/1735719206715297956
-https://x.com/argyleink/status/1735692251228156232
-
 scroll-driven animation - https://x.com/jh3yy/status/1740501273009389943
 https://x.com/jh3yy/status/1731866102508949733
 https://x.com/reactive_dude/status/1695674826109681730

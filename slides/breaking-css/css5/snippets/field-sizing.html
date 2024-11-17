@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Field Sizing</title>
+        <script type="module" charset="UTF-8" src="../../../../resources/init-service-worker.js"></script>
+        <style>
+            .with {
+                textarea,
+                select,
+                input {
+                    field-sizing: content;
+                }
+            }
+
+            textarea {
+                min-block-size: 3.5rlh;
+                min-inline-size: 20ch;
+                max-inline-size: 50ch;
+            }
+
+            select {
+                min-block-size: 1.5lh;
+            }
+
+            input {
+                min-inline-size: 7ch;
+            }
+
+            main {
+                display: grid;
+                place-content: center;
+                place-items: start;
+                gap: 10vmin;
+
+                @media (width > 800px) {
+                    grid-auto-flow: column;
+                }
+            }
+
+            section {
+                display: grid;
+                justify-items: start;
+                gap: 2vh;
+            }
+
+            textarea,
+            select,
+            input {
+                font: inherit;
+            }
+
+            input,
+            textarea {
+                line-height: 1.5;
+                padding-inline: 0.75rem;
+                padding-block: 0.5rem;
+            }
+
+            select {
+                padding: 0.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main class="player">
+            <section class="without">
+                <h2>Without</h2>
+                <textarea placeholder="No grow…"></textarea>
+
+                <select>
+                    <option>This doesn't shrink to fit</option>
+                    <option>hi</option>
+                    <option>short</option>
+                    <option>medium</option>
+                    <option>annoying long option that needs rewritten</option>
+                </select>
+
+                <select multiple>
+                    <option>This doesn't shrink to fit</option>
+                    <option>hi</option>
+                    <option>short</option>
+                    <option>medium</option>
+                    <option>annoying long option that needs rewritten</option>
+                </select>
+
+                <input type="text" placeholder="I don't grow" />
+
+                <input type="number" placeholder="99" />
+            </section>
+
+            <section class="with">
+                <h2>With</h2>
+
+                <textarea placeholder="Does grow…"></textarea>
+
+                <select>
+                    <option>This shrinks to fit</option>
+                    <option>hi</option>
+                    <option>short</option>
+                    <option>medium</option>
+                    <option>annoying long option that needs rewritten</option>
+                </select>
+
+                <select multiple>
+                    <option>This shrinks to fit</option>
+                    <option>hi</option>
+                    <option>short</option>
+                    <option>medium</option>
+                    <option>annoying long option that needs rewritten</option>
+                </select>
+
+                <input type="text" placeholder="I grow too" />
+
+                <input type="number" placeholder="99" />
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../resources/assets/favicon.ico" />
         <meta charset="UTF-8" />
         <title>Breaking CSS - CSS5</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -629,6 +630,18 @@ form:has(:focus) {
                         <h2>Play with it</h2>
                         <iframe class="c-iframe" src="./snippets/text-wrap.html"></iframe>
                     </section>
+
+                    <section>
+                        <h2>field-sizing</h2>
+                        <p>Used for <i>input</i> and <i>textarea</i> elements</p>
+                        <p>It controls the sizing behavior of elements that are given a default preferred size</p>
+                        <p>We could for example adapt the size of a <i>textarea</i> without JavaScript</p>
+                    </section>
+
+                    <section>
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="./snippets/field-sizing.html"></iframe>
+                    </section>
                 </section>
 
                 <!-- Improvements for rendering -->
@@ -779,6 +792,67 @@ then stroke, then fill */</code></pre>
     );
  }</code></pre>
                     </section>
+
+                    <section>
+                        <h2>Custom state</h2>
+                        <p>Some HTML elements has got some pseudo-class to style them depending of their state</p>
+                        <p>For the <i>input</i> tag, we could find:</p>
+                        <ul>
+                            <li>:invalid</li>
+                            <li>:checked</li>
+                            <li>:placeholder-shown</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Custom state</h2>
+                        <p>Web components could now define their own states and use CSS to customize the component depending of the state!</p>
+                        <p>These states could be styled <b>outside</b> of the web component</p>
+                    </section>
+
+                    <section>
+                        <h2>Custom state</h2>
+                        <p>On CSS side, we will use <i>:state(...)</i></p>
+                        <pre><code class="css u-no-max">/* Inside Web Component */
+:host(:state(confirmation)) button {
+    background-image: url("/tick.svg");
+}
+
+/*Outside of the Web Component*/
+copy-button:state(confirmation) {
+    --bg: #34d399;
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Custom state</h2>
+                        <p>On JavaScript side, we need to call first <i>attachInternals()</i></p>
+                        <p>The method exposes an internal representation of the element, and we could find a property called <i>states</i></p>
+                        <p>This is a <i>CustomStateSet</i> and this is similar to the ES6 <i>Map</i></p>
+                        <p>The element could have <b>multiple state at the same time</b>.</p>
+                    </section>
+
+                    <section>
+                        <h2>Custom state</h2>
+                        <pre class="c-pre">
+                            <code class="javascript u-no-max">class CopyButton extends HTMLElement {
+    #internals = this.attachInternals();
+    #states = this.#internals.states;
+
+    get confirmation() {
+        return this.#states.has("confirmation");
+    }
+
+    #onClick(event) {
+        this.#states.add("confirmation");
+        setTimeout(() => {
+            this.#states.delete("confirmation");
+        }, 2000);
+    }
+}</code>
+                          </pre>
+                    </section>
                 </section>
 
                 <!-- Advanced -->
@@ -818,6 +892,9 @@ then stroke, then fill */</code></pre>
                             <li>
                                 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style" target="_blank">@starting-style</a>
                             </li>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/css-ui/css-field-sizing" target="_blank">field-sizing</a>
+                            </li>
                         </ul>
                     </section>
 
@@ -838,6 +915,9 @@ then stroke, then fill */</code></pre>
                             </li>
                             <li>
                                 <a href="https://geoffgraham.me/conditionals-on-custom-properties/" target="_blank">Conditionals on Custom Properties</a>
+                            </li>
+                            <li>
+                                <a href="https://fullystacked.net/custom-pseudo-classes/" target="_blank">Custom state</a>
                             </li>
                         </ul>
                     </section>
