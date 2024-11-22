@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Anchor positioning - Basics</title>
+        <script type="module" charset="UTF-8" src="../../../../resources/init-service-worker.js"></script>
+        <style>
+            html,
+            body {
+                border: none;
+                height: 100%;
+                margin: 0 0 0 0;
+                padding: 0 0 0 0;
+                width: 100%;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+
+            main {
+                display: flex;
+                flex: 1 1 auto;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+
+            article {
+                background-color: burlywood;
+                border: 1px solid black;
+                flex: 0 0 auto;
+                height: 5rem;
+                width: 10rem;
+
+                anchor-name: --anchor-el;
+            }
+
+            aside {
+                background-color: lightgreen;
+                border: 1px solid black;
+                height: 3rem;
+                flex: 0 0 auto;
+                width: 8rem;
+
+                position-anchor: --anchor-el;
+                position: absolute;
+            }
+
+            footer {
+                display: flex;
+                flex: 0 0 auto;
+            }
+
+            .main-y_top.anchor-y_top {
+                top: anchor(top);
+            }
+
+            .main-y_top.anchor-y_center {
+                top: anchor(center);
+            }
+
+            .main-y_top.anchor-y_bottom {
+                top: anchor(bottom);
+            }
+
+            .main-y_bottom.anchor-y_top {
+                bottom: anchor(top);
+            }
+
+            .main-y_bottom.anchor-y_center {
+                bottom: anchor(center);
+            }
+
+            .main-y_bottom.anchor-y_bottom {
+                bottom: anchor(bottom);
+            }
+
+            .main-x_left.anchor-x_left {
+                left: anchor(left);
+            }
+
+            .main-x_left.anchor-x_center {
+                left: anchor(center);
+            }
+
+            .main-x_left.anchor-x_right {
+                left: anchor(right);
+            }
+
+            .main-x_right.anchor-x_left {
+                right: anchor(left);
+            }
+
+            .main-x_right.anchor-x_center {
+                right: anchor(center);
+            }
+
+            .main-x_right.anchor-x_right {
+                right: anchor(right);
+            }
+        </style>
+    </head>
+
+    <body class="player">
+        <main>
+            <article>Main</article>
+            <aside class="main-y_bottom anchor-y_top main-x_right anchor-x_right">Anchored</aside>
+        </main>
+        <footer>
+            <fieldset>
+                <legend>Anchor position - Y axis</legend>
+                <form name="axisy">
+                    <div>
+                        <p>On the main element</p>
+                        <label>
+                            <input type="radio" name="main-y" value="top" />
+                            <span>Top</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="main-y" value="bottom" checked="checked" />
+                            <span>Bottom</span>
+                        </label>
+                    </div>
+                    <div>
+                        <p>On the anchored element</p>
+                        <label>
+                            <input type="radio" name="anchor-y" value="top" checked="checked" />
+                            <span>Top</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="anchor-y" value="center" />
+                            <span>Center</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="anchor-y" value="bottom" />
+                            <span>Bottom</span>
+                        </label>
+                    </div>
+                </form>
+            </fieldset>
+
+            <fieldset>
+                <legend>Anchor position - X axis</legend>
+                <form name="axisx">
+                    <div>
+                        <p>On the main element</p>
+                        <label>
+                            <input type="radio" name="main-x" value="right" checked="checked" />
+                            <span>Right</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="main-x" value="left" />
+                            <span>Left</span>
+                        </label>
+                    </div>
+                    <div>
+                        <p>On the anchored element</p>
+                        <label>
+                            <input type="radio" name="anchor-x" value="left" />
+                            <span>Left</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="anchor-x" value="center" />
+                            <span>Center</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="anchor-x" value="right" checked="checked" />
+                            <span>Right</span>
+                        </label>
+                    </div>
+                </form>
+            </fieldset>
+        </footer>
+        <script>
+            const formAxisYElement = document.querySelector(`form[name="axisy"]`);
+            const formAxisXElement = document.querySelector(`form[name="axisx"]`);
+            const asideElement = document.querySelector('aside');
+
+            formAxisYElement.addEventListener('submit', (event) => event.preventDefault(), false);
+            formAxisYElement.addEventListener(
+                'change',
+                (event) => {
+                    asideElement.classList.remove('main-y_top', 'main-y_bottom');
+                    asideElement.classList.remove('anchor-y_top', 'anchor-y_center', 'anchor-y_bottom');
+                    asideElement.classList.add(`main-y_${formAxisYElement.elements['main-y'].value}`);
+                    asideElement.classList.add(`anchor-y_${formAxisYElement.elements['anchor-y'].value}`);
+                },
+                false,
+            );
+
+            formAxisXElement.addEventListener('submit', (event) => event.preventDefault(), false);
+            formAxisXElement.addEventListener(
+                'change',
+                (event) => {
+                    asideElement.classList.remove('main-x_left', 'main-x_right');
+                    asideElement.classList.remove('anchor-x_top', 'anchor-x_center', 'anchor-x_bottom');
+                    asideElement.classList.add(`main-x_${formAxisXElement.elements['main-x'].value}`);
+                    asideElement.classList.add(`anchor-x_${formAxisXElement.elements['anchor-x'].value}`);
+                },
+                false,
+            );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Anchor positioning - Inset</title>
+        <script type="module" charset="UTF-8" src="../../../../resources/init-service-worker.js"></script>
+        <style>
+            html,
+            body {
+                border: none;
+                height: 100%;
+                margin: 0 0 0 0;
+                padding: 0 0 0 0;
+                width: 100%;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+
+            main {
+                display: flex;
+                flex: 1 1 auto;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+
+            article {
+                background-color: burlywood;
+                border: 1px solid black;
+                flex: 0 0 auto;
+                height: 5rem;
+                width: 10rem;
+
+                anchor-name: --anchor-el;
+            }
+
+            aside {
+                background-color: lightgreen;
+                border: 1px solid black;
+                height: 3rem;
+                flex: 0 0 auto;
+                width: 8rem;
+
+                position-anchor: --anchor-el;
+                position: absolute;
+            }
+
+            footer {
+                display: flex;
+                flex: 0 0 auto;
+            }
+        </style>
+    </head>
+
+    <body class="player">
+        <main>
+            <article>Main</article>
+            <aside style="position-area: inline-end block-end">Anchored</aside>
+        </main>
+        <footer>
+            <label>
+                <span>Choose your position-area</span>
+                <select name="position-area-select">
+                    <optgroup label="Physical, single tile">
+                        <option>top left</option>
+                        <option>bottom right</option>
+                    </optgroup>
+                    <optgroup label="Physical, span two">
+                        <option>bottom span-right</option>
+                        <option>left span-top</option>
+                    </optgroup>
+                    <optgroup label="Physical, span all">
+                        <option>top</option>
+                        <option>left</option>
+                    </optgroup>
+                    <optgroup label="Logical, single tile">
+                        <option>start center</option>
+                        <option>inline-start block-end</option>
+                        <option>inline-start block-start</option>
+                        <option selected="selected">inline-end block-end</option>
+                        <option>inline-sendtart block-start</option>
+                    </optgroup>
+                    <optgroup label="Logical, span two">
+                        <option>start span-end</option>
+                        <option>center span-start</option>
+                        <option>inline-start span-block-end</option>
+                        <option>span-block-start center</option>
+                    </optgroup>
+                    <optgroup label="Logical, span all">
+                        <option>start span-all</option>
+                        <option>block-end</option>
+                    </optgroup>
+                    <optgroup label="Coordinates, single tile">
+                        <option>x-start center</option>
+                        <option>x-end y-end</option>
+                    </optgroup>
+                    <optgroup label="Coordinates, span two">
+                        <option>center span-y-start</option>
+                        <option>y-start span-x-end</option>
+                    </optgroup>
+                    <optgroup label="Coordinates, span all">
+                        <option>x-start span-all</option>
+                        <option>y-end</option>
+                    </optgroup>
+                </select>
+            </label>
+        </footer>
+        <script>
+            const selectElement = document.querySelector(`select`);
+            const asideElement = document.querySelector('aside');
+
+            selectElement.addEventListener(
+                'change',
+                (event) => {
+                    asideElement.setAttribute('style', `position-area: ${event.target.value}`);
+                },
+                false,
+            );
+        </script>
+    </body>
+</html>

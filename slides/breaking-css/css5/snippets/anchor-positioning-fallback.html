@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Anchor positioning - Fallback</title>
+        <script type="module" charset="UTF-8" src="../../../../resources/init-service-worker.js"></script>
+        <style>
+            .anchor {
+                font-size: 1.8rem;
+                color: white;
+                text-shadow: 1px 1px 1px black;
+                background-color: hsl(240 100% 75%);
+                width: fit-content;
+                border-radius: 10px;
+                border: 1px solid black;
+                padding: 3px;
+            }
+
+            body {
+                border: 1px solid black;
+                width: 1500px;
+                height: 500px;
+            }
+
+            .anchor {
+                anchor-name: --myAnchor;
+                margin: 100px 350px;
+            }
+
+            .infobox {
+                color: darkblue;
+                background-color: azure;
+                border: 1px solid #ddd;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 1rem;
+            }
+
+            .infobox {
+                position: fixed;
+                position-anchor: --myAnchor;
+                position-area: top left;
+
+                position-try-fallbacks: flip-block, flip-inline;
+                position-try: flip-block, flip-inline;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="anchor">⚓︎</div>
+
+        <div class="infobox">
+            <p>This is an information box.</p>
+        </div>
+    </body>
+</html>

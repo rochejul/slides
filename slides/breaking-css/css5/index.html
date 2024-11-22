@@ -866,6 +866,162 @@ copy-button:state(confirmation) {
                         <p>API for navigation styling in your app.</p>
                         <p><a href="../../you-know-nothing-js/es-2023-2024/index.html" target="_blank">See these slides</a></p>
                     </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>The ability to attach an element to another and to provide rules to adapt the position, depending of the layout, scroll position, etc...</p>
+                        <p>We have two approaches: the <i>absolute positining</i> and <i>the inset area</i></p>
+                    </section>
+
+                    <section>
+                        <a
+                            class="c-source"
+                            href="https://coryrylan.com/blog/flow-charts-with-css-anchor-positioning"
+                            target="_blank"
+                            title="Source"
+                            >[?]</a
+                        >
+                        <h2>Anchor positioning</h2>
+                        <p>With this feature, we could create some flow charts if we want!</p>
+                        <iframe class="c-iframe" src="https://coryrylan.web.app/assets/video/posts/2024-05-27-flow-charts-with-css-anchor-positioning/draggable-flow-chart.mp4"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>First, let's define a CSS va and use it through <i>anchor-name</i> on the element where we want to attach another one</p>
+                        <pre><code class="css u-no-max">.anchor-button {
+    anchor-name: --anchor-el;
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>Now, we will use the <i>anchor</i> CSS function through <i>position-anchor</i> on the element which should be positioned based on the first element</p>
+                        <pre><code class="css u-no-max">.positioned-notice {
+    position-anchor: --anchor-el;
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>We will use the properties <i>top</i>, <i>right</i>, <i>bottom</i> and <i>left</i> to attach the element based on the first element</p>
+                        <p>It also means here we adopt the <b>absolute</b> positioning</p>
+                        <p>We could also use the <b>explicit declaration</b> to attach multiple anchors</p>
+                        <div class="c-layout c-layout--two-columns">
+                            <pre><code class="css u-no-max">.positioned-notice {
+    position-anchor: --anchor-el;
+    top: anchor(bottom);
+}</code></pre>
+
+                        <pre><code class="css u-no-max">.anchored {
+    position: absolute;
+    top: anchor(--one bottom);
+    left: anchor(--one right);
+    right: anchor(--two left);
+    bottom: anchor(--two top);
+}</code></pre>
+                        </div>
+                        
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>Here an overview of how to position the attached element on the first element</p>
+                        <div class="c-layout c-layout--two-columns">
+                            <img src="./resources/anchor-diagram-1.png" />
+
+                            <img src="./resources/anchor-diagram-2.png" />
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>If we want to attach the top right element on the bottom right of the first element:</p>
+                        <pre><code class="css u-no-max">.positioned-notice {
+    position-anchor: --anchor-el;
+    /* absolutely position the positioned element */
+    position: absolute;
+    /* position the right of the positioned element
+    at the right edge of the anchor */
+    right: anchor(right);
+    /* position the bottom of the positioned element
+    at the top edge of the anchor */
+    bottom: anchor(top);
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="./snippets/anchor-positioning-basics.html"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>We could quickly centered the anchored element with <i>anchor-center</i> on <i>justify-self</i>, <i>align-self</i>, <i>justify-items</i> and <i>align-items</i></p>
+                        <div class="c-layout c-layout--two-columns">
+                            <img src="./resources/anchor-demo-2_856.png" />
+                            <pre><code class="css u-no-max">.positioned-notice {
+    position: absolute;
+    /*  Anchor reference  */
+    position-anchor: --anchor-el;
+    /*  Position bottom of positioned elem at top of anchor  */
+    bottom: anchor(top);
+    /*  Center justification to the anchor */
+    justify-self: anchor-center;
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>We could use the <i>inset area</i> approach using the <i>position-area</i> property, with a lot of flexibilities to define the rules.</p>
+                        <p>We have more flexibilities because we could use physical position (<i>top</i>, <i>left</i>, ...).</p>
+                        <p>We could too use the logical positions (<i>block-end</i>, <i>inline-start</i>, etc...)</p>
+                        <p>We could also use the coordinate positions (<i>x-end</i>, <i>y-start</i>, etc...)</p>
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p><i>position-area</i> is based  on the concept of a 3x3 grid of tiles, called the <b>position-area grid</b>, with the anchor element being the center tile</p>
+                        <img src="./resources/position-area.png" style="max-width: 50%;" />
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>We have at the end a <i>span</i> notion.</p>
+                        <p>The first value specifies the row or column to place the positioned element in, placing it initially in the center, and the other one specifies the other tiles of that row or column to span.</p>
+                        <pre><code class="css u-no-max">.positioned-notice {
+    position-area: top span-left;
+    /*  it causes the positioned element to be placed
+    in the center of the top row, and span across
+    the center and left tiles of that row  */
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="./snippets/anchor-positioning-inset.html"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>Anchor positioning</h2>
+                        <p>At the end, we have a <i>position-try</i> notion.</p>
+                        <p>We could specify an alternative position (<i>position-try-fallbacks</i> and <i>position-try-order</i>) if the anchored element will not be visible.</p>
+                        <pre><code class="css u-no-max">.infobox {
+    position: fixed;
+    position-anchor: --myAnchor;
+    position-area: top left;
+
+    position-try-fallbacks: flip-block, flip-inline;
+    position-try: flip-block, flip-inline;
+}
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="./snippets/anchor-positioning-fallback.html"></iframe>
+                    </section>
                 </section>
 
                 <!-- Resources -->
@@ -895,6 +1051,9 @@ copy-button:state(confirmation) {
                             <li>
                                 <a href="https://developer.chrome.com/docs/css-ui/css-field-sizing" target="_blank">field-sizing</a>
                             </li>
+                            <li>
+                                <a href="https://developer.chrome.com/blog/anchor-positioning-api" target="_blank">Anchor positioning</a>
+                            </li>
                         </ul>
                     </section>
 
@@ -918,6 +1077,12 @@ copy-button:state(confirmation) {
                             </li>
                             <li>
                                 <a href="https://fullystacked.net/custom-pseudo-classes/" target="_blank">Custom state</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.chrome.com/blog/tether-elements-to-each-other-with-css-anchor-positioning/" target="_blank">Anchor positioning - Chrome blog</a>
+                            </li>
+                            <li>
+                                <a href="https://coryrylan.com/blog/flow-charts-with-css-anchor-positioning" target="_blank">Anchor positioning - Flow chart example</a>
                             </li>
                         </ul>
                     </section>
