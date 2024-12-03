@@ -19,15 +19,14 @@
 }
 
 .url-preview {
-    position-area: inline-start center;
-    position-try-fallbacks: top;
+    position-area: end;
 
     border: 1px solid var(--color-black);
     border-radius: 0.5rem;
     display: flex;
     pointer-events: none;
     position-anchor: --anchor-el;
-    position: absolute;
+    position: fixed;
     position-try-order: most-height;
     position-visibility: anchors-visible;
 
