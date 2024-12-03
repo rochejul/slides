@@ -673,6 +673,18 @@ form:has(:focus) {
                     </section>
 
                     <section>
+                        <a
+                            class="c-source"
+                            href="https://ishadeed.com/article/overflow-clip/"
+                            target="_blank"
+                            title="Source"
+                            >[?]</a
+                        >
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="./snippets/overflow-clip.html"></iframe>
+                    </section>
+
+                    <section>
                         <h2>paint-order</h2>
                         <p>Lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.</p>
                     </section>
@@ -868,6 +880,83 @@ copy-button:state(confirmation) {
                     </section>
 
                     <section>
+                        <a
+                            class="c-source"
+                            href="https://scroll-driven-animations.style/"
+                            target="_blank"
+                            title="Source"
+                            >[?]</a
+                        >
+                        <h2>Scroll driven animation</h2>
+                        <p>API to create animations that are linked to the scroll position of a scroll container.</p>
+                        <p>It means that as you scroll up or down, the linked animation scrubs forward or backward in direct response.</p>
+                    </section>
+
+                    <section>
+                        <a
+                            class="c-source"
+                            href="https://scroll-driven-animations.style/"
+                            target="_blank"
+                            title="Source"
+                            >[?]</a
+                        >
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="https://scroll-driven-animations.style/demos/scroll-shadows/css/"></iframe>
+                    </section>
+
+                    <section>
+                        <a
+                            class="c-source"
+                            href="https://scroll-driven-animations.style/"
+                            target="_blank"
+                            title="Source"
+                            >[?]</a
+                        >
+                        <h2>Play with it</h2>
+                        <iframe class="c-iframe" src="https://scroll-driven-animations.style/demos/stacking-cards/css/"></iframe>
+                    </section>
+
+                    <section>
+                        <h2>Scroll driven animation</h2>
+                        <p>We need to define an aninmation with a classical <i>@keyframes</i></p>
+                        <p>Then on the element where we apply scrolling, we will use <i>animation</i> and <i>animation-timeline</i></p>
+                        <pre><code class="css u-no-max">@keyframes animate-it { /* ... */ }
+
+.subject {
+    /* We provide the animation and the animation transition animation*/
+    animation: animate-it linear;
+    /* Definition of the scroll timeline */
+    animation-timeline: scroll(root block);
+}</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Scroll driven animation</h2>
+                        <p><i>scroll()</i> accepts a <i>scroller</i> and an <i>axis</i> argument.</p>
+                    </section>
+
+                    <section>
+                        <h2>Scroll driven animation</h2>
+                        <p>scroller (which element with scroll to "listen"):</p>
+                        <ul>
+                            <li><b>nearest</b>: Uses the nearest ancestor scroll container (default).</li>
+                            <li><b>root</b>: Uses the document viewport as the scroll container.</li>
+                            <li><b>self</b>: Uses the element itself as the scroll container.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Scroll driven animation</h2>
+                        <p>axis (measure of progess):</p>
+                        <ul>
+                            <li><b>block</b>: Uses the measure of progress along the block axis of the scroll container (default).</li>
+                            <li><b>inline</b>: Uses the measure of progress along the inline axis of the scroll container.</li>
+                            <li><b>y</b>: Uses the measure of progress along the y axis of the scroll container.</li>
+                            <li><b>x</b>: Uses the measure of progress along the x axis of the scroll container.</li>
+                        </ul>
+                    </section>
+
+                    <section>
                         <h2>Anchor positioning</h2>
                         <p>The ability to attach an element to another and to provide rules to adapt the position, depending of the layout, scroll position, etc...</p>
                         <p>We have two approaches: the <i>absolute positining</i> and <i>the inset area</i></p>
@@ -1051,6 +1140,15 @@ copy-button:state(confirmation) {
                             <li>
                                 <a href="https://developer.chrome.com/docs/css-ui/css-field-sizing" target="_blank">field-sizing</a>
                             </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Main entry points (2)</h2>
+                        <ul>
+                            <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations" target="_blank">Scroll driven animation</a>
+                            </li>
                             <li>
                                 <a href="https://developer.chrome.com/blog/anchor-positioning-api" target="_blank">Anchor positioning</a>
                             </li>
@@ -1058,7 +1156,7 @@ copy-button:state(confirmation) {
                     </section>
 
                     <section>
-                        <h2>Misc.</h2>
+                        <h2>Misc. (1)</h2>
                         <ul>
                             <li>
                                 <a href="https://ishadeed.com/article/css-container-style-queries/" target="_blank">CSS Style Queries</a>
@@ -1078,8 +1176,23 @@ copy-button:state(confirmation) {
                             <li>
                                 <a href="https://fullystacked.net/custom-pseudo-classes/" target="_blank">Custom state</a>
                             </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Misc. (2)</h2>
+                        <ul>
+                            <li>
+                                <a href="https://ishadeed.com/article/overflow-clip/ target="_blank">Overflow Clip</a>
+                            </li>
+                            <li>
+                                <a href="https://scroll-driven-animations.style/" target="_blank">Scroll-driven Animations</a>
+                            </li>
                             <li>
                                 <a href="https://developer.chrome.com/blog/tether-elements-to-each-other-with-css-anchor-positioning/" target="_blank">Anchor positioning - Chrome blog</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.chrome.com/docs/css-ui/scroll-driven-animations" target="_blank">Animate elements on scroll with Scroll-driven animations/a>
                             </li>
                             <li>
                                 <a href="https://coryrylan.com/blog/flow-charts-with-css-anchor-positioning" target="_blank">Anchor positioning - Flow chart example</a>
