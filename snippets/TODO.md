@@ -15,3 +15,5 @@
 -   https://x.com/wesbos/status/1841867095102939139?t=iPD2PhVwE78IUnPJqZzcAA&s=09
 -   https://x.com/paul_uiux/status/1841437472711938322?t=YeZ850PSOMXdjBvxukH5nA&s=03
 -   https://x.com/sysxplore/status/1852766179854598398
+-   https://x.com/ChromiumDev/status/1864414373801828533?t=p555uUztw4YzhU1D2W1r3g&s=03
+-   https://jsdev.space/html-ping-attribute/
