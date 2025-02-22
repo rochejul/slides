@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="./resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Julien Roche's slides and games = gloassary</title>
+
+        <link rel="stylesheet" href="./resources/theme.css" />
+        <link rel="stylesheet" href="./resources/page.css" />
+
+        <link rel="import" href="./resources/components/logo/logo.html" />
+        <link rel="import" href="./resources/components/resource/resource.html" />
+        <link rel="import" href="./resources/components/section-content/section-content.html" />
+        <link rel="import" href="./resources/components/section-title/section-title.html" />
+        <link rel="import" href="./resources/components/url-preview/url-preview.html" />
+
+        <link rel="prefetch" href="./index.html" as="document" />
+
+        <link rel="prefetch" href="./slides/reactive-everywhere" as="document" />
+        <link rel="prefetch" href="./slides/css/css-coding-conventions" as="document" />
+        <link rel="prefetch" href="./slides/css/css-tricks" as="document" />
+        <link rel="prefetch" href="./slides/css/css4-variables" as="document" />
+        <link rel="prefetch" href="./slides/breaking-css/css5" as="document" />
+        <link rel="prefetch" href="./slides/javascript/javascript-functional-programming" as="document" />
+        <link rel="prefetch" href="./slides/you-know-nothing-js/chrome-dev-tools" as="document" />
+        <link rel="prefetch" href="./slides/you-know-nothing-js/console-api" as="document" />
+        <link rel="prefetch" href="./slides/you-know-nothing-js/es-2023-2024" as="document" />
+
+        <link rel="prefetch" href="./snippets/js/camera-access" as="document" />
+        <link rel="prefetch" href="./snippets/js/handwriting-recognition" as="document" />
+
+        <link rel="prefetch" href="./games/langton-ant" as="document" />
+        <link rel="prefetch" href="./games/maze-runner" as="document" />
+        <link rel="prefetch" href="./games/mine-sweeper" as="document" />
+        <link rel="prefetch" href="./games/snake" as="document" />
+
+        <script type="module" src="./resources/app.js"></script>
+    </head>
+
+    <body class="page page--loading">
+        <div class="page__loader"></div>
+
+        <header class="page__header">
+            <aside class="page__header__logo">
+                <jro-logo></jro-logo>
+            </aside>
+            <section class="page__header__title">
+                <p>Welcome on Julien's page</p>
+                <p class="page__header__title__sub">Glossary</p>
+            </div>
+        </header>
+
+        <section class="page__content">
+            <jro-section-title label="Agility & Craftman"></jro-section-title>
+            <section class="page__content__section">
+                <jro-section-content label="Agility" variant="default">
+                    <ul>
+                        <li>
+                            <jro-url-preview label="DACI Decision-Making Framework" src="https://www.productplan.com/glossary/daci/"></jro-url-preview>
+                        </li>
+                        <li>
+                            <jro-url-preview label="INVEST in Good Stories, and SMART Tasks" src="https://xp123.com/invest-in-good-stories-and-smart-tasks/"></jro-url-preview>
+                        </li>
+                    </ul>
+                </jro-section-content>
+            </section>
+
+            <jro-section-title label="Design Patterns"></jro-section-title>
+            <section class="page__content__section">
+                <jro-section-content label="Principles" variant="drawing">
+                    <ul>
+                        <li><b>KISS (Keep It Simple, Stupid)</b>: Design solutions as simply as possible. Avoid unnecessary complexity.</li>
+                        <li><b>DRY (Don't Repeat Yourself)</b>: Eliminate duplicate code. Centralize logic to make maintenance easier.</li>
+                        <li><b>YAGNI (You aren't Gonna Need It)</b>: Build only what's needed now, not features you might need "someday."</li>
+                        <li><b>Encapuslate what Varies</b>: Hide changing parts of your code behind stable interfaces.</li>
+                        <li><b>Program to an Interface, Not an Implementation</b>: Depend on abstractions, not concrete classes, for flexibility.</li>
+                        <li><b>Favor Composition Over Inheritance</b>: Combine small, reusable components instead of relying heavily on class hierarchies.</li>
+                        <li><b>Strive for Loosely Coupled Designs</b>: Reduce interdependencies so changes in one part don't break others.</li>
+                        <li><b>LoD (Law of Demeter)</b>: Only communicate with direct neighbors. Don't chain too many calls.</li>
+                    </ul>
+                </jro-section-content>
+
+                <jro-section-content label="SOLID principles" variant="drawing">
+                    <ul>
+                        <li><b>SRP (Single Responsibility Principle)</b>: One class, one job—keep responsibilities clear and focused.</li>
+                        <li><b>OCP (Open/Closed Principle)</b>: Open for extension, closed for modification—add new features without changing core code.</li>
+                        <li><b>LSP (Liskov Substitution Principle)</b>: Subclasses should seamlessly replace their parents without issues.</li>
+                        <li><b>ISP (Interface Segregation Principle)</b>: Create small, specific interfaces instead of large, general ones.</li>
+                        <li><b>DIP (Dependency Inversion Principle)</b>: Depend on abstractions, not details—high-level modules shouldn't depend on low-level modules.</li>
+                    </ul>
+                </jro-section-content>
+            </section>
+
+            <jro-section-title label="Cloud architecture"></jro-section-title>
+            <section class="page__content__section">
+                <jro-section-content label="Cloud/Micro-service" variant="red">
+                    <ul>
+                        <li><b>Event Sourcing</b></li>
+                        <li><b>CQRS</b></li>
+                        <li><b>Saga</b></li>
+                        <li><b>BFF</b></li>
+                        <li><b>API Gateway</b></li>
+                        <li><b>Strangler</b></li>
+                        <li><b>Database per mictoservice</b></li>
+                        <li><b>Externalized configuration</b></li>
+                        <li><b>Consumer-Driven contract tracing</b></li>
+                    </ul>
+                </jro-section-content>
+
+                <jro-section-content label="Resiliency Patterns" variant="red">
+                    <ul>
+                        <li><b>Circuit breaker</b>: When a service experiences repeated failures, the circuit breaker 'trips' & stops sending requests to that service for a period of time. This allows the failing service to recover without being overwhelmed.</li>
+                        <li><b>Retry</b>: When a request fails, the system automatically retries it a certain number of times before giving up. Improves system availability and can mask transient errors.</li>
+                        <li><b>Timeout</b>: Sets a maximum time limit for a request before is considered a failure.</li>
+                        <li><b>Bulkhead</b>: isolates different parts of an application into pools or compartments. This isolation limits the impact of failures or overload in one compartment, preventing it from cascading and affecting the entire system.</li>
+                        <li><b>Rate Limiting</b>: Controls the rate of incoming requests to protect a system from being overwhelmed.</li>
+                        <li><b>Fallback</b>: Provides an alternative (often less ideal) response or action when the primary one fails.</li>
+                        <li><b>Hedging (Redundancy)</b>: Sends duplicate requests to multiple identical services and uses the fastest response. Mitigates the impact of slow responses and failures, improving system responsiveness.</li>
+                        <li><b>Load Shedding</b>: Drops non-critical requests when a system is overloaded to protect its core functionality.</li>
+                        <li><b>Backpressure</b>: Feedback loop between the producer (sending data) and the consumer (receiving data). The consumer signals its capacity to the producer, allowing the producer to adjust its output rate dynamically.</li>
+                    </ul>
+                </jro-section-content>
+
+                <jro-section-content label="SideCar" variant="red">
+                    <p><jro-url-preview label="SideCar" src="https://t.co/wg0R8hs9mn"></jro-url-preview>: Microservice design pattern that deploys auxiliary components alongside your main service container.</p>
+                    <p>Key Benefits:</p>
+                    <ol>
+                        <li>Separation of cross-cutting concerns (logging, monitoring, security)</li>
+                        <li>Language/framework agnostic - can be written in any tech sta</li>
+                        <li>Independent scaling and updates of aux. components</li>
+                        <li>Reduced main service complexity</li>
+                    </ol>
+                    <figure>
+                        <img src="./resources/figures/sidecar.jpeg" alt="SideCar principle" width="500" />
+                        <figcaption>SideCar principle</figcaption>
+                    </figure>
+                </jro-section-content>
+            </section>
+
+            <jro-section-title label="AI"></jro-section-title>
+            <section class="page__content__section">
+                <jro-section-content label="Agentic AI Design Patterns" variant="red">
+                    <figure>
+                        <img src="./resources/figures/agentic.jpeg" alt="Agentic AI Design Patterns" width="500" />
+                        <figcaption>Agentic AI Design Patterns</figcaption>
+                    </figure>
+                </jro-section-content>
+
+                <jro-section-content label="RAG (Retrieval-Augmented Generation)" variant="red">
+                    <figure>
+                        <img src="./resources/figures/rag.jpeg" alt="RAG" width="500" />
+                        <figcaption>RAG</figcaption>
+                    </figure>
+                </jro-section-content>
+            </section>
+
+            <jro-section-title label="Misc."></jro-section-title>
+            <section class="page__content__section">
+                <jro-section-content label="Software architecture" variant="default">
+                    <ul>
+                        <li>
+                            <jro-url-preview label="27 Fundamental Techniques for Software Architects" src="https://www.workingsoftware.dev/fundamental-techniques-for-software-architects/"></jro-url-preview>
+                        </li>
+                    </ul>
+                </jro-section-content>
+
+                <jro-section-content label="Networking Protocols" variant="default">
+                    <figure>
+                        <img src="./resources/figures/networking.jpeg" alt="Networking Protocols" width="500" />
+                        <figcaption>Networking Protocols</figcaption>
+                    </figure>
+                </jro-section-content>
+            </section>
+        </section>
+
+        <footer class="page__footer">
+            <jro-resource label="Twitter" url="https://x.com/rochejul"></jro-resource>
+            <jro-resource label="Github" url="https://github.com/rochejul"></jro-resource>
+            <jro-resource label="Blog" url="https://julienroche.blogspot.com/"></jro-resource>
+            <jro-resource label="Linkedin" url="https://fr.linkedin.com/in/julien-roche-233b9813"></jro-resource>
+            <jro-resource label="Medium" url="https://medium.com/@rochejul"></jro-resource>
+            <jro-resource label="Index" url="./index.html"></jro-resource>
+        </footer>
+    </body>
+</html>

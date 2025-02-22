@@ -16,4 +16,26 @@
 -   https://x.com/paul_uiux/status/1841437472711938322?t=YeZ850PSOMXdjBvxukH5nA&s=03
 -   https://x.com/sysxplore/status/1852766179854598398
 -   https://x.com/ChromiumDev/status/1864414373801828533?t=p555uUztw4YzhU1D2W1r3g&s=03
+-   https://x.com/snorklTV/status/1865058798534300010?t=nZEvg4Kc7W1DzZ1hte2Upw&s=03
 -   https://jsdev.space/html-ping-attribute/
+-   https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library
+-   https://x.com/alirdev/status/1866120701079699587?t=8cavpgYNcHenKP-jCBNIVQ&s=03
+-   https://x.com/ChallengesCss/status/1866428556256903449?t=H2GHD0ikuNIKNVlMRpXrUQ&s=03
+-   https://x.com/bramus/status/1869536573664227618?t=j5_n7BS34mZgZLZDR6CxDQ&s=03
+-   https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/getPredictedEvents#result
+-   https://bsky.app/profile/nerdy.dev/post/3ld2bli6bu22v
+-   canvases scaling: https://x.com/aidenybai/status/1873499990540374346?t=IlG3RU6gqA-QaCvW7wZCuw&s=03
+-   inline webworker: https://x.com/aidenybai/status/1873444625907597780?t=E6v0m-l2HPiTSvpoKHG_eQ&s=03
+-   https://bsky.app/profile/anatudor.bsky.social/post/3lf7mrlaq722h
+-   https://x.com/codewithshripal/status/1877715109176562164?t=BCpC3DZ5izOEWPtyyNgQoQ&s=03
+-   https://x.com/Shefali__J/status/1878362240400691360?t=Bk15AtHkEl3HtfYEdNbMuw&s=03
+-   https://x.com/javascript_fan/status/1878124966342005016?t=VYamhNeG6aBWCWb6iAHV-g&s=03
+-   https://x.com/sysxplore/status/1879197832298778691
+-   https://x.com/ChallengesCss/status/1880200901421572158?t=ByouPGvd0KsuENerDVO76A&s=03
+-   https://x.com/aidenybai/status/1880648594895901055?t=Dj_zV5D6H5aULaQCKjszcw&s=09
+-   https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025
+-   https://x.com/hypeddev/status/1884595151965667738?t=wCeb-oQu8ErjUqmK0x_gVg&s=03
+-   multi select dropdown: https://jsdev.space/multi-select-dropdown/
+-   https://x.com/codewithshripal/status/1890039395119743104?t=CFVOuFN_PQEEbj2YCkGOLA&s=03
+-   https://x.com/davidm_ml/status/1892172590778576985?t=EpbTDcyhXZmczjPTb7BPOQ&s=03
+-   https://codepen.io/YusukeNakaya/pen/JojGVWX
