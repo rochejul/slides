@@ -1,0 +1,30 @@
+@import url('../../variables.css');
+
+:host {
+    --image-size: 32rem;
+
+    all: initial;
+    display: block;
+    font-family: var(--font);
+}
+
+figure,
+img {
+    max-width: var(--image-size);
+}
+
+figure {
+    position: relative;
+}
+
+img {
+    object-fit: contain;
+}
+
+figcaption {
+    bottom: -2rem;
+    font-weight: bolder;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
