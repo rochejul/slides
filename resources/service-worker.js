@@ -1,5 +1,5 @@
 // The name of the new cache your app uses.
-const CACHE_NAME = 'cache-v5';
+const CACHE_NAME = 'cache-v6';
 const isHostedOnGithub = location.hostname === 'rochejul.github.io';
 const PRE_CACHED_RESOURCES = [
     (isHostedOnGithub ? '/slides' : '') + '/games',
@@ -8,6 +8,7 @@ const PRE_CACHED_RESOURCES = [
     (isHostedOnGithub ? '/slides' : '') + '/snippets',
     (isHostedOnGithub ? '/slides' : '') + '/index.html',
     (isHostedOnGithub ? '/slides' : '') + '/glossary.html',
+    (isHostedOnGithub ? '/slides' : '') + '/tips.html',
 ];
 
 async function preCacheResources() {

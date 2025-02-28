@@ -39,3 +39,8 @@
 -   https://x.com/codewithshripal/status/1890039395119743104?t=CFVOuFN_PQEEbj2YCkGOLA&s=03
 -   https://x.com/davidm_ml/status/1892172590778576985?t=EpbTDcyhXZmczjPTb7BPOQ&s=03
 -   https://codepen.io/YusukeNakaya/pen/JojGVWX
+-   https://x.com/jh3yy/status/1894787364762812778?t=snpDnXjpGGYz93gnmB9o-w&s=03
+-   https://x.com/ChallengesCss/status/1894761715293635008?t=ziX-i7UFCR3Et0VTI0lsSA&s=03
+-   https://x.com/k_grajeda/status/1894425200931778976?s=03
+    https://x.com/ChallengesCss/status/1893991557075812366?t=KMRCFA69TgAjHHwFNiBEOA&s=03
+-   https://x.com/bramus/status/1894055280075235672?t=2sDSaMSeqlFUSFw055dbUw&s=03

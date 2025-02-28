@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="./resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Julien Roche's slides and games = gloassary</title>
+
+        <link rel="stylesheet" href="./resources/theme.css" />
+        <link rel="stylesheet" href="./resources/page.css" />
+
+        <link rel="import" href="./resources/components/figure/figure.html" />
+        <link rel="import" href="./resources/components/logo/logo.html" />
+        <link rel="import" href="./resources/components/resource/resource.html" />
+        <link rel="import" href="./resources/components/section-content/section-content.html" />
+        <link rel="import" href="./resources/components/section-title/section-title.html" />
+        <link rel="import" href="./resources/components/url-preview/url-preview.html" />
+
+        <link rel="prefetch" href="./index.html" as="document" />
+
+        <link rel="prefetch" href="./slides/reactive-everywhere" as="document" />
+        <link rel="prefetch" href="./slides/css/css-coding-conventions" as="document" />
+        <link rel="prefetch" href="./slides/css/css-tricks" as="document" />
+        <link rel="prefetch" href="./slides/css/css4-variables" as="document" />
+        <link rel="prefetch" href="./slides/breaking-css/css5" as="document" />
+        <link rel="prefetch" href="./slides/javascript/javascript-functional-programming" as="document" />
+        <link rel="prefetch" href="./slides/you-know-nothing-js/chrome-dev-tools" as="document" />
+        <link rel="prefetch" href="./slides/you-know-nothing-js/console-api" as="document" />
+        <link rel="prefetch" href="./slides/you-know-nothing-js/es-2023-2024" as="document" />
+
+        <link rel="prefetch" href="./snippets/js/camera-access" as="document" />
+        <link rel="prefetch" href="./snippets/js/handwriting-recognition" as="document" />
+
+        <link rel="prefetch" href="./games/langton-ant" as="document" />
+        <link rel="prefetch" href="./games/maze-runner" as="document" />
+        <link rel="prefetch" href="./games/mine-sweeper" as="document" />
+        <link rel="prefetch" href="./games/snake" as="document" />
+
+        <script type="module" src="./resources/app.js"></script>
+    </head>
+
+    <body class="page page--loading">
+        <div class="page__loader"></div>
+
+        <header class="page__header">
+            <aside class="page__header__logo">
+                <jro-logo></jro-logo>
+            </aside>
+            <section class="page__header__title">
+                <p>Welcome on Julien's page</p>
+                <p class="page__header__title__sub">Tips</p>
+            </div>
+        </header>
+
+        <section class="page__content">
+            <jro-section-title label="Various"></jro-section-title>
+            <jro-figure label="CRON Job" src="./resources/figures/cron-job.png"></jro-figure>
+            <jro-figure label="Docker best practices" src="./resources/figures/docker-best-practices.png"></jro-figure>
+        </section>
+
+        <footer class="page__footer">
+            <jro-resource label="Twitter" url="https://x.com/rochejul"></jro-resource>
+            <jro-resource label="Github" url="https://github.com/rochejul"></jro-resource>
+            <jro-resource label="Blog" url="https://julienroche.blogspot.com/"></jro-resource>
+            <jro-resource label="Linkedin" url="https://fr.linkedin.com/in/julien-roche-233b9813"></jro-resource>
+            <jro-resource label="Medium" url="https://medium.com/@rochejul"></jro-resource>
+            <jro-resource label="Index" url="./index.html"></jro-resource>
+            <jro-resource label="Tips" url="./tips.html"></jro-resource>
+        </footer>
+    </body>
+</html>
