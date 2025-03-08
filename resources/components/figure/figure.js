@@ -1,4 +1,6 @@
 class Figure extends HTMLElement {
+    static observedAttributes = ['label', 'src'];
+
     #root;
 
     constructor() {
