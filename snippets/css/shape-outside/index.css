@@ -1,0 +1,16 @@
+.page__content {
+    article {
+        border: 0.125rem black solid;
+        border-radius: 1rem;
+        margin: 1rem 1rem 1rem 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+        width: 50vw;
+    }
+
+    img {
+        float: left;
+        margin: 20px;
+        width: 150px;
+        shape-outside: circle(50%);
+    }
+}

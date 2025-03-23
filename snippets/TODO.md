@@ -9,7 +9,7 @@
 -   https://x.com/BilliCodes/status/1840620661951041881?t=bDI9DCg8S9llaCwLvSRynA&s=03
 -   https://x.com/BilliCodes/status/1839898265476534734?t=Z38o_zHRA7b-Ktb4lrW9jw&s=03
 -   https://x.com/BilliCodes/status/1843896797103808627?t=rJFN43qBuD-H3HhrjYqKqA&s=03
--   https://x.com/denicmarko/status/1843292731751456817?t=Yneej8B-NCfqDJA3ZDERIw&s=03
+
 -   https://x.com/anatudor/status/1842569374609363071?t=WkpaX-u7YKWIqqbVPF2A_Q&s=03
 -   https://x.com/davidm_ml/status/1842550726716801337?t=p5xx-5rwYIfshDWCq-uDEg&s=03
 -   https://x.com/wesbos/status/1841867095102939139?t=iPD2PhVwE78IUnPJqZzcAA&s=09
@@ -45,3 +45,4 @@
 -   https://x.com/ChallengesCss/status/1893991557075812366?t=KMRCFA69TgAjHHwFNiBEOA&s=03
 -   https://x.com/bramus/status/1894055280075235672?t=2sDSaMSeqlFUSFw055dbUw&s=03
 -   https://www.bram.us/2025/03/11/view-transitions-border-radius/
+-   https://x.com/codewithshripal/status/1901998123939209659?t=TuH5dVbhJse3H3IsJ1FPoA&s=03
