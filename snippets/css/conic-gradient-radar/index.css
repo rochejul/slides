@@ -1,0 +1,29 @@
+:root {
+    --angle: 30deg;
+    --start: 0deg;
+}
+
+.page__content {
+    .radar {
+        border: 1px solid black;
+        width: 20rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: conic-gradient(from var(--start), green var(--angle), #0006 0%);
+        animation:
+            start 2s linear infinite,
+            angle 1s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes start {
+    to {
+        --start: 1turn;
+    }
+}
+
+@keyframes angle {
+    to {
+        --angle: 120deg;
+    }
+}

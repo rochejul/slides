@@ -10,15 +10,10 @@
 -   https://x.com/BilliCodes/status/1839898265476534734?t=Z38o_zHRA7b-Ktb4lrW9jw&s=03
 -   https://x.com/BilliCodes/status/1843896797103808627?t=rJFN43qBuD-H3HhrjYqKqA&s=03
 
--   https://x.com/anatudor/status/1842569374609363071?t=WkpaX-u7YKWIqqbVPF2A_Q&s=03
--   https://x.com/davidm_ml/status/1842550726716801337?t=p5xx-5rwYIfshDWCq-uDEg&s=03
--   https://x.com/wesbos/status/1841867095102939139?t=iPD2PhVwE78IUnPJqZzcAA&s=09
 -   https://x.com/paul_uiux/status/1841437472711938322?t=YeZ850PSOMXdjBvxukH5nA&s=03
--   https://x.com/sysxplore/status/1852766179854598398
 -   https://x.com/ChromiumDev/status/1864414373801828533?t=p555uUztw4YzhU1D2W1r3g&s=03
 -   https://x.com/snorklTV/status/1865058798534300010?t=nZEvg4Kc7W1DzZ1hte2Upw&s=03
 -   https://jsdev.space/html-ping-attribute/
--   https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library
 -   https://x.com/alirdev/status/1866120701079699587?t=8cavpgYNcHenKP-jCBNIVQ&s=03
 -   https://x.com/ChallengesCss/status/1866428556256903449?t=H2GHD0ikuNIKNVlMRpXrUQ&s=03
 -   https://x.com/bramus/status/1869536573664227618?t=j5_n7BS34mZgZLZDR6CxDQ&s=03
@@ -46,3 +41,5 @@
 -   https://x.com/bramus/status/1894055280075235672?t=2sDSaMSeqlFUSFw055dbUw&s=03
 -   https://www.bram.us/2025/03/11/view-transitions-border-radius/
 -   https://x.com/codewithshripal/status/1901998123939209659?t=TuH5dVbhJse3H3IsJ1FPoA&s=03
+-   https://x.com/argyleink/status/1904285204765900863?t=hww_jU4t0j4RIxAPAEqfxg&s=03
+-   https://css-tip.com/custom-progress/
