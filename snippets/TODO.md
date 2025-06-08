@@ -43,3 +43,4 @@
 -   https://x.com/codewithshripal/status/1901998123939209659?t=TuH5dVbhJse3H3IsJ1FPoA&s=03
 -   https://x.com/argyleink/status/1904285204765900863?t=hww_jU4t0j4RIxAPAEqfxg&s=03
 -   https://css-tip.com/custom-progress/
+-   https://css-tricks.com/better-css-shapes-using-shape-part-3-curves/

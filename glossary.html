@@ -49,7 +49,7 @@
             <section class="page__header__title">
                 <p>Welcome on Julien's page</p>
                 <p class="page__header__title__sub">Glossary</p>
-            </div>
+            </section>
         </header>
 
         <section class="page__content">
@@ -111,20 +111,38 @@
 
                 <jro-section-content label="Resiliency Patterns" variant="red">
                     <ul>
-                        <li><b>Circuit breaker</b>: When a service experiences repeated failures, the circuit breaker 'trips' & stops sending requests to that service for a period of time. This allows the failing service to recover without being overwhelmed.</li>
-                        <li><b>Retry</b>: When a request fails, the system automatically retries it a certain number of times before giving up. Improves system availability and can mask transient errors.</li>
+                        <li>
+                            <b>Circuit breaker</b>: When a service experiences repeated failures, the circuit breaker 'trips' & stops sending requests to that service for a period
+                            of time. This allows the failing service to recover without being overwhelmed.
+                        </li>
+                        <li>
+                            <b>Retry</b>: When a request fails, the system automatically retries it a certain number of times before giving up. Improves system availability and can
+                            mask transient errors.
+                        </li>
                         <li><b>Timeout</b>: Sets a maximum time limit for a request before is considered a failure.</li>
-                        <li><b>Bulkhead</b>: isolates different parts of an application into pools or compartments. This isolation limits the impact of failures or overload in one compartment, preventing it from cascading and affecting the entire system.</li>
+                        <li>
+                            <b>Bulkhead</b>: isolates different parts of an application into pools or compartments. This isolation limits the impact of failures or overload in one
+                            compartment, preventing it from cascading and affecting the entire system.
+                        </li>
                         <li><b>Rate Limiting</b>: Controls the rate of incoming requests to protect a system from being overwhelmed.</li>
                         <li><b>Fallback</b>: Provides an alternative (often less ideal) response or action when the primary one fails.</li>
-                        <li><b>Hedging (Redundancy)</b>: Sends duplicate requests to multiple identical services and uses the fastest response. Mitigates the impact of slow responses and failures, improving system responsiveness.</li>
+                        <li>
+                            <b>Hedging (Redundancy)</b>: Sends duplicate requests to multiple identical services and uses the fastest response. Mitigates the impact of slow
+                            responses and failures, improving system responsiveness.
+                        </li>
                         <li><b>Load Shedding</b>: Drops non-critical requests when a system is overloaded to protect its core functionality.</li>
-                        <li><b>Backpressure</b>: Feedback loop between the producer (sending data) and the consumer (receiving data). The consumer signals its capacity to the producer, allowing the producer to adjust its output rate dynamically.</li>
+                        <li>
+                            <b>Backpressure</b>: Feedback loop between the producer (sending data) and the consumer (receiving data). The consumer signals its capacity to the
+                            producer, allowing the producer to adjust its output rate dynamically.
+                        </li>
                     </ul>
                 </jro-section-content>
 
                 <jro-section-content label="SideCar" variant="red">
-                    <p><jro-url-preview label="SideCar" src="https://t.co/wg0R8hs9mn"></jro-url-preview>: Microservice design pattern that deploys auxiliary components alongside your main service container.</p>
+                    <p>
+                        <jro-url-preview label="SideCar" src="https://t.co/wg0R8hs9mn"></jro-url-preview>: Microservice design pattern that deploys auxiliary components alongside
+                        your main service container.
+                    </p>
                     <p>Key Benefits:</p>
                     <ol>
                         <li>Separation of cross-cutting concerns (logging, monitoring, security)</li>
@@ -180,7 +198,13 @@
                 <jro-section-content label="Software architecture" variant="default">
                     <ul>
                         <li>
-                            <jro-url-preview label="27 Fundamental Techniques for Software Architects" src="https://www.workingsoftware.dev/fundamental-techniques-for-software-architects/"></jro-url-preview>
+                            <jro-url-preview
+                                label="27 Fundamental Techniques for Software Architects"
+                                src="https://www.workingsoftware.dev/fundamental-techniques-for-software-architects/"
+                            ></jro-url-preview>
+                        </li>
+                        <li>
+                            <jro-url-preview label="RESTful API and Event Guidelines" src="https://opensource.zalando.com/restful-api-guideline"></jro-url-preview>
                         </li>
                     </ul>
                 </jro-section-content>
