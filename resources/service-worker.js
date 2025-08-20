@@ -1,5 +1,5 @@
 // The name of the new cache your app uses.
-const CACHE_NAME = 'cache-v7';
+const CACHE_NAME = 'cache-v8';
 const isHostedOnGithub = location.hostname === 'rochejul.github.io';
 const PRE_CACHED_RESOURCES = [
     (isHostedOnGithub ? '/slides' : '') + '/games',

@@ -44,3 +44,5 @@
 -   https://x.com/argyleink/status/1904285204765900863?t=hww_jU4t0j4RIxAPAEqfxg&s=03
 -   https://css-tip.com/custom-progress/
 -   https://css-tricks.com/better-css-shapes-using-shape-part-3-curves/
+-   https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/hidden#the_hidden_until_found_state
+-   https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API
