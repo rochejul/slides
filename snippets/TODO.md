@@ -46,3 +46,6 @@
 -   https://css-tricks.com/better-css-shapes-using-shape-part-3-curves/
 -   https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/hidden#the_hidden_until_found_state
 -   https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API
+-   https://developer.mozilla.org/en-US/blog/html-details-exclusive-accordions/
+-   https://developer.mozilla.org/en-US/docs/Web/API/Element/getAnimations
+-   https://x.com/Ibelick/status/1974097196367950169?t=4ctnzsyRJ4celKnx47hBrA&s=03
