@@ -49,3 +49,7 @@
 -   https://developer.mozilla.org/en-US/blog/html-details-exclusive-accordions/
 -   https://developer.mozilla.org/en-US/docs/Web/API/Element/getAnimations
 -   https://x.com/Ibelick/status/1974097196367950169?t=4ctnzsyRJ4celKnx47hBrA&s=03
+-   https://x.com/jh3yy/status/1975632997769691327?t=ZymNA7OEP4YZg5nXNwgbjw&s=03
+-   https://x.com/ChallengesCss/status/1976597880266694786?t=N4RRqJqc5ZN2_k26vFF4mg&s=03
+-   https://x.com/jh3yy/status/1978600856359403944?t=ppU_VS7MZcp8wEWHFnUqaA&s=03
+-   https://x.com/CodePen/status/1984008937151095029?t=_QAOAhZ95qS9BroFWk8EWg&s=03
