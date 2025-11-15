@@ -53,3 +53,5 @@
 -   https://x.com/ChallengesCss/status/1976597880266694786?t=N4RRqJqc5ZN2_k26vFF4mg&s=03
 -   https://x.com/jh3yy/status/1978600856359403944?t=ppU_VS7MZcp8wEWHFnUqaA&s=03
 -   https://x.com/CodePen/status/1984008937151095029?t=_QAOAhZ95qS9BroFWk8EWg&s=03
+-   https://x.com/davidm_ml/status/1986551826905219194?t=ugR455RIlKk3Qn7CzHQjPA&s=03
+-   https://css-tip.com/responsive-stacked-img/
