@@ -55,3 +55,7 @@
 -   https://x.com/CodePen/status/1984008937151095029?t=_QAOAhZ95qS9BroFWk8EWg&s=03
 -   https://x.com/davidm_ml/status/1986551826905219194?t=ugR455RIlKk3Qn7CzHQjPA&s=03
 -   https://css-tip.com/responsive-stacked-img/
+-   https://x.com/dev_ya/status/1991193618787254462
+-   https://x.com/pie6k/status/1990935296536687004?t=aJke5-cDI7IQgGY0F32jfQ&s=03
+-   https://x.com/Una/status/1990536715304644916?t=7lgXNAoCEgQg_PtevJbyWw&s=03
+-   https://x.com/sebastienlorber/status/1990445457152295231?t=fN4kUqgRYwbq4LBmIvGrZw&s=03
