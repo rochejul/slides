@@ -59,3 +59,4 @@
 -   https://x.com/pie6k/status/1990935296536687004?t=aJke5-cDI7IQgGY0F32jfQ&s=03
 -   https://x.com/Una/status/1990536715304644916?t=7lgXNAoCEgQg_PtevJbyWw&s=03
 -   https://x.com/sebastienlorber/status/1990445457152295231?t=fN4kUqgRYwbq4LBmIvGrZw&s=03
+-   https://x.com/MozDevNet/status/1993666081404416375?t=NlePLfuECJkmzKqlYQIb6w&s=03
