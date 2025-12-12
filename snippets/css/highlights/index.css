@@ -1,0 +1,6 @@
+.page__content {
+    ::highlight(pronouns) {
+        background: rgba(255, 105, 180, .25);
+        text-decoration: underline;
+    }
+}
