@@ -1,6 +1,27 @@
 .page__content {
     ::highlight(pronouns) {
-        background: rgba(255, 105, 180, .25);
+        background: rgba(255, 105, 180, 0.25);
         text-decoration: underline;
+    }
+
+    ::highlight(keyword) {
+        color: #79c0ff;
+        font-weight: 600;
+    }
+    ::highlight(string) {
+        color: #a5d6ff;
+    }
+    ::highlight(comment) {
+        color: #8b949e;
+        font-style: italic;
+    }
+    ::highlight(number) {
+        color: #79c0ff;
+    }
+    ::highlight(identifier) {
+        color: #ffa657;
+    }
+    ::highlight(punctuation) {
+        color: #c9d1d9;
     }
 }

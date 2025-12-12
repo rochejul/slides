@@ -16,13 +16,42 @@
 
     <body class="page">
         <header class="page__header">CSS Highlights API</header>
-        <section class="page__content">
-            <p id="text"> She said they would bring it if we asked them politely. You and I should remind her tomorrow. </p> 
+        <section class="page__content page__content--splitted">
+            <article>
+                <p id="text">She said they would bring it if we asked them politely. You and I should remind her tomorrow.</p>
+            </article>
+            <article>
+                <pre id="css">
+::highlight(keyword) {
+  color: #ff79c6;
+  font-weight: 600;
+}
+::highlight(string) {
+  color: #f1fa8c;
+}
+::highlight(comment) {
+  color: #6272a4;
+  font-style: italic;
+}
+::highlight(number) {
+  color: #bd93f9;
+}  
+::highlight(identifier) {
+  color: #50fa7b;
+}
+::highlight(punctuation) {
+  color: #f8f8f2;
+}
+</pre
+                >
+            </article>
         </section>
         <footer class="page__footer">
             <ul>
                 <li>
-                    <a href="https://pavi2410.com/blog/high-performance-syntax-highlighting-with-css-highlights-api/" target="_blank">High-Performance Syntax Highlighting with CSS Highlights API</a>
+                    <a href="https://pavi2410.com/blog/high-performance-syntax-highlighting-with-css-highlights-api/" target="_blank"
+                        >High-Performance Syntax Highlighting with CSS Highlights API</a
+                    >
                 </li>
             </ul>
         </footer>
