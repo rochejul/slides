@@ -5,6 +5,7 @@
     "type": "module",
     "private": true,
     "devDependencies": {
+        "@types/web": "0.0.305",
         "eslint": "9.6.0",
         "eslint-config-prettier": "9.1.0",
         "eslint-plugin-jest": "28.6.0",

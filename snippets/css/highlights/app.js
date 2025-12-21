@@ -1,3 +1,5 @@
+/** @import { Highlight } from '@types/web';  */
+
 function applyPronounsSyntax() {
     const pronounSet = new Set([
         'i',
@@ -61,81 +63,86 @@ function applyPronounsSyntax() {
     CSS.highlights.set('pronouns', pronouns);
 }
 
+function isEqualCarriageReturn(character) {
+    return (
+        character ===
+        `
+`
+    );
+}
+
 function lexCss(codeAsText) {
     const tokens = [];
-    let t = 0;
-    const p = new Set(['{', '}', '(', ')', ';', ':', ',']);
+    let index = 0;
+    const punctuations = new Set(['{', '}', '(', ')', ';', ':', ',']);
 
-    for (; t < codeAsText.length; ) {
-        const o = codeAsText[t];
-        if (/\s/.test(o)) {
-            t++;
-            continue;
-        }
-        if (o === '/' && codeAsText[t + 1] === '/') {
-            const i = t;
-            for (
-                t += 2;
-                t < codeAsText.length &&
-                codeAsText[t] !==
-                    `
-`;
+    for (; index < codeAsText.length; ) {
+        const character = codeAsText[index];
 
-            )
-                t++;
-            tokens.push({ type: 'comment', start: i, end: t, value: codeAsText.slice(i, t) });
+        if (/\s/.test(character)) {
+            index++;
             continue;
         }
 
-        if (o === '/' && codeAsText[t + 1] === '*') {
-            const i = t;
-            for (t += 2; t < codeAsText.length - 1 && !(codeAsText[t] === '*' && codeAsText[t + 1] === '/'); ) t++;
-            (t += 2), tokens.push({ type: 'comment', start: i, end: t, value: codeAsText.slice(i, t) });
+        if (character === '/' && codeAsText[index + 1] === '/') {
+            const i = index;
+            for (index += 2; index < codeAsText.length && !isEqualCarriageReturn(codeAsText[index]); ) {
+                index++;
+            }
+
+            tokens.push({ type: 'comment', start: i, end: index, value: codeAsText.slice(i, index) });
             continue;
         }
 
-        if (o === '"' || o === "'") {
-            const i = t,
-                g = o;
-            for (t++; t < codeAsText.length && codeAsText[t] !== g; ) codeAsText[t] === '\\' && t++, t++;
-            t++, tokens.push({ type: 'string', start: i, end: t, value: codeAsText.slice(i, t) });
+        if (character === '/' && codeAsText[index + 1] === '*') {
+            const i = index;
+            for (index += 2; index < codeAsText.length - 1 && !(codeAsText[index] === '*' && codeAsText[index + 1] === '/'); ) index++;
+            (index += 2), tokens.push({ type: 'comment', start: i, end: index, value: codeAsText.slice(i, index) });
             continue;
         }
 
-        if (o === '#') {
-            const i = t;
-            for (t++; t < codeAsText.length && /[0-9a-fA-F]/.test(codeAsText[t]); ) t++;
-            tokens.push({ type: 'string', start: i, end: t, value: codeAsText.slice(i, t) });
+        if (character === '"' || character === "'") {
+            const i = index,
+                g = character;
+            for (index++; index < codeAsText.length && codeAsText[index] !== g; ) codeAsText[index] === '\\' && index++, index++;
+            index++, tokens.push({ type: 'string', start: i, end: index, value: codeAsText.slice(i, index) });
             continue;
         }
 
-        if (/\d/.test(o)) {
-            const i = t;
-            for (; t < codeAsText.length && /[\d.]/.test(codeAsText[t]); ) t++;
-            tokens.push({ type: 'number', start: i, end: t, value: codeAsText.slice(i, t) });
+        if (character === '#') {
+            const i = index;
+            for (index++; index < codeAsText.length && /[0-9a-fA-F]/.test(codeAsText[index]); ) index++;
+            tokens.push({ type: 'string', start: i, end: index, value: codeAsText.slice(i, index) });
             continue;
         }
 
-        if (o === ':' && codeAsText[t + 1] === ':') {
-            const i = t;
-            for (t += 2; t < codeAsText.length && /[a-zA-Z-]/.test(codeAsText[t]); ) t++;
-            tokens.push({ type: 'keyword', start: i, end: t, value: codeAsText.slice(i, t) });
+        if (/\d/.test(character)) {
+            const i = index;
+            for (; index < codeAsText.length && /[\d.]/.test(codeAsText[index]); ) index++;
+            tokens.push({ type: 'number', start: i, end: index, value: codeAsText.slice(i, index) });
             continue;
         }
 
-        if (/[a-zA-Z-]/.test(o)) {
-            const i = t;
-            for (; t < codeAsText.length && /[a-zA-Z0-9-]/.test(codeAsText[t]); ) t++;
-            tokens.push({ type: 'identifier', start: i, end: t, value: codeAsText.slice(i, t) });
+        if (character === ':' && codeAsText[index + 1] === ':') {
+            const i = index;
+            for (index += 2; index < codeAsText.length && /[a-zA-Z-]/.test(codeAsText[index]); ) index++;
+            tokens.push({ type: 'keyword', start: i, end: index, value: codeAsText.slice(i, index) });
             continue;
         }
 
-        if (p.has(o)) {
-            tokens.push({ type: 'punctuation', start: t, end: t + 1, value: o }), t++;
+        if (/[a-zA-Z-]/.test(character)) {
+            const i = index;
+            for (; index < codeAsText.length && /[a-zA-Z0-9-]/.test(codeAsText[index]); ) index++;
+            tokens.push({ type: 'identifier', start: i, end: index, value: codeAsText.slice(i, index) });
             continue;
         }
 
-        t++;
+        if (punctuations.has(character)) {
+            tokens.push({ type: 'punctuation', start: index, end: index + 1, value: character }), index++;
+            continue;
+        }
+
+        index++;
     }
 
     return tokens;

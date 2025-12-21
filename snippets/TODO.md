@@ -33,7 +33,6 @@
 -   multi select dropdown: https://jsdev.space/multi-select-dropdown/
 -   https://x.com/codewithshripal/status/1890039395119743104?t=CFVOuFN_PQEEbj2YCkGOLA&s=03
 -   https://x.com/davidm_ml/status/1892172590778576985?t=EpbTDcyhXZmczjPTb7BPOQ&s=03
--   https://codepen.io/YusukeNakaya/pen/JojGVWX
 -   https://x.com/jh3yy/status/1894787364762812778?t=snpDnXjpGGYz93gnmB9o-w&s=03
 -   https://x.com/ChallengesCss/status/1894761715293635008?t=ziX-i7UFCR3Et0VTI0lsSA&s=03
 -   https://x.com/k_grajeda/status/1894425200931778976?s=03
