@@ -60,3 +60,5 @@
 -   https://x.com/sebastienlorber/status/1990445457152295231?t=fN4kUqgRYwbq4LBmIvGrZw&s=03
 -   https://x.com/MozDevNet/status/1993666081404416375?t=NlePLfuECJkmzKqlYQIb6w&s=03
 -   https://x.com/jakubkrehel/status/1996273635015929959?t=P0zH22GEWtilU30iT0sQJw&s=03
+-   https://x.com/jh3yy/status/2003430259409260673
+-   https://x.com/MozDevNet/status/2004054523753681015

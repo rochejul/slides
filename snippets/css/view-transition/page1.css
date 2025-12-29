@@ -1,0 +1,38 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: lightpink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+@keyframes slide-from-right {
+    from {
+        /* Arrive from the right */
+        transform: translateX(100vw);
+    }
+    to {
+        /* Come into view */
+        transform: translateX(0);
+    }
+}
+
+::view-transition-old(root) {
+    animation: none;
+}
+
+::view-transition-new(root) {
+    /* Apply animation to page2.html */
+    animation: slide-from-right 0.3s;
+}

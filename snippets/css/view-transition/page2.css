@@ -1,0 +1,40 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: lightseagreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+@keyframes slide-to-right {
+    from {
+        /* Start from screen view */
+        transform: translateX(0);
+    }
+
+    to {
+        /* Move to right */
+        transform: translateX(100vw);
+    }
+}
+
+::view-transition-old(root) {
+    /* Apply @keyframes to page2.html */
+    animation: slide-to-right 0.3s;
+    z-index: 2;
+}
+
+::view-transition-new(root) {
+    animation: none;
+}
