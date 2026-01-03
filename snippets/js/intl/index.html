@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>JavaScript Intl API</title>
+
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/frameworks/highlight.js@9.12.0/idea.css" />
+        <link rel="stylesheet" href="../../../resources/theme.css" />
+        <link rel="stylesheet" href="../../../resources/snippet.css" />
+        <link rel="stylesheet" href="./index.css" />
+
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/highlight.js@9.12.0/highlight.js"></script>
+        <script type="module" src="./app.js"></script>
+        <script type="module" charset="UTF-8" src="../../../resources/init-service-worker.js"></script>
+    </head>
+
+    <body class="page">
+        <header class="page__header">
+            <span>JavaScript Intl API</span>
+            <span>&nbsp;</span>
+            <select name="language" id="language">
+                <option selected="selected" value="en">en</option>
+                <option value="fr">fr</option>
+                <option value="de">de</option>
+            </select>
+        </header>
+        <section class="page__content page__content--splitted">
+            <fieldset>
+                <legend>ListFormat</legend>
+                <pre><code>['Mario', 'Peach', 'Daisy', 'Luigi']</code></pre>
+                <article id="list-format"></article>
+            </fieldset>
+            <fieldset>
+                <legend>NumberFormat</legend>
+                <pre><code>3500</code></pre>
+                <article id="number-format"></article>
+            </fieldset>
+            <footer>
+                <form id="list-format-form">
+                    <label>
+                        <span>Type:</span>
+                        <select name="type">
+                            <option selected="selected" value="conjunction">conjunction</option>
+                            <option value="disjunction">disjunction</option>
+                            <option value="unit">unit</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Style:</span>
+                        <select name="style">
+                            <option selected="selected" value="long">long</option>
+                            <option value="short">short</option>
+                            <option value="narrow">narrow</option>
+                        </select>
+                    </label>
+                </form>
+            </footer>
+            <footer>
+                <form id="number-format-form">
+                    <label>
+                        <span>Style:</span>
+                        <select name="style">
+                            <option selected="selected" value="decimal">decimal</option>
+                            <option value="currency">currency</option>
+                            <option value="percent">percent</option>
+                            <option value="unit">unit</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Currency:</span>
+                        <select name="currency" id="number-format-currency">
+                            <option selected="selected" value="">none</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Currency Display:</span>
+                        <select name="currencyDisplay">
+                            <option selected="selected" value="symbol">symbol</option>
+                            <option value="code">code</option>
+                            <option value="narrowSymbol">narrowSymbol</option>
+                            <option value="unit">unit</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Unit:</span>
+                        <select name="unit" id="number-format-unit">
+                            <option selected="selected" value="">none</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Unit Display:</span>
+                        <select name="unitDisplay">
+                            <option selected="selected" value="short">short</option>
+                            <option value="long">long</option>
+                            <option value="narrow">narrow</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Notation:</span>
+                        <select name="notation">
+                            <option selected="selected" value="standard">standard</option>
+                            <option value="scientific">scientific</option>
+                            <option value="engineering">engineering</option>
+                            <option value="compact">compact</option>
+                        </select>
+                    </label>
+                     <label>
+                        <span>Sign Display:</span>
+                        <select name="signDisplay">
+                            <option selected="selected" value="auto">auto</option>
+                            <option value="always">always</option>
+                            <option value="exceptZero">exceptZero</option>
+                            <option value="negative">negative</option>
+                            <option value="never">never</option>
+                        </select>
+                    </label>
+                </form>
+            </footer>
+        </section>
+        <footer class="page__footer">
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl" target="_blank">MDM - Intl API</a>
+                </li>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat" target="_blank">MDM - Intl API - ListFormat</a>
+                </li>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat" target="_blank">MDM - Intl API - NumberFormat</a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
