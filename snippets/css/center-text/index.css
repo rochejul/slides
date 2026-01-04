@@ -1,0 +1,16 @@
+.page__content {
+    .demo {
+        font:
+            900 70px system-ui,
+            sans-serif;
+        border: 1px solid red;
+
+        &.demo--uppercase {
+            text-transform: uppercase;
+        }
+
+        &.demo--lowercase {
+            text-transform: lowercase;
+        }
+    }
+}
