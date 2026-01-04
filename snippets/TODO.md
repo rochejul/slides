@@ -38,7 +38,6 @@
 -   https://x.com/ChallengesCss/status/1893991557075812366?t=KMRCFA69TgAjHHwFNiBEOA&s=03
 #   https://x.com/bramus/status/1894055280075235672?t=2sDSaMSeqlFUSFw055dbUw&s=03
 #   https://www.bram.us/2025/03/11/view-transitions-border-radius/
--   https://x.com/codewithshripal/status/1901998123939209659?t=TuH5dVbhJse3H3IsJ1FPoA&s=03
 -   https://x.com/argyleink/status/1904285204765900863?t=hww_jU4t0j4RIxAPAEqfxg&s=03
 -   https://css-tricks.com/better-css-shapes-using-shape-part-3-curves/
 -   https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/hidden#the_hidden_until_found_state
