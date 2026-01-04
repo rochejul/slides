@@ -1,7 +1,7 @@
 -   https://webrtchacks.com/bad-lighting-fix-with-javascript-webcam-exposure/
 -   https://x.com/denicmarko/status/1837801294385279290?t=w6HJYxqCbS2ZEbT3mvP9DA&s=03
 -   https://medium.com/@likovalevl/video-streaming-with-javascript-the-easy-way-45ecd7ec3f08
--   https://x.com/davidm_ml/status/1838542099634888967?s=03
+-   https://x.com/davidm_ml/status/1986551826905219194?t=ugR455RIlKk3Qn7CzHQjPA&s=03
 -   https://webrtc.org/
 -   https://x.com/BilliCodes/status/1838825114529370542
 -   https://x.com/BilliCodes/status/1841337126475980942?t=lj5913BkxdVoE_em7DPhyg&s=03
@@ -9,24 +9,17 @@
 -   https://x.com/BilliCodes/status/1840620661951041881?t=bDI9DCg8S9llaCwLvSRynA&s=03
 -   https://x.com/BilliCodes/status/1839898265476534734?t=Z38o_zHRA7b-Ktb4lrW9jw&s=03
 -   https://x.com/BilliCodes/status/1843896797103808627?t=rJFN43qBuD-H3HhrjYqKqA&s=03
--   https://x.com/paul_uiux/status/1841437472711938322?t=YeZ850PSOMXdjBvxukH5nA&s=03
 -   https://x.com/ChromiumDev/status/1864414373801828533?t=p555uUztw4YzhU1D2W1r3g&s=03
 -   https://x.com/snorklTV/status/1865058798534300010?t=nZEvg4Kc7W1DzZ1hte2Upw&s=03
 -   https://jsdev.space/html-ping-attribute/
 -   https://x.com/alirdev/status/1866120701079699587?t=8cavpgYNcHenKP-jCBNIVQ&s=03
 -   https://x.com/ChallengesCss/status/1866428556256903449?t=H2GHD0ikuNIKNVlMRpXrUQ&s=03
--   https://x.com/bramus/status/1869536573664227618?t=j5_n7BS34mZgZLZDR6CxDQ&s=03
 -   https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/getPredictedEvents#result
--   https://bsky.app/profile/nerdy.dev/post/3ld2bli6bu22v
 -   canvases scaling: https://x.com/aidenybai/status/1873499990540374346?t=IlG3RU6gqA-QaCvW7wZCuw&s=03
 -   inline webworker: https://x.com/aidenybai/status/1873444625907597780?t=E6v0m-l2HPiTSvpoKHG_eQ&s=03
--   https://bsky.app/profile/anatudor.bsky.social/post/3lf7mrlaq722h
 -   https://x.com/codewithshripal/status/1877715109176562164?t=BCpC3DZ5izOEWPtyyNgQoQ&s=03
--   https://x.com/Shefali__J/status/1878362240400691360?t=Bk15AtHkEl3HtfYEdNbMuw&s=03
--   https://x.com/javascript_fan/status/1878124966342005016?t=VYamhNeG6aBWCWb6iAHV-g&s=03
--   https://x.com/sysxplore/status/1879197832298778691
 -   https://x.com/ChallengesCss/status/1880200901421572158?t=ByouPGvd0KsuENerDVO76A&s=03
--   https://x.com/aidenybai/status/1880648594895901055?t=Dj_zV5D6H5aULaQCKjszcw&s=09
+#  https://x.com/aidenybai/status/1880648594895901055?t=Dj_zV5D6H5aULaQCKjszcw&s=09
 -   https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025
 -   https://x.com/hypeddev/status/1884595151965667738?t=wCeb-oQu8ErjUqmK0x_gVg&s=03
 -   multi select dropdown: https://jsdev.space/multi-select-dropdown/
@@ -46,8 +39,6 @@
 -   https://x.com/jh3yy/status/1975632997769691327?t=ZymNA7OEP4YZg5nXNwgbjw&s=03
 -   https://x.com/ChallengesCss/status/1976597880266694786?t=N4RRqJqc5ZN2_k26vFF4mg&s=03
 -   https://x.com/jh3yy/status/1978600856359403944?t=ppU_VS7MZcp8wEWHFnUqaA&s=03
--   https://x.com/CodePen/status/1984008937151095029?t=_QAOAhZ95qS9BroFWk8EWg&s=03
--   https://x.com/davidm_ml/status/1986551826905219194?t=ugR455RIlKk3Qn7CzHQjPA&s=03
 -   https://css-tip.com/responsive-stacked-img/
 -   https://x.com/dev_ya/status/1991193618787254462
 -   https://x.com/pie6k/status/1990935296536687004?t=aJke5-cDI7IQgGY0F32jfQ&s=03
