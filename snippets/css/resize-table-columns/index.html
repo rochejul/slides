@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="./index.css" />
 
         <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/highlight.js@9.12.0/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/reveal.js@3.6.0/plugins/highlight.js"></script>
         <script type="module" src="./app.js"></script>
         <script type="module" charset="UTF-8" src="../../../resources/init-service-worker.js"></script>
     </head>
@@ -20,19 +21,19 @@
         <header class="page__header">CSS resize table columns</header>
         <section class="page__content page__content--splitted" columns="2">
             <pre>
-                <code>
-    th {
-        resize: horizontal;
-        overflow-x: auto;
-    }
+                <code class="css">
+th {
+    resize: horizontal;
+    overflow-x: auto;
+}
 
-    ::-webkit-resizer {
-        width: 0px;
-        height: 0px;
-        border-style: solid;
-        border-width: 0 0 15px 15px;
-        border-color: transparent transparent pink transparent;
-    }</code>
+::-webkit-resizer {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 0 15px 15px;
+    border-color: transparent transparent pink transparent;
+}</code>
             </pre>
             <section>
                 <table>

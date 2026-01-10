@@ -12,6 +12,7 @@ async function setupTextBox() {
         const currentValue = selectElement.value;
         codeElement.textContent = currentValue;
         renderElements.forEach((renderElement) => renderElement.setAttribute('style', currentValue));
+        hljs.initHighlightingOnLoad();
     }
 
     render();

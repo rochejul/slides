@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>CSS - font-size-adjust</title>
+
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/frameworks/highlight.js@9.12.0/idea.css" />
+        <link rel="stylesheet" href="../../../resources/theme.css" />
+        <link rel="stylesheet" href="../../../resources/snippet.css" />
+        <link rel="stylesheet" href="./index.css" />
+
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/highlight.js@9.12.0/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/reveal.js@3.6.0/plugins/highlight.js"></script>
+        <script type="module" src="./app.js"></script>
+        <script type="module" charset="UTF-8" src="../../../resources/init-service-worker.js"></script>
+    </head>
+
+    <body class="page">
+        <header class="page__header">
+            <span>CSS - font-size-adjust</span>
+        </header>
+        <section class="page__content page__content--splitted" columns="2">
+            <fieldset>
+                <legend>Some examples (from MDN)</legend>
+                <p class="verdana">A: This text uses the Verdana font (14px), which has relatively large lowercase letters.</p>
+                <p class="times">B: This text uses the Times font (14px), which is hard to read in small sizes.</p>
+                <p class="times adj-times-ex-height">
+                    C: This text in 14px Times font is adjusted to the same aspect value as the Verdana font, so lowercase letters are normalized across the two fonts.
+                </p>
+                <p class="times adj-times-cap-height">
+                    D: This text in 14px Times font is adjusted to the same cap-height to font size ratio as the Verdana font, so uppercase letters are normalized across the two
+                    fonts.
+                </p>
+                <pre><code class="css">
+.times {
+    font-family: 'Times', serif;
+    font-size: 14px;
+}
+
+.verdana {
+    font-family: 'Verdana', sans-serif;
+    font-size: 14px;
+}
+
+.adj-times-ex-height {
+    font-size-adjust: 0.545;
+}
+
+.adj-times-cap-height {
+    font-size-adjust: cap-height 0.73;
+}</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend>Playground</legend>
+                <p class="times" id="playground">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius mauris convallis, euismod eros quis, porta elit. Nullam feugiat est eget ipsum faucibus egestas. Cras congue suscipit vulputate. Mauris arcu nulla, suscipit at pulvinar non, aliquet et metus. Phasellus turpis felis, rhoncus quis diam sed, commodo sodales diam. Nulla ut lobortis lectus. Nunc molestie lorem eu magna interdum, sed porttitor augue condimentum. Sed non enim quis eros vehicula ultrices. Pellentesque lorem risus, vulputate vel nisl vitae, lacinia feugiat quam. Ut porttitor at sapien eu laoreet. Curabitur quis tempor risus. Donec at nunc a felis gravida commodo sed quis ligula. Pellentesque molestie tortor at egestas rutrum. Nunc ullamcorper dui id augue ultricies, ac tincidunt odio dapibus. Sed placerat lectus sit amet molestie viverra.</p>
+            </fieldset>
+            <footer></footer>
+            <footer>
+                <form>
+                    <label>
+                        <span>Font metric:</span>
+                        <select name="type">
+                            <option selected="selected" value="none">none</option>
+                            <option value="ex-height">ex-height</option>
+                            <option value="cap-height">cap-height</option>
+                            <option value="ch-width">ch-width</option>
+                            <option value="ic-width">ic-width</option>
+                            <option value="ic-height">ic-height</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Size:</span>
+                        <input type="range" name="size" value="0.5" min="0" max="1" step="0.01" />
+                        <output name="size-value" for="size">0.5</output>
+                    </label>
+                </form>
+            </footer>
+        </section>
+        <footer class="page__footer">
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size-adjust" target="_blank">MDM - CSS - font-size-adjust</a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>

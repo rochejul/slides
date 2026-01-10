@@ -19,7 +19,9 @@
 -   inline webworker: https://x.com/aidenybai/status/1873444625907597780?t=E6v0m-l2HPiTSvpoKHG_eQ&s=03
 -   https://x.com/codewithshripal/status/1877715109176562164?t=BCpC3DZ5izOEWPtyyNgQoQ&s=03
 -   https://x.com/ChallengesCss/status/1880200901421572158?t=ByouPGvd0KsuENerDVO76A&s=03
-#  https://x.com/aidenybai/status/1880648594895901055?t=Dj_zV5D6H5aULaQCKjszcw&s=09
+
+# https://x.com/aidenybai/status/1880648594895901055?t=Dj_zV5D6H5aULaQCKjszcw&s=09
+
 -   https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025
 -   https://x.com/hypeddev/status/1884595151965667738?t=wCeb-oQu8ErjUqmK0x_gVg&s=03
 -   multi select dropdown: https://jsdev.space/multi-select-dropdown/
@@ -27,8 +29,11 @@
 -   https://x.com/davidm_ml/status/1892172590778576985?t=EpbTDcyhXZmczjPTb7BPOQ&s=03
 -   https://x.com/jh3yy/status/1894787364762812778?t=snpDnXjpGGYz93gnmB9o-w&s=03
 -   https://x.com/k_grajeda/status/1894425200931778976?s=03
-#   https://x.com/bramus/status/1894055280075235672?t=2sDSaMSeqlFUSFw055dbUw&s=03
-#   https://www.bram.us/2025/03/11/view-transitions-border-radius/
+
+# https://x.com/bramus/status/1894055280075235672?t=2sDSaMSeqlFUSFw055dbUw&s=03
+
+# https://www.bram.us/2025/03/11/view-transitions-border-radius/
+
 -   https://x.com/argyleink/status/1904285204765900863?t=hww_jU4t0j4RIxAPAEqfxg&s=03
 -   https://css-tricks.com/better-css-shapes-using-shape-part-3-curves/
 -   https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/hidden#the_hidden_until_found_state
@@ -48,3 +53,5 @@
 -   https://x.com/jakubkrehel/status/1996273635015929959?t=P0zH22GEWtilU30iT0sQJw&s=03
 -   https://x.com/jh3yy/status/2003430259409260673
 -   https://x.com/MozDevNet/status/2004054523753681015
+-   dialog: https://x.com/fractaledmind/status/2009390985248194655
+-   https://x.com/ChallengesCss/status/2008488113778401514
