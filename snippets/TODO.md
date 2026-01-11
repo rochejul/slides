@@ -53,5 +53,4 @@
 -   https://x.com/jakubkrehel/status/1996273635015929959?t=P0zH22GEWtilU30iT0sQJw&s=03
 -   https://x.com/jh3yy/status/2003430259409260673
 -   https://x.com/MozDevNet/status/2004054523753681015
--   dialog: https://x.com/fractaledmind/status/2009390985248194655
 -   https://x.com/ChallengesCss/status/2008488113778401514

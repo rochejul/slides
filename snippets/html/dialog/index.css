@@ -1,0 +1,32 @@
+#dialog-with-customized-backdrop::backdrop {
+    background-color: salmon;
+    pointer-events: none;
+}
+
+#dialog-as-a-drawer {
+    height: 100%;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    transition:
+        display 0.7s allow-discrete, /* we need the display property when we close the dialog*/
+        margin-left 0.7s allow-discrete;
+    width: 20rem;
+
+    &:not([open]) {
+        margin-left: -23rem;
+    }
+
+    @starting-style {
+        /* if not present, the transition will not work, so we force to apply the Cstyle BEFORE transition*/
+        margin-left: -23rem;
+    }
+}
+
+/* Check whether any modal dialogs are open */
+html:has(dialog[open]:modal) {
+    /* Poof! No more scrolling! */
+    overflow: hidden;
+    /* keep the scrollbar width */
+    /*scrollbar-gutter: stable;*/
+}
