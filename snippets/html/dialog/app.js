@@ -8,7 +8,7 @@ async function setupPlayground() {
 
     buttonOnlyJsModalElement.addEventListener('click', () => {
         // NB: if a dialog and we try to open it, an exeception will be thrown `app.js:7 Uncaught InvalidStateError: Failed to execute 'showModal' on 'HTMLDialogElement': The dialog is already open as a non-modal dialog, and therefore cannot be opened as a modal dialog.`
-        if (document.querySelectorAll('dialog[open]:modal')) {
+        if (document.querySelector('dialog[open]:modal')) {
             alert('A dialog/modal is already opened');
             return;
         }
