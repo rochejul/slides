@@ -1,0 +1,50 @@
+.page__content {
+    .demo {
+        border: 1px solid black;
+        border-radius: 1rem;
+        padding: 1rem;
+        width: 35vw;
+
+        .steps {
+            --bullet-block-margin: 0.375rem;
+            --bullet-inline-margin: 0.5rem;
+            --bullet-size: 1.75rem;
+            --guide-width: 1px;
+            list-style: none; /* Do not automatically display the bullets (and then let us to customize them) */
+
+            li {
+                counter-increment: steps-counter; /* Make a count and on the rendering of the element, do a "+1" */
+                position: relative;
+
+                &::before {
+                    background-color: #24272f;
+                    border-radius: 99rem;
+                    box-shadow: inset 0 0 0 1px #353841;
+                    color: white;
+                    content: counter(steps-counter);
+                    height: var(--bullet-size);
+                    inset-inline-start: calc((var(--bullet-size) * -1) - var(--bullet-inline-margin));
+                    line-height: var(--bullet-size);
+                    position: absolute;
+                    text-align: center;
+                    top: 0;
+                    width: var(--bullet-size);
+                }
+
+                &::after {
+                    background-color: #353841;
+                    bottom: var(--bullet-block-margin);
+                    content: '';
+                    inset-inline-start: calc((-1 * var(--bullet-size)) + var(--guide-width) + (var(--bullet-inline-margin) / 2));
+                    position: absolute;
+                    top: calc(var(--bullet-size) + var(--bullet-block-margin));
+                    width: var(--guide-width);
+                }
+            }
+
+            p {
+                text-align: justify;
+            }
+        }
+    }
+}
