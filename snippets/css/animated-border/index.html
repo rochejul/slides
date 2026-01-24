@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../resources/assets/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>CSS animated boder</title>
+
+        <link rel="stylesheet" media="all" charset="utf-8" href="../../../shared/frameworks/highlight.js@9.12.0/idea.css" />
+        <link rel="stylesheet" href="../../../resources/theme.css" />
+        <link rel="stylesheet" href="../../../resources/snippet.css" />
+        <link rel="stylesheet" href="./index.css" />
+
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/highlight.js@9.12.0/highlight.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="../../../shared/frameworks/reveal.js@3.6.0/plugins/highlight.js"></script>
+        <script type="module" src="./app.js"></script>
+        <script type="module" charset="UTF-8" src="../../../resources/init-service-worker.js"></script>
+    </head>
+
+    <body class="page">
+        <header class="page__header">CSS animated border</header>
+        <section class="page__content page__content--splitted" columns="2">
+            <pre>
+              <code class="css">@property --angle {
+  syntax: '<angle>';
+  initial-value: 45deg;
+  inherits: false;
+}
+
+.fancy-box {
+  border: 0.5rem solid transparent; /* Required for border-image to work */
+  border-image-source: linear-gradient(to right, red, yellow, green);
+  border-image-slice: 1; /* Ensures the image is sliced to cover the entire border */
+}
+
+.fancy-box--animated {
+  --angle: 45deg;
+
+  border-image-source: linear-gradient(var(--angle), red, yellow, green);
+  animation: 2s rotate linear infinite;
+}
+
+.fancy-box--border-radius {
+  clip-path: rect(0px auto auto 0px round 10px);
+  position: relative;
+
+  &::before {
+    background-color: white;
+    clip-path: rect(0px auto auto 0px round 10px);filter: drop-shadow(0 0 0 white);
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+    top: -3px;
+    z-index: -1;
+  }
+}
+
+article {
+  padding: 1rem;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}</code>
+            </pre>
+            <article class="demo">
+                <article class="fancy-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae ante a lorem dignissim dapibus quis vitae felis. Quisque scelerisque leo ut sapien scelerisque, ut maximus leo facilisis. Phasellus lobortis, turpis ut blandit posuere, odio est gravida arcu, non gravida metus eros eu tortor. Donec hendrerit nulla et elementum maximus. Phasellus pulvinar, erat id tempus dictum, metus lectus tincidunt arcu, sed congue erat risus eget libero. Donec quis congue libero, at pretium risus. Quisque tincidunt sem et dignissim tempor. Integer ac rhoncus enim. Nam vitae nulla id urna sollicitudin laoreet vitae nec sapien. Donec pretium volutpat ipsum, eu ultrices felis tincidunt ac. Ut et risus dignissim, tristique ex non, congue purus. Maecenas ut semper eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas mattis gravida felis. Sed et tortor sed quam malesuada rhoncus.</article>
+<br />
+<article class="fancy-box fancy-box--animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae ante a lorem dignissim dapibus quis vitae felis. Quisque scelerisque leo ut sapien scelerisque, ut maximus leo facilisis. Phasellus lobortis, turpis ut blandit posuere, odio est gravida arcu, non gravida metus eros eu tortor. Donec hendrerit nulla et elementum maximus. Phasellus pulvinar, erat id tempus dictum, metus lectus tincidunt arcu, sed congue erat risus eget libero. Donec quis congue libero, at pretium risus. Quisque tincidunt sem et dignissim tempor. Integer ac rhoncus enim. Nam vitae nulla id urna sollicitudin laoreet vitae nec sapien. Donec pretium volutpat ipsum, eu ultrices felis tincidunt ac. Ut et risus dignissim, tristique ex non, congue purus. Maecenas ut semper eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas mattis gravida felis. Sed et tortor sed quam malesuada rhoncus.</article>
+<br />
+<article class="fancy-box fancy-box--animated fancy-box--border-radius">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae ante a lorem dignissim dapibus quis vitae felis. Quisque scelerisque leo ut sapien scelerisque, ut maximus leo facilisis. Phasellus lobortis, turpis ut blandit posuere, odio est gravida arcu, non gravida metus eros eu tortor. Donec hendrerit nulla et elementum maximus. Phasellus pulvinar, erat id tempus dictum, metus lectus tincidunt arcu, sed congue erat risus eget libero. Donec quis congue libero, at pretium risus. Quisque tincidunt sem et dignissim tempor. Integer ac rhoncus enim. Nam vitae nulla id urna sollicitudin laoreet vitae nec sapien. Donec pretium volutpat ipsum, eu ultrices felis tincidunt ac. Ut et risus dignissim, tristique ex non, congue purus. Maecenas ut semper eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas mattis gravida felis. Sed et tortor sed quam malesuada rhoncus.</article>
+            </article>
+        </section>
+        <footer class="page__footer">
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient" target="_blank">MDN - linear-gradient()</a>
+                </li>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-image" target="_blank">MDN - CSS border-image</a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>

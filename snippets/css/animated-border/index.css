@@ -1,0 +1,48 @@
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 45deg;
+    inherits: false;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+.page__content {
+    .fancy-box {
+        border: 0.5rem solid transparent; /* Required for border-image to work */
+        border-image-source: linear-gradient(to right, red, yellow, green);
+        border-image-slice: 1; /* Ensures the image is sliced to cover the entire border */
+    }
+
+    .fancy-box--animated {
+        --angle: 45deg;
+
+        border-image-source: linear-gradient(var(--angle), red, yellow, green);
+        animation: 2s rotate linear infinite;
+    }
+
+    .fancy-box--border-radius {
+        clip-path: rect(0px auto auto 0px round 10px);
+        position: relative;
+
+        &::before {
+            background-color: white;
+            clip-path: rect(0px auto auto 0px round 10px);
+            filter: drop-shadow(0 0 0 white);
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: -3px;
+            right: -3px;
+            top: -3px;
+            z-index: -1;
+        }
+    }
+
+    article {
+        padding: 1rem;
+    }
+}
