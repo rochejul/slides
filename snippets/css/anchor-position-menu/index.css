@@ -1,0 +1,43 @@
+.page__content {
+    & .demo {
+        background-color: lightcyan;
+        border: 1px solid black;
+        border-radius: 2rem;
+
+        & .demo__menu {
+            list-style: none;
+            margin: 3rem;
+            position: relative;
+
+            &::after {
+                background-color: red;
+                clip-path: circle(1rem);
+                content: '';
+                height: 2rem;
+                position: absolute;
+                position-anchor: --thumb;
+                right: calc(anchor(left) + 1rem);
+                transition: top 0.5s ease;
+                top: calc(anchor(top) + 1rem);
+                width: 2rem;
+            }
+
+            & .demo__menu__item {
+                border: 1px solid lightblue;
+                cursor: pointer;
+                margin: 0.25rem 0;
+                padding: 1rem;
+                user-select: none;
+
+                &:first-child {
+                    anchor-name: --thumb;
+                }
+
+                &:hover {
+                    anchor-name: --thumb;
+                    border: 1px solid blue;
+                }
+            }
+        }
+    }
+}
