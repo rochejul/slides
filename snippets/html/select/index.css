@@ -1,0 +1,118 @@
+select.customize {
+  &,
+  &::picker(select) { appearance: base-select; }
+}
+
+select.fancy {
+  &,
+  &::picker(select) {
+    /* We request to not use native display */
+    appearance: base-select;
+  }
+
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 0.75rem;
+  transition: 0.4s;
+  will-change: border;
+
+  &:focus,
+  &:hover {
+    background: #dddddd;
+    border: 2px solid black;
+
+    &::picker-icon {
+      color: black;
+    }
+  }
+
+  & selectedcontent {
+    /* The content which will be displayed when the dropdown is closed */
+    font-style: italic;
+  }
+
+  &::picker-icon {
+    /* The icon displayed belonging to the selectedcontent */
+    content: '⇝';
+    color: lightgrey;
+    transition: 0.4s rotate;
+    will-change: rotate;
+  }
+
+  &::picker(select) {
+    /* The layer where the possible options appeat */
+    border: none;
+    border-radius: 0.75rem;
+    opacity: 0;
+    left: anchor(10%);
+    margin-bottom: 1rem;
+    scrollbar-color: lightgrey transparent;
+    scrollbar-gutter: stable;
+    top: calc(anchor(bottom) + 1px);
+    transition: all 0.4s allow-discrete;
+    will-change: opacity;
+  }
+
+  &:open {
+    /* When the dropdown is opened */
+    border: 2px dotted black;
+
+    &::picker-icon {
+      color: black;
+      rotate: 180deg;
+    }
+
+    &::picker(select) {
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+
+  & option {
+    border: 2px solid #dddddd;
+    background: #eeeeee;
+    min-width: 6rem;
+    padding: 10px;
+
+    &:checked {
+      font-weight: bold;
+    }
+
+    &:nth-of-type(odd) {
+      background: white;
+    }
+
+    &:first-of-type {
+      border-radius: 0.75rem 0.75rem 0 0;
+    }
+
+    &:last-of-type {
+      border-radius: 0 0 0.75rem 0.75rem;
+    }
+
+    &:not(option:last-of-type) {
+      border-bottom: none;
+    }
+
+    &:hover,
+    &:focus {
+      background: lightgrey;
+    }
+
+    &::checkmark {
+      /* The icon show belonging to the option to mark as "checked" the option. */
+      content: '✅️';
+      margin-left: auto;
+      order: 1;
+    }
+
+    &:hover::checkmark {
+      content: '✔️';
+      margin-left: auto;
+      order: 1;
+    }
+  }
+}
